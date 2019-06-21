@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+<html lang="中文" itemscope itemtype="http://schema.org/WebPage">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -56,6 +56,8 @@ We&amp;rsquo;ll start with creating a new site with a very basic template." />
 
 
 
+
+<link rel="stylesheet" href="/css/custom.css">
 
 
 <meta property="og:title" content="Creating a New Theme" />
@@ -143,35 +145,6 @@ We&rsquo;ll start with creating a new site with a very basic template."/>
           
             <a class="menu-item-link" href="https://factory011.github.io/about/">关于</a>
           
-        
-      </li><li class="mobile-menu-item">
-        
-          
-          <div class="mobile-menu-parent">
-            <span class="mobile-submenu-open"></span>
-            <a href="https://factory011.github.io/">
-              docs
-            </a>
-          </div>
-          <ul class="mobile-submenu-list">
-            
-              <li>
-                <a href="https://factory011.github.io/post/jane-theme-preview/">Jane Theme Preview</a>
-              </li>
-            
-              <li>
-                <a href="https://factory011.github.io/post/shortcodes-preview/">Shortcodes Preview</a>
-              </li>
-            
-              <li>
-                <a href="https://factory011.github.io/post/image-preview/">Image Preview</a>
-              </li>
-            
-              <li>
-                <a href="https://factory011.github.io/post/syntax-highlighting/">Syntax Highlighting</a>
-              </li>
-            
-          </ul>
         
       </li>
     
@@ -309,34 +282,6 @@ We&rsquo;ll start with creating a new site with a very basic template."/>
 
       </li>
     
-        <li class="menu-item">
-        
-          
-          <a class="menu-item-link menu-parent" href="https://factory011.github.io/">docs</a>
-          <ul class="submenu">
-            
-              <li>
-                <a href="https://factory011.github.io/post/jane-theme-preview/">Jane Theme Preview</a>
-              </li>
-            
-              <li>
-                <a href="https://factory011.github.io/post/shortcodes-preview/">Shortcodes Preview</a>
-              </li>
-            
-              <li>
-                <a href="https://factory011.github.io/post/image-preview/">Image Preview</a>
-              </li>
-            
-              <li>
-                <a href="https://factory011.github.io/post/syntax-highlighting/">Syntax Highlighting</a>
-              </li>
-            
-          </ul>
-
-        
-
-      </li>
-    
     
   </ul>
 </nav>
@@ -362,7 +307,8 @@ We&rsquo;ll start with creating a new site with a very basic template."/>
             <a href="https://factory011.github.io/categories/index/"> index </a>
             
           </div>
-        
+        <span class="more-meta"> 约 7232 字 </span>
+          <span class="more-meta"> 预计阅读 34 分钟 </span>
 
         
         
@@ -375,7 +321,7 @@ We&rsquo;ll start with creating a new site with a very basic template."/>
     
     
 <div class="post-toc" id="post-toc">
-  <h2 class="post-toc-title">Table of Contents</h2>
+  <h2 class="post-toc-title">文章目录</h2>
   <div class="post-toc-content">
     <nav id="TableOfContents">
 <ul>
@@ -1560,23 +1506,36 @@ $ vi themes/zafta/layouts/_default/single.html
     
 <div class="post-copyright">
   <p class="copyright-item">
-    <span class="item-title">Author</span>
+    <span class="item-title">文章作者</span>
     <span class="item-content">Michael Henderson</span>
   </p>
   <p class="copyright-item">
-    <span class="item-title">LastMod</span>
+    <span class="item-title">上次更新</span>
     <span class="item-content">2014-09-28</span>
   </p>
   
   <p class="copyright-item">
-    <span class="item-title">License</span>
-    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">署名 4.0 国际</a></span>
   </p>
 </div>
 
 
     
     
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    
+      <label class="qr-code-image" for="reward">
+        <img class="image" src="/image/wechat.png">
+        <span>微信打赏</span>
+      </label>
+    
+  </div>
+</div>
 
     <footer class="post-footer">
       <div class="post-tags">
@@ -1602,12 +1561,12 @@ $ vi themes/zafta/layouts/_default/single.html
 
             </i>
             <span class="prev-text nav-default">This is a very long title This is a very long title This is a very long title This is a very long title This is a very long title</span>
-            <span class="prev-text nav-mobile">Prev</span>
+            <span class="prev-text nav-mobile">上一篇</span>
           </a>
         
           <a class="next" href="/post/goisforlovers/">
             <span class="next-text nav-default">(Hu)go Template Primer</span>
-            <span class="prev-text nav-mobile">Next</span>
+            <span class="prev-text nav-mobile">下一篇</span>
             
             <i class="iconfont">
               <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
@@ -1780,6 +1739,8 @@ $ vi themes/zafta/layouts/_default/single.html
 
 
 
+
+  <script src="/js/custom.js"></script>
 
 
 </body>
