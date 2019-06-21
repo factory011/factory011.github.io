@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: https://github.com/factory011/hugo-blog/sitemap.xml
+Sitemap: https://factory011.github.io/sitemap.xml

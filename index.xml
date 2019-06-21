@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Jane - A super concise theme for Hugo</title>
-    <link>https://github.com/factory011/hugo-blog/</link>
+    <link>https://factory011.github.io/</link>
     <description>Recent content on Jane - A super concise theme for Hugo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Tue, 06 Mar 2018 16:01:23 +0800</lastBuildDate>
     
-        <atom:link href="https://github.com/factory011/hugo-blog/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://factory011.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Jane 主题预览</title>
-      <link>https://github.com/factory011/hugo-blog/post/jane-theme-preview.zh-cn/</link>
+      <link>https://factory011.github.io/post/jane-theme-preview.zh-cn/</link>
       <pubDate>Tue, 06 Mar 2018 16:01:23 +0800</pubDate>
       
-      <guid>https://github.com/factory011/hugo-blog/post/jane-theme-preview.zh-cn/</guid>
+      <guid>https://factory011.github.io/post/jane-theme-preview.zh-cn/</guid>
       
         <description>&lt;p&gt;主题预览,内容有待填充。&lt;/p&gt;
 </description>
@@ -25,10 +25,10 @@
     
     <item>
       <title>Jane Theme Preview</title>
-      <link>https://github.com/factory011/hugo-blog/post/jane-theme-preview/</link>
+      <link>https://factory011.github.io/post/jane-theme-preview/</link>
       <pubDate>Mon, 01 Jan 2018 16:01:23 +0800</pubDate>
       
-      <guid>https://github.com/factory011/hugo-blog/post/jane-theme-preview/</guid>
+      <guid>https://factory011.github.io/post/jane-theme-preview/</guid>
       
         <description>&lt;p&gt;&lt;strong&gt;Markdown&lt;/strong&gt; is created by &lt;a href=&#34;http://daringfireball.net/&#34;&gt;Daring Fireball&lt;/a&gt;, the original guideline is &lt;a href=&#34;http://daringfireball.net/projects/markdown/syntax&#34;&gt;here&lt;/a&gt;. Its syntax, however, varies between different parsers or editors.&lt;/p&gt;
 
@@ -386,10 +386,10 @@ __double underscores__
     
     <item>
       <title>About</title>
-      <link>https://github.com/factory011/hugo-blog/about/</link>
+      <link>https://factory011.github.io/about/</link>
       <pubDate>Sun, 20 Aug 2017 21:38:52 +0800</pubDate>
       
-      <guid>https://github.com/factory011/hugo-blog/about/</guid>
+      <guid>https://factory011.github.io/about/</guid>
       
         <description>&lt;p&gt;Hugo is a static site engine written in Go.&lt;/p&gt;
 
@@ -409,10 +409,10 @@ __double underscores__
     
     <item>
       <title>Shortcodes Preview</title>
-      <link>https://github.com/factory011/hugo-blog/post/shortcodes-preview/</link>
+      <link>https://factory011.github.io/post/shortcodes-preview/</link>
       <pubDate>Sun, 04 Mar 2018 16:01:23 +0800</pubDate>
       
-      <guid>https://github.com/factory011/hugo-blog/post/shortcodes-preview/</guid>
+      <guid>https://factory011.github.io/post/shortcodes-preview/</guid>
       
         <description>&lt;h2 id=&#34;what-a-shortcode-is&#34;&gt;What a Shortcode is&lt;/h2&gt;
 
@@ -827,10 +827,10 @@ Yes !.
     
     <item>
       <title>Image Preview</title>
-      <link>https://github.com/factory011/hugo-blog/post/image-preview/</link>
+      <link>https://factory011.github.io/post/image-preview/</link>
       <pubDate>Sat, 03 Mar 2018 16:01:23 +0800</pubDate>
       
-      <guid>https://github.com/factory011/hugo-blog/post/image-preview/</guid>
+      <guid>https://factory011.github.io/post/image-preview/</guid>
       
         <description>&lt;p&gt;Thanks for &lt;a href=&#34;https://github.com/liwenyip/hugo-easy-gallery&#34;&gt;liwenyip/hugo-easy-gallery&lt;/a&gt; &amp;amp; &lt;a href=&#34;https://github.com/xianmin/hugo-theme-jane/pull/48&#34;&gt;Zebradil · Pull Request #48&lt;/a&gt; .&lt;/p&gt;
 
@@ -945,10 +945,10 @@ Yes !.
     
     <item>
       <title>Shortcodes Notice Preview</title>
-      <link>https://github.com/factory011/hugo-blog/post/shortcode-notice/</link>
+      <link>https://factory011.github.io/post/shortcode-notice/</link>
       <pubDate>Sat, 03 Mar 2018 16:01:23 +0800</pubDate>
       
-      <guid>https://github.com/factory011/hugo-blog/post/shortcode-notice/</guid>
+      <guid>https://factory011.github.io/post/shortcode-notice/</guid>
       
         <description>
 
@@ -1055,10 +1055,10 @@ A warning disclaimer
     
     <item>
       <title>Jane-Theme Footnote Preview</title>
-      <link>https://github.com/factory011/hugo-blog/post/doc-footnote-preview/</link>
+      <link>https://factory011.github.io/post/doc-footnote-preview/</link>
       <pubDate>Thu, 01 Mar 2018 16:01:23 +0800</pubDate>
       
-      <guid>https://github.com/factory011/hugo-blog/post/doc-footnote-preview/</guid>
+      <guid>https://factory011.github.io/post/doc-footnote-preview/</guid>
       
         <description>&lt;p&gt;Hugo-theme-jane optimized for footnote. When you mouse hover the footnote&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:example&#34;&gt;&lt;a href=&#34;#fn:example&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; , footnote content will be displayed.&lt;/p&gt;
 
@@ -1145,10 +1145,10 @@ A warning disclaimer
     
     <item>
       <title>English Creating a New Theme</title>
-      <link>https://github.com/factory011/hugo-blog/post/english-preview/</link>
+      <link>https://factory011.github.io/post/english-preview/</link>
       <pubDate>Thu, 31 Aug 2017 15:43:48 +0800</pubDate>
       
-      <guid>https://github.com/factory011/hugo-blog/post/english-preview/</guid>
+      <guid>https://factory011.github.io/post/english-preview/</guid>
       
         <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
 
@@ -2246,10 +2246,10 @@ $ vi themes/zafta/layouts/_default/single.html
     
     <item>
       <title>This is a very long title This is a very long title This is a very long title This is a very long title This is a very long title</title>
-      <link>https://github.com/factory011/hugo-blog/post/this-is-a-very-long-title/</link>
+      <link>https://factory011.github.io/post/this-is-a-very-long-title/</link>
       <pubDate>Wed, 30 Aug 2017 15:43:48 +0800</pubDate>
       
-      <guid>https://github.com/factory011/hugo-blog/post/this-is-a-very-long-title/</guid>
+      <guid>https://factory011.github.io/post/this-is-a-very-long-title/</guid>
       
         <description>&lt;p&gt;This is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long title&lt;/p&gt;
 </description>
@@ -2258,10 +2258,10 @@ $ vi themes/zafta/layouts/_default/single.html
     
     <item>
       <title>Creating a New Theme</title>
-      <link>https://github.com/factory011/hugo-blog/post/creating-a-new-theme/</link>
+      <link>https://factory011.github.io/post/creating-a-new-theme/</link>
       <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://github.com/factory011/hugo-blog/post/creating-a-new-theme/</guid>
+      <guid>https://factory011.github.io/post/creating-a-new-theme/</guid>
       
         <description>
 
@@ -3362,10 +3362,10 @@ $ vi themes/zafta/layouts/_default/single.html
     
     <item>
       <title>(Hu)go Template Primer</title>
-      <link>https://github.com/factory011/hugo-blog/post/goisforlovers/</link>
+      <link>https://factory011.github.io/post/goisforlovers/</link>
       <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://github.com/factory011/hugo-blog/post/goisforlovers/</guid>
+      <guid>https://factory011.github.io/post/goisforlovers/</guid>
       
         <description>
 
@@ -3425,7 +3425,7 @@ functions.&lt;/p&gt;
 &lt;p&gt;Each go template has a struct (object) made available to it. In hugo each
 template is passed either a page or a node struct depending on which type of
 page you are rendering. More details are available on the
-&lt;a href=&#34;https://github.com/factory011/hugo-blog/layout/variables&#34;&gt;variables&lt;/a&gt; page.&lt;/p&gt;
+&lt;a href=&#34;https://factory011.github.io/layout/variables&#34;&gt;variables&lt;/a&gt; page.&lt;/p&gt;
 
 &lt;p&gt;A variable is accessed by referencing the variable name.&lt;/p&gt;
 
@@ -3442,7 +3442,7 @@ page you are rendering. More details are available on the
 
 &lt;p&gt;Go template ship with a few functions which provide basic functionality. The go
 template system also provides a mechanism for applications to extend the
-available functions with their own. &lt;a href=&#34;https://github.com/factory011/hugo-blog/layout/functions&#34;&gt;Hugo template
+available functions with their own. &lt;a href=&#34;https://factory011.github.io/layout/functions&#34;&gt;Hugo template
 functions&lt;/a&gt; provide some additional functionality we believe
 are useful for building websites. Functions are called by using their name
 followed by the required parameters separated by spaces. Template
@@ -3630,7 +3630,7 @@ you want to inside of your templates.&lt;/p&gt;
 &lt;h2 id=&#34;using-content-page-parameters&#34;&gt;Using Content (page) Parameters&lt;/h2&gt;
 
 &lt;p&gt;In each piece of content you can provide variables to be used by the
-templates. This happens in the &lt;a href=&#34;https://github.com/factory011/hugo-blog/content/front-matter&#34;&gt;front matter&lt;/a&gt;.&lt;/p&gt;
+templates. This happens in the &lt;a href=&#34;https://factory011.github.io/content/front-matter&#34;&gt;front matter&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;An example of this is used in this documentation site. Most of the pages
 benefit from having the table of contents provided. Sometimes the TOC just
@@ -3710,10 +3710,10 @@ so, such as in this example:&lt;/p&gt;
     
     <item>
       <title>Getting Started with Hugo</title>
-      <link>https://github.com/factory011/hugo-blog/post/hugoisforlovers/</link>
+      <link>https://factory011.github.io/post/hugoisforlovers/</link>
       <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://github.com/factory011/hugo-blog/post/hugoisforlovers/</guid>
+      <guid>https://factory011.github.io/post/hugoisforlovers/</guid>
       
         <description>
 
@@ -3724,7 +3724,7 @@ appropriate version for your os and architecture.&lt;/p&gt;
 
 &lt;p&gt;Save it somewhere specific as we will be using it in the next step.&lt;/p&gt;
 
-&lt;p&gt;More complete instructions are available at &lt;a href=&#34;https://github.com/factory011/hugo-blog/overview/installing/&#34;&gt;installing hugo&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;More complete instructions are available at &lt;a href=&#34;https://factory011.github.io/overview/installing/&#34;&gt;installing hugo&lt;/a&gt;&lt;/p&gt;
 
 &lt;h2 id=&#34;step-2-build-the-docs&#34;&gt;Step 2. Build the Docs&lt;/h2&gt;
 
@@ -3799,10 +3799,10 @@ Having nearly instant feedback enables you to have your creativity flow without 
     
     <item>
       <title>Migrate to Hugo from Jekyll</title>
-      <link>https://github.com/factory011/hugo-blog/post/migrate-from-jekyll/</link>
+      <link>https://factory011.github.io/post/migrate-from-jekyll/</link>
       <pubDate>Mon, 10 Mar 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://github.com/factory011/hugo-blog/post/migrate-from-jekyll/</guid>
+      <guid>https://factory011.github.io/post/migrate-from-jekyll/</guid>
       
         <description>
 
@@ -3828,7 +3828,7 @@ With Jekyll, something that looked like&lt;/p&gt;
 
 &lt;h2 id=&#34;create-your-hugo-configuration-file&#34;&gt;Create your Hugo configuration file&lt;/h2&gt;
 
-&lt;p&gt;Hugo can read your configuration as JSON, YAML or TOML. Hugo supports parameters custom configuration too. Refer to the &lt;a href=&#34;https://github.com/factory011/hugo-blog/overview/configuration/&#34;&gt;Hugo configuration documentation&lt;/a&gt; for details.&lt;/p&gt;
+&lt;p&gt;Hugo can read your configuration as JSON, YAML or TOML. Hugo supports parameters custom configuration too. Refer to the &lt;a href=&#34;https://factory011.github.io/overview/configuration/&#34;&gt;Hugo configuration documentation&lt;/a&gt; for details.&lt;/p&gt;
 
 &lt;h2 id=&#34;set-your-configuration-publish-folder-to-site&#34;&gt;Set your configuration publish folder to &lt;code&gt;_site&lt;/code&gt;&lt;/h2&gt;
 
@@ -3854,13 +3854,13 @@ git submodule add -b gh-pages git@github.com:your-username/your-repo.git public
 
 &lt;h2 id=&#34;convert-jekyll-templates-to-hugo-templates&#34;&gt;Convert Jekyll templates to Hugo templates&lt;/h2&gt;
 
-&lt;p&gt;That&amp;rsquo;s the bulk of the work right here. The documentation is your friend. You should refer to &lt;a href=&#34;http://jekyllrb.com/docs/templates/&#34;&gt;Jekyll&amp;rsquo;s template documentation&lt;/a&gt; if you need to refresh your memory on how you built your blog and &lt;a href=&#34;https://github.com/factory011/hugo-blog/layout/templates/&#34;&gt;Hugo&amp;rsquo;s template&lt;/a&gt; to learn Hugo&amp;rsquo;s way.&lt;/p&gt;
+&lt;p&gt;That&amp;rsquo;s the bulk of the work right here. The documentation is your friend. You should refer to &lt;a href=&#34;http://jekyllrb.com/docs/templates/&#34;&gt;Jekyll&amp;rsquo;s template documentation&lt;/a&gt; if you need to refresh your memory on how you built your blog and &lt;a href=&#34;https://factory011.github.io/layout/templates/&#34;&gt;Hugo&amp;rsquo;s template&lt;/a&gt; to learn Hugo&amp;rsquo;s way.&lt;/p&gt;
 
 &lt;p&gt;As a single reference data point, converting my templates for &lt;a href=&#34;http://heyitsalex.net/&#34;&gt;heyitsalex.net&lt;/a&gt; took me no more than a few hours.&lt;/p&gt;
 
 &lt;h2 id=&#34;convert-jekyll-plugins-to-hugo-shortcodes&#34;&gt;Convert Jekyll plugins to Hugo shortcodes&lt;/h2&gt;
 
-&lt;p&gt;Jekyll has &lt;a href=&#34;http://jekyllrb.com/docs/plugins/&#34;&gt;plugins&lt;/a&gt;; Hugo has &lt;a href=&#34;https://github.com/factory011/hugo-blog/doc/shortcodes/&#34;&gt;shortcodes&lt;/a&gt;. It&amp;rsquo;s fairly trivial to do a port.&lt;/p&gt;
+&lt;p&gt;Jekyll has &lt;a href=&#34;http://jekyllrb.com/docs/plugins/&#34;&gt;plugins&lt;/a&gt;; Hugo has &lt;a href=&#34;https://factory011.github.io/doc/shortcodes/&#34;&gt;shortcodes&lt;/a&gt;. It&amp;rsquo;s fairly trivial to do a port.&lt;/p&gt;
 
 &lt;h3 id=&#34;implementation&#34;&gt;Implementation&lt;/h3&gt;
 
@@ -3978,10 +3978,10 @@ Liquid::Template.register_tag(&#39;image&#39;, Jekyll::ImageTag)
     
     <item>
       <title>Syntax Highlighting</title>
-      <link>https://github.com/factory011/hugo-blog/post/syntax-highlighting/</link>
+      <link>https://factory011.github.io/post/syntax-highlighting/</link>
       <pubDate>Tue, 30 Aug 2011 16:01:23 +0800</pubDate>
       
-      <guid>https://github.com/factory011/hugo-blog/post/syntax-highlighting/</guid>
+      <guid>https://factory011.github.io/post/syntax-highlighting/</guid>
       
         <description>&lt;p&gt;More detail: &lt;a href=&#34;https://gohugo.io/content-management/syntax-highlighting/&#34;&gt;Syntax Highlighting | Hugo&lt;/a&gt;&lt;/p&gt;
 
