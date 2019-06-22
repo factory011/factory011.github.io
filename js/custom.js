@@ -37,11 +37,5 @@ var toc = function() {
   }
 }
 
-/* main */
-$(document).ready(function () {
-  backToTop();
-  mobileNavbar();
-  toc();
-  headerAnchor();
-  fnTooltip();
-});
+backToTop();
+toc();
