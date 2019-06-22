@@ -1,18 +1,113 @@
 /* ===============================post_toc.scss ================================== */
-.container {
-	
+/* 设置菜单栏icon偏移位置 */
+.menu-item-link .iconfont::before {
+	padding-right: 8px;
 }
 
-.post.bg-white {
-	
+/* 设置title字体大小 */
+.header .logo-wrapper .logo {
+	position: relative;
+    font-size: 36px;
+    line-height: 68px;
 }
 
-#post-toc {
-    width: 360px;
-	right: calc((100% - 1350px)/2);
-	top: 68px;
+/* 设置title上横线 */
+.header .logo-wrapper .logo::before {
+    content: '';
+    position: absolute;
+	top: -10px;
+	left: 27px;
+    width: 160px;
+    height: 2px;
+    background-color: #333;
 }
 
-#post-toc .post-toc-content {
-	display: block;
+/* 设置title下横线 */
+.header .logo-wrapper .logo::after {
+        content: '';
+    position: absolute;
+	bottom: -10px;
+    left: 0;
+	left: 27px;
+    width: 160px;
+    height: 4px;
+    background-color: #333;
 }
+
+/* 去除顶部border */
+body {
+	border-top: 0;
+}
+
+/* 清除浮动影响 */
+.read-more {
+	text-align: center;
+}
+
+/* 阅读更多居右 */
+.post .post-content .read-more .read-more-link {
+    border: 1px solid #ccc;
+    padding: 0.5em 1em;
+    background-color: #000;
+    color: #fff;
+}
+
+/* 设置文章盒子阴影 */
+.post {
+	padding: 1em 1em;
+    margin: 1.5em 0;
+	box-shadow: 0 0 5px rgba(202,203,203,.5);
+	-webkit-box-shadow: 0 0 5px rgba(202,203,203,.5);
+}
+
+/* 调整返回顶部icon位置和大小 */
+.back-to-top {
+    right: 30px;
+    bottom: 45px;
+    font-size: 2em;
+}
+
+/* 设置标签样式 */
+.terms .terms-tags .terms-link {
+    margin: 10px 10px;
+    border-radius: 50em;
+    padding: 5px 10px;
+    background-color: #FFF2AB;
+}
+
+/* 设置标签数组样式 */
+.terms .terms-tags .terms-link .terms-count {
+    top: -2px;
+    right: -1px;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: red;
+    color: #fff;
+}
+
+/* 设置底部heart样式 */
+.footer .copyright .copyright-year .heart {
+    color: #ff7171;
+	display: inline-block;
+	animation: heartAnimate 1.33s ease-in-out infinite;
+}
+
+@keyframes heartAnimate {
+	0%, 100% {
+    transform: scale(1);
+	}
+
+	10%, 30% {
+		transform: scale(.9);
+	}
+	20%, 40%, 60%, 80% {
+		transform: scale(1.1);
+	}
+	50%, 70% {
+		transform: scale(1.1);
+	}
+}
+
+
