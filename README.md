@@ -103,7 +103,7 @@ cd ./themes/even/
 git pull
 ```
 
-## Deploy Github
+## Host on Github
 
 1、在Github上创建一个名称为`xxxxxx.github.io`的仓库（xxxxxx为你的Github账号名称）。
 
@@ -145,7 +145,7 @@ git push origin master
 cd ..
 ```
 
-
+5、打开`xxxxxx.github.io`仓库的setting配置，往下找到Github Pages，选择master branch开启page服务，访问page地址，出现页面即完成。
 
 ## License
 
