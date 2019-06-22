@@ -2,31 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>tag-6 on 浪里个小胖子</title>
-    <link>https://factory011.github.io/tags/tag-6/</link>
+    <link>http://localhost:1313/tags/tag-6/</link>
     <description>Recent content in tag-6 on 浪里个小胖子</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>中文</language>
+    <language>zh-cn</language>
     <lastBuildDate>Tue, 06 Mar 2018 16:01:23 +0800</lastBuildDate>
     
-	<atom:link href="https://factory011.github.io/tags/tag-6/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://localhost:1313/tags/tag-6/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Jane 主题预览</title>
-      <link>https://factory011.github.io/post/jane-theme-preview/</link>
+      <link>http://localhost:1313/post/jane-theme-preview/</link>
       <pubDate>Tue, 06 Mar 2018 16:01:23 +0800</pubDate>
       
-      <guid>https://factory011.github.io/post/jane-theme-preview/</guid>
+      <guid>http://localhost:1313/post/jane-theme-preview/</guid>
       <description>主题预览,内容有待填充。</description>
-    </item>
-    
-    <item>
-      <title>Shortcodes Notice Preview</title>
-      <link>https://factory011.github.io/post/shortcode-notice/</link>
-      <pubDate>Sat, 03 Mar 2018 16:01:23 +0800</pubDate>
-      
-      <guid>https://factory011.github.io/post/shortcode-notice/</guid>
-      <description>normal use Note example: {{% notice note %}} A notice disclaimer {{% /notice %}} teste ghjgh Result: note A notice disclaimer You could custom title : {{% notice note 笔记 %}} A notice disclaimer {{% /notice %}} 笔记 A notice disclaimer tip {{% notice tip %}} A tip disclaimer {{% /tip %}} tip A tip disclaimer info {{% notice info %}} A info disclaimer {{% /notice %}} info</description>
     </item>
     
   </channel>

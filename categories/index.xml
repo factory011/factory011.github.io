@@ -2,75 +2,75 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on 浪里个小胖子</title>
-    <link>https://factory011.github.io/categories/</link>
+    <link>http://localhost:1313/categories/</link>
     <description>Recent content in Categories on 浪里个小胖子</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>中文</language>
+    <language>zh-cn</language>
     <lastBuildDate>Tue, 06 Mar 2018 16:01:23 +0800</lastBuildDate>
     
-	<atom:link href="https://factory011.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>index</title>
-      <link>https://factory011.github.io/categories/index/</link>
+      <link>http://localhost:1313/categories/index/</link>
       <pubDate>Tue, 06 Mar 2018 16:01:23 +0800</pubDate>
       
-      <guid>https://factory011.github.io/categories/index/</guid>
+      <guid>http://localhost:1313/categories/index/</guid>
       <description></description>
     </item>
     
     <item>
       <title>shortcodes</title>
-      <link>https://factory011.github.io/categories/shortcodes/</link>
+      <link>http://localhost:1313/categories/shortcodes/</link>
       <pubDate>Tue, 06 Mar 2018 16:01:23 +0800</pubDate>
       
-      <guid>https://factory011.github.io/categories/shortcodes/</guid>
+      <guid>http://localhost:1313/categories/shortcodes/</guid>
       <description></description>
     </item>
     
     <item>
       <title>docs</title>
-      <link>https://factory011.github.io/categories/docs/</link>
-      <pubDate>Sat, 03 Mar 2018 16:01:23 +0800</pubDate>
+      <link>http://localhost:1313/categories/docs/</link>
+      <pubDate>Thu, 01 Mar 2018 16:01:23 +0800</pubDate>
       
-      <guid>https://factory011.github.io/categories/docs/</guid>
+      <guid>http://localhost:1313/categories/docs/</guid>
       <description></description>
     </item>
     
     <item>
       <title>English</title>
-      <link>https://factory011.github.io/categories/english/</link>
+      <link>http://localhost:1313/categories/english/</link>
       <pubDate>Thu, 31 Aug 2017 15:43:48 +0800</pubDate>
       
-      <guid>https://factory011.github.io/categories/english/</guid>
+      <guid>http://localhost:1313/categories/english/</guid>
       <description></description>
     </item>
     
     <item>
       <title>test</title>
-      <link>https://factory011.github.io/categories/test/</link>
+      <link>http://localhost:1313/categories/test/</link>
       <pubDate>Wed, 30 Aug 2017 15:43:48 +0800</pubDate>
       
-      <guid>https://factory011.github.io/categories/test/</guid>
+      <guid>http://localhost:1313/categories/test/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Development</title>
-      <link>https://factory011.github.io/categories/development/</link>
+      <link>http://localhost:1313/categories/development/</link>
       <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://factory011.github.io/categories/development/</guid>
+      <guid>http://localhost:1313/categories/development/</guid>
       <description></description>
     </item>
     
     <item>
       <title>golang</title>
-      <link>https://factory011.github.io/categories/golang/</link>
+      <link>http://localhost:1313/categories/golang/</link>
       <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
       
-      <guid>https://factory011.github.io/categories/golang/</guid>
+      <guid>http://localhost:1313/categories/golang/</guid>
       <description></description>
     </item>
     

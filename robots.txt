@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: https://factory011.github.io/sitemap.xml
+Sitemap: http://localhost:1313/sitemap.xml
