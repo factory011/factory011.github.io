@@ -1,4 +1,4 @@
-/* ===============================post_toc.scss ================================== */
+/* ===============================custom.css ================================== */
 /* 设置菜单栏icon偏移位置 */
 .menu-item-link .iconfont::before {
 	padding-right: 8px;
@@ -24,7 +24,7 @@
 
 /* 设置title下横线 */
 .header .logo-wrapper .logo::after {
-        content: '';
+    content: '';
     position: absolute;
 	bottom: -10px;
     left: 0;
@@ -39,17 +39,23 @@ body {
 	border-top: 0;
 }
 
-/* 清除浮动影响 */
+/* 让阅读更多居中 */
 .read-more {
 	text-align: center;
+	padding: 0 0 20px;
 }
 
-/* 阅读更多居右 */
+/* 调整阅读更多样式 */
 .post .post-content .read-more .read-more-link {
     border: 1px solid #ccc;
     padding: 0.5em 1em;
     background-color: #000;
     color: #fff;
+}
+
+/* 去除文章border-bottom */
+.posts {
+	border-bottom: none;
 }
 
 /* 设置文章盒子阴影 */
@@ -67,7 +73,7 @@ body {
     font-size: 2em;
 }
 
-/* 设置标签样式 */
+/* 设置菜单项的标签、分类页面样式 */
 .terms .terms-tags .terms-link {
     margin: 10px 10px;
     border-radius: 50em;
@@ -75,7 +81,7 @@ body {
     background-color: #FFF2AB;
 }
 
-/* 设置标签数组样式 */
+/* 设置菜单项的标签、分类页面的统计数字样式 */
 .terms .terms-tags .terms-link .terms-count {
     top: -2px;
     right: -1px;
@@ -87,7 +93,7 @@ body {
     color: #fff;
 }
 
-/* 设置底部heart样式 */
+/* 设置底部heart跳动样式动画 */
 .footer .copyright .copyright-year .heart {
     color: #ff7171;
 	display: inline-block;
@@ -108,6 +114,11 @@ body {
 	50%, 70% {
 		transform: scale(1.1);
 	}
+}
+
+/* 设置文章目录的ul样式 */
+.post .post-toc .post-toc-content ul {
+    list-style: telugu;
 }
 
 
