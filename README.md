@@ -1,29 +1,44 @@
 # hugo-theme-even
 
-[![GitHub contributors](https://img.shields.io/github/contributors/olOwOlo/hugo-theme-even.svg?colorB=green)](https://github.com/olOwOlo/hugo-theme-even/contributors)
-[![GitHub release](https://img.shields.io/github/release/olOwOlo/hugo-theme-even.svg?colorB=green)](https://github.com/olOwOlo/hugo-theme-even/releases)
-[![GitHub commits (since latest release)](https://img.shields.io/github/commits-since/olOwOlo/hugo-theme-even/latest.svg?colorB=green)](https://github.com/olOwOlo/hugo-theme-even/compare)
-[![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/olOwOlo/hugo-theme-even/blob/master/LICENSE.md)
-
 A super concise theme for Hugo
 
 > 该主题移植自 [hexo-theme-even](https://github.com/ahonn/hexo-theme-even)
 
-[在线预览 Demo](https://blog.olowolo.com/example-site/)
+[在线预览 Demo](https://factory011.github.io/)
 
 ## Screenshots
 
 ![even-showcase](https://raw.githubusercontent.com/olOwOlo/hugo-theme-even/master/images/showcase.png)
 
-## Installation
+## Installation Hugo（windows）
+
+1. 转到[Hugo Releases](https://github.com/gohugoio/hugo/releases)页面下载exe执行文件。
+2. 最新版本在顶部公布。滚动到发布公告的底部以查看下载。找到底部附近的Windows文件（它们按字母顺序排列，因此Windows是最后一个） - 根据您是否具有32位或64位Windows，下载32位或64位文件，例如我下载的文件名称为`hugo_0.55.6_Windows-64bit.zip`。
+3. 将ZIP文件解压移动到您的`D:\Hugo\bin`文件夹中。
+4. 现在应该有一个新文件：hugo可执行文件`hugo.exe`。
+5. 将执行文件目录`D:\Hugo\bin`添加到电脑系统环境变量`path`中。
+6. 打开cmd命令窗口输入`hugo version`，得到类似如下结果`Hugo Static Site Generator v0.55.6-A5D4C82D windows/amd64 BuildDate: 2019-05-18T07:57:00Z`，说明Hugo安装成功。
+
+## Installation Theme（windows）
+
+1、创建blog文件，在上一步的`D:\Hugo`目录中执行
+
+```JS
+hugo new site blog
+```
+
+2、添加主题（需[安装git](<https://git-scm.com/downloads>)）
 
 ```bash
+// 进入D:\Hugo\blog\themes目录中
+cd blog/themes
+// 将hugo-theme-even主题克隆到本地，文件名称由hugo-theme-even改成even
 $ git clone https://github.com/olOwOlo/hugo-theme-even themes/even
 ```
 
-**重要:** 在主题的 [`exampleSite`](https://github.com/olOwOlo/hugo-theme-even/tree/master/exampleSite) 目录下有一个 [`config.toml`](https://github.com/olOwOlo/hugo-theme-even/blob/master/exampleSite/config.toml) 文件，**将这个 [`config.toml`](https://github.com/olOwOlo/hugo-theme-even/blob/master/exampleSite/config.toml) 文件复制到你的站点目录下**，根据自己的需求更改即可。
+**重要:**在 `D:\Hugo\blog\themes\even\exampleSite`目录下有一个 [`config.toml`](https://github.com/olOwOlo/hugo-theme-even/blob/master/exampleSite/config.toml) 文件，**将这个 `config.toml` 文件复制到你的站点目录下（blog目录）**，根据自己的需求更改即可。
 
-**注意:** 对于这个主题，你应该使用 **post** 而不是 **posts**，即 `hugo new post/some-content.md`。
+**注意:** 对于这个主题，你应该使用 **post** 而不是 **posts**，即新建文章的执行命令是`hugo new post/some-content.md`。
 
 ## Language Support
 
@@ -88,12 +103,50 @@ cd ./themes/even/
 git pull
 ```
 
+## Deploy Github
+
+1、在Github上创建一个名称为`xxxxxx.github.io`的仓库（xxxxxx为你的Github账号名称）。
+
+2、在`D:\Hugo\blog\themes`目录执行
+
+```JS
+$ git init
+$ git remote add origin git@github.com:xxxxxxx/factory011.github.io.git
+```
+
+3、在`D:\Hugo\blog`目录新建脚本文件`deploy.sh`。
+
+4、在站点根目录右键打开`git bash`窗口执行脚本文件或者选中脚本文件右键属性，打开方式选择`git bash`执行程序，然后双击脚本文件即可将`public`一键部署到Github上。
+
+```JS
+#!/bin/bash
+
+echo -e "\033[0;32mDeploying updates to GitHub...\033[0m"
+
+# Build the project.
+hugo # if using a theme, replace by `hugo -t <yourtheme>`
+
+# Go To Public folder
+cd public
+# Add changes to git.
+git add -A
+
+# Commit changes.
+msg="rebuilding site `date`"
+if [ $# -eq 1 ]
+  then msg="$1"
+fi
+git commit -m "$msg"
+
+# Push source and build repos.
+git push origin master
+
+# Come Back
+cd ..
+```
+
+
+
 ## License
 
-Released under the [MIT](https://github.com/olOwOlo/hugo-theme-even/blob/master/LICENSE.md) License.
-
-## Acknowledgements
-
-- [ananke](https://github.com/budparr/gohugo-theme-ananke)
-- [hexo-theme-even](https://github.com/ahonn/hexo-theme-even)
-- [hugo-nuo](https://github.com/laozhu/hugo-nuo)
+Released under the [MIT](https://github.com/olOwOlo/hugo-theme-even/blob/master/LICENSE.md) License.https://github.com/laozhu/hugo-nuo)
