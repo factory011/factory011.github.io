@@ -1,191 +1,99 @@
-![jane-preview](https://raw.githubusercontent.com/xianmin/hugo-theme-jane/master/images/preview.png)
+# hugo-theme-even
 
+[![GitHub contributors](https://img.shields.io/github/contributors/olOwOlo/hugo-theme-even.svg?colorB=green)](https://github.com/olOwOlo/hugo-theme-even/contributors)
+[![GitHub release](https://img.shields.io/github/release/olOwOlo/hugo-theme-even.svg?colorB=green)](https://github.com/olOwOlo/hugo-theme-even/releases)
+[![GitHub commits (since latest release)](https://img.shields.io/github/commits-since/olOwOlo/hugo-theme-even/latest.svg?colorB=green)](https://github.com/olOwOlo/hugo-theme-even/compare)
+[![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/olOwOlo/hugo-theme-even/blob/master/LICENSE.md)
 
-## hugo-theme-jane
+A super concise theme for Hugo
 
-Jane 是一个专注于阅读体验的 Hugo 主题。最早的版本基于 [hugo-theme-even](https://github.com/olOwOlo/hugo-theme-even) ，在它的基础上进行了重新改造。
+> 该主题移植自 [hexo-theme-even](https://github.com/ahonn/hexo-theme-even)
 
-[Demo](http://en.xianmin.org/hugo-theme-jane/) | [我的博客](http://www.xianmin.org)
+[在线预览 Demo](https://blog.olowolo.com/example-site/)
 
-**主要特色：**
+## Screenshots
 
-- 响应式设计
-- 多国语言支持
-- 支持多个 Shortcode
-- 单独设计的 *标签页* 和 *分类页*
-- 社交网站链接
-- 更好的分页、目录、注脚样式
-- 使用更快的 Chroma 代码高亮
-- 自定义 css，自定义 js，自定义 head
-- 子目录支持
-- 搜索优化
+![even-showcase](https://raw.githubusercontent.com/olOwOlo/hugo-theme-even/master/images/showcase.png)
 
-
-## 谁在用 Hugo-theme-Jane
-
-- [ATFeng](https://www.gooth.org/) - A beautiful blog fork from Jane.
-- [Jack Baty's Blog](https://www.baty.net/) - Thousands of posts on the site powered by Hugo & Theme Jane.
-- [Notes on Blue Skies](https://terrty.net) - Personal blog in Russian by @paskal
-- [贤民的比特记忆](http://www.xianmin.org/) - A Chinese blog.
-- [虞双齐爱折腾](https://yushuangqi.com/) - @ysqi 个人技术博客.
-- [茶歇驿站](https://maiyang.me/) - Go 爱好者，开源爱好者，Go 夜读发起人 @yangwenmai.
-- [Time](https://ifttl.com/) - 个人博客
-- Waiting to add more...
-
-
-## 如何使用？
-
-**注意：** 这个教程假设你 **第一次** 使用 [Hugo][] 。 [Hugo][] 是一个非常流行的静态网站生成工具。 你可查看官方文档 [Hugo Official Docs][] 获取更多帮助。
-
-[Hugo]: https://gohugo.io/
-[Hugo Official Docs]: https://gohugo.io/getting-started/
-
-
-
-### 1. 快速安装 Hugo
-
-从 [Hugo Releases](https://github.com/gohugoio/hugo/releases) 上直接下载安装适合你的版本。
-
-
-
-### 2. 快速创建网站
+## Installation
 
 ```bash
-hugo new site myBlog
+$ git clone https://github.com/olOwOlo/hugo-theme-even themes/even
 ```
 
-上面的命令将会在一个名为 `myBlog`  的文件夹中创建一个新的 hugo 站点。
+**重要:** 在主题的 [`exampleSite`](https://github.com/olOwOlo/hugo-theme-even/tree/master/exampleSite) 目录下有一个 [`config.toml`](https://github.com/olOwOlo/hugo-theme-even/blob/master/exampleSite/config.toml) 文件，**将这个 [`config.toml`](https://github.com/olOwOlo/hugo-theme-even/blob/master/exampleSite/config.toml) 文件复制到你的站点目录下**，根据自己的需求更改即可。
 
+**注意:** 对于这个主题，你应该使用 **post** 而不是 **posts**，即 `hugo new post/some-content.md`。
 
+## Language Support
 
-### 3. 快速使用 Hugo-Theme-Jane
+> 翻译资源在 [`themes/even/i18n/`](https://github.com/olOwOlo/hugo-theme-even/tree/master/i18n) 文件夹（内置在主题中），以及站点根目录下的 `i18n/` 文件夹中。两个文件夹下的翻译资源将会被合并，且根目录下的优先级大于内置于主题中的。
 
-把这个主题克隆到 `themes` 文件夹
-
-```bash
-cd myBlog
-git clone https://github.com/xianmin/hugo-theme-jane.git --depth=1 themes/jane
-```
-
-复制一些示例文本：
-
-```bash
-cp -r themes/jane/exampleSite/content ./
-```
-
-复制默认的站点设置：
-
-```bash
-cp themes/jane/exampleSite/config.toml ./
-```
-
-启动 hugo server ：
-
-```bash
-hugo server
-```
-
-打开 http://localhost:1313/ ，你将会看到一个示例网站。
-
-
-
-### 4. 开始你的博客
-
-默认配置文件 `config.toml` 位于你的网站的根目录，请按自身需要进行定制。
-
-默认的文章文件位于 `./content/post` 目录。
-
-
-
-### 5. 生成你的网站
-
-直接运行 `hugo` ，将会自动生成你的网站到 `public/` 目录。
-
-如果你有额外的时间，并且想更多的了解 [Hugo][] ，请查阅官方文档 [Hugo Official Docs][] 。
-
-
-
-## 站点设置
-
-不妨看一看 [exampleSite](https://github.com/xianmin/hugo-theme-jane/tree/master/exampleSite) 文件夹中的文件。
-
-这个目录包含一个示例 `config.toml` 文件和一些示例文章。
-
-将 `config.toml` 复制到你的网站根目录。按自身需要进行修改。
-
-
-
-## 单篇文章的设置
-
-**Front Matter** : Hugo 允许你使用 yaml， toml 或者 json 语法在你每一篇文章的开头进行设置。
-
-**YAML 示例：**
-
-```yaml
----
-# 常用定义
-title: "An Example Post"           # 标题
-date: 2018-01-01T16:01:23+08:00    # 创建时间
-lastmod: 2018-01-02T16:01:23+08:00 # 最后修改时间
-draft: false                       # 是否是草稿？
-tags: ["tag-1", "tag-2", "tag-3"]  # 标签
-categories: ["index"]              # 分类
-author: "xianmin"                  # 作者
-
-# 用户自定义
-# 你可以选择 关闭(false) 或者 打开(true) 以下选项
-comment: false   # 关闭评论
-toc: false       # 关闭文章目录
-# 你同样可以自定义文章的版权规则
-contentCopyright: '<a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a>'
-reward: false	 # 关闭打赏
-mathjax: true    # 打开 mathjax
----
-```
-
-
-
-## 多语言支持
-
-Hugo-Theme-Jane 支持创建多语言网站。
-
-你需要为你的网站对 `languages` 进行配置。
-
-翻译位于 `i18n/` 文件夹下。
-
-使用特定的翻译：
+只需要正确的设置 [`defaultContentLanguage`](https://github.com/olOwOlo/hugo-theme-even/blob/master/exampleSite/config.toml#L3) 的值即可使用翻译资源。
 
 ```toml
-# 使用中文
-defaultContentLanguage = "zh-cn"  # 默认使用的语言
-[Languages.zh-cn]
-  languageCode = "zh-cn"
+defaultContentLanguage = "en"  # en / zh-cn / other...
 ```
 
-有关多语言设置，请查看 [Multilingual Mode | Hugo](https://gohugo.io/content-management/multilingual/) 。
+同样也支持其他语言。举例来说，为支持德语，在站点根目录下创建 `/i18n/de.yaml` 文件。参考 [`en.yaml`](https://github.com/olOwOlo/hugo-theme-even/tree/master/i18n/en.yaml) 文件查看如何编写翻译资源。
 
+附：在多语言模式下，当前正被用于渲染网站的语言会被用于匹配翻译资源。
 
+## Favicon
 
-## 怎样开发？
+为了定制 favicon，你需要在站点根目录的 `static` 文件夹下放置下述**所有**文件，这将覆盖 [`themes/even/static/`](https://github.com/olOwOlo/hugo-theme-even/tree/master/static) 文件夹下的那些文件。
 
-使用 `npm` 安装依赖：
+- android-chrome-192x192.png
+- android-chrome-512x512.png
+- apple-touch-icon.png
+- browserconfig.xml
+- favicon.ico
+- favicon-16x16.png
+- favicon-32x32.png
+- manifest.json
+- mstile-150x150.png
+- safari-pinned-tab.svg
+
+[favicon generator (Google)](https://www.google.com/search?q=favicon+generator) 能够帮助你生成这些文件。
+
+## Front Matter
+
+你可以通过 front-matter 针对每一篇文章单独进行设置。[`themes/even/archetypes/default.md`](https://github.com/olOwOlo/hugo-theme-even/tree/master/archetypes/default.md) 文件陈列了所有可用的参数。将该文件复制到站点根目录的 `archetypes` 文件夹下将会有所帮助。
+
+## Shortcodes
+
+主题提供了 `center`,` right`, `left`,` music`, `admonition` 这些 shortcodes，并支持为内置的 `figure` 设置 `center`,` right`, `left` 这三种 class 值。点击[这里](https://blog.olowolo.com/example-site/post/shortcodes/)查看详细内容。
+
+## Theme Color 
+
+主题内置了五种颜色 ( Default | Mint Green | Cobalt Blue | Hot Pink | Dark Violet )，你可以通过改变 [`/src/css/_variable.scss`](https://github.com/olOwOlo/hugo-theme-even/blob/master/src/css/_variables.scss#L5-L8) 文件中 `$theme-color-config` 的值来改变主题的颜色。
+    
+## Build
+
+如果你更改了 `/src/` 目录下的任意文件，你需要重新编译它们。
+```bash
+cd ./themes/even/
+# install dependencies
+yarn install
+# build
+yarn build
+```
+
+_你需要先安装 **[Yarn](https://yarnpkg.com/)** 和 **[Node.js](https://nodejs.org/)**。_
+
+## Update Theme
 
 ```bash
-npm install
+cd ./themes/even/
+git pull
 ```
-
-然后：
-
-```bash
-npm run dev
-```
-
-这条命令会同时运行  `webpack --watch` 和 `hugo server`  。 如果你修改了任何文件，浏览器将会自动更新。
-
-
 
 ## License
 
-Hugo-theme-jane is licensed under the MIT license. Check the [LICENSE](LICENSE.md) file for details.
+Released under the [MIT](https://github.com/olOwOlo/hugo-theme-even/blob/master/LICENSE.md) License.
 
+## Acknowledgements
 
+- [ananke](https://github.com/budparr/gohugo-theme-ananke)
+- [hexo-theme-even](https://github.com/ahonn/hexo-theme-even)
+- [hugo-nuo](https://github.com/laozhu/hugo-nuo)
