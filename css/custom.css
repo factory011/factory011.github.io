@@ -1,7 +1,34 @@
 /* ===============================custom.css ================================== */
-/* 设置菜单栏icon偏移位置 */
-.menu-item-link .iconfont::before {
-	padding-right: 8px;
+/* 去除顶部border */
+body {
+	border-top: 0;
+}
+
+/* 设置版心 */
+.container {
+	width: 800px;
+	margin: 0 auto;
+}
+
+/* 设置header样式 */
+.header {
+	padding: 10px;
+	background: -webkit-linear-gradient(200deg, #FFFFFF 0%, #BCBCBC 80%); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(200deg, #FFFFFF 0%, #BCBCBC 80%); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(200deg, #FFFFFF 0%, #BCBCBC 80%); /* Firefox 3.6 - 15 */
+    background: linear-gradient(200deg, #FFFFFF 0%, #BCBCBC 80%); /* 标准的语法（必须放在最后） */
+}
+
+/* 设置菜单项hover样式 */
+.header .site-navbar .menu .menu-item:hover {
+    background-color: #CCCCCC;
+	border-radius: 6px;
+}
+
+.post .post-header .post-link:hover {
+    background-color: #CCCCCC;
+	padding: 1px 10px;
+	border-radius: 6px;
 }
 
 /* 设置title字体大小 */
@@ -34,9 +61,13 @@
     background-color: #333;
 }
 
-/* 去除顶部border */
-body {
-	border-top: 0;
+/* 设置菜单栏icon偏移位置 */
+.menu-item {
+	padding: 0 10px;
+}
+
+.menu-item-link .iconfont::before {
+	padding-right: 8px;
 }
 
 /* 让阅读更多居中 */
@@ -64,6 +95,11 @@ body {
     margin: 1.5em 0;
 	box-shadow: 0 0 5px rgba(202,203,203,.5);
 	-webkit-box-shadow: 0 0 5px rgba(202,203,203,.5);
+}
+
+/* 设置文章目录的ul样式 */
+.post .post-toc .post-toc-content ul {
+    list-style: telugu;
 }
 
 /* 调整返回顶部icon位置和大小 */
@@ -116,9 +152,6 @@ body {
 	}
 }
 
-/* 设置文章目录的ul样式 */
-.post .post-toc .post-toc-content ul {
-    list-style: telugu;
-}
+
 
 
