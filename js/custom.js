@@ -36,3 +36,5 @@ var toc = function() {
     }
   }
 }
+
+toc();
