@@ -341,7 +341,25 @@ Having nearly instant feedback enables you to have your creativity flow without 
     </footer>
   </article>
         </div>
-        
+        <div id="comments-gitment"></div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/default.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/gitment.browser.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var gitment = new Gitment({
+        id: '2014-04-02 00:00:00 \x2b0000 UTC',
+        title: 'Getting Started with Hugo',
+        link: decodeURI(location.href),
+        desc: 'Step 1. Install Hugo Goto hugo releases and download the appropriate version for your os and architecture.\nSave it somewhere specific as we will be using it in the next step.\nMore complete instructions are available at installing hugo\nStep 2. Build the Docs Hugo has its own example site which happens to also be the documentation site you are reading right now.\nFollow the following steps:\n Clone the hugo repository Go into the repo Run hugo in server mode and build the docs Open your browser to http:\/\/localhost:1313  Corresponding pseudo commands:',
+        owner: 'factory011',
+        repo: 'factory011.github.io',
+        oauth: {
+          client_id: '119efc9ab3446717371a',
+          client_secret: '8c57c5ba3c166b577ea4390a102dccb1efa729ff'
+        }
+      });
+      gitment.render('comments-gitment');
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/imsun/gitment">comments powered by gitment.</a></noscript>
   
   
 

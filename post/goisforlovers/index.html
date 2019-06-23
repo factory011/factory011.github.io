@@ -730,7 +730,25 @@ so, such as in this example:</p>
     </footer>
   </article>
         </div>
-        
+        <div id="comments-gitment"></div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/default.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/gitment.browser.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var gitment = new Gitment({
+        id: '2014-04-02 00:00:00 \x2b0000 UTC',
+        title: '(Hu)go Template Primer',
+        link: decodeURI(location.href),
+        desc: 'Hugo uses the excellent go html\/template library for its template engine. It is an extremely lightweight engine that provides a very small amount of logic. In our experience that it is just the right amount of logic to be able to create a good static website. If you have used other template systems from different languages or frameworks you will find a lot of similarities in go templates.\nThis document is a brief primer on using go templates.',
+        owner: 'factory011',
+        repo: 'factory011.github.io',
+        oauth: {
+          client_id: '119efc9ab3446717371a',
+          client_secret: '8c57c5ba3c166b577ea4390a102dccb1efa729ff'
+        }
+      });
+      gitment.render('comments-gitment');
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/imsun/gitment">comments powered by gitment.</a></noscript>
   
   
 

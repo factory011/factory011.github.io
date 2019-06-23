@@ -513,7 +513,25 @@ Liquid::Template.register_tag(&#39;image&#39;, Jekyll::ImageTag)</pre></td></tr>
     </footer>
   </article>
         </div>
-        
+        <div id="comments-gitment"></div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/default.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/gitment.browser.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var gitment = new Gitment({
+        id: '2014-03-10 00:00:00 \x2b0000 UTC',
+        title: 'Migrate to Hugo from Jekyll',
+        link: decodeURI(location.href),
+        desc: 'Move static content to static Jekyll has a rule that any directory not starting with _ will be copied as-is to the _site output. Hugo keeps all static content under static. You should therefore move it all there. With Jekyll, something that looked like\n1 2 3  ▾ \x26lt;root\x26gt;\/ ▾ images\/ logo.png   should become\n1 2 3 4  ▾ \x26lt;root\x26gt;\/ ▾ static\/ ▾ images\/ logo.png   Additionally, you\x26rsquo;ll want any files that should reside at the root (such as CNAME) to be moved to static.',
+        owner: 'factory011',
+        repo: 'factory011.github.io',
+        oauth: {
+          client_id: '119efc9ab3446717371a',
+          client_secret: '8c57c5ba3c166b577ea4390a102dccb1efa729ff'
+        }
+      });
+      gitment.render('comments-gitment');
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/imsun/gitment">comments powered by gitment.</a></noscript>
   
   
 
