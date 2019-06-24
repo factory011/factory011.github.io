@@ -26,7 +26,18 @@ a {
 
 /* 设置main最小高度，保证标签、分类页面的footer在底部 */
 .main {
-	min-height: 453px;
+	min-height: 484px;
+}
+
+/* 设置文章内间距 */
+.content-wrapper {
+	padding: 20px 20px 0 20px;
+}
+
+/* 设置footer底部margin为padding，解决背景色空白问题 */
+.footer .copyright {
+    margin: 0;
+    padding: 10px 0;
 }
 
 /* ================================ 设置header样式 ============================== */
