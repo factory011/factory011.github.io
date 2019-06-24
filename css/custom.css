@@ -4,12 +4,6 @@ body {
 	border-top: 0;
 }
 
-/* 设置版心 */
-.container {
-	width: 800px;
-	margin: 0 auto;
-}
-
 /* 设置a标签样式 */
 a {
 	color: rgba(139,69,19,0.8);
