@@ -85,16 +85,6 @@ a {
     background-color: #333;
 }
 
-/* ========================= 设置菜单栏icon偏移位置 ================================ */
-.menu-item {
-	padding: 0 10px;
-}
-
-.menu-item-link .iconfont::before {
-	padding-right: 8px;
-}
-
-
 /* ============================== 调整阅读更多样式 ======================================= */
 .post .post-content .read-more .read-more-link {
     border: 2px solid #222;
@@ -119,7 +109,7 @@ a {
 	padding: 1em 1em;
     margin: 1.5em 0;
 	box-shadow: 0 8px 8px rgba(10,16,20,.24), 0 0 8px rgba(10,16,20,.12);
-	-webkit-box-shadow: box-shadow: 0 8px 8px rgba(10,16,20,.24), 0 0 8px rgba(10,16,20,.12);
+	-webkit-box-shadow: 0 8px 8px rgba(10,16,20,.24), 0 0 8px rgba(10,16,20,.12);
 }
 
 /* 设置文章目录的ul样式telugu */
