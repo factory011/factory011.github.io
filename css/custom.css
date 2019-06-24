@@ -70,7 +70,7 @@ a {
 	left: 27px;
     width: 160px;
     height: 2px;
-    background-color: #333;
+    background-color: rgba(139,69,19,0.8);
 }
 
 /* 设置title下横线 */
@@ -82,20 +82,20 @@ a {
 	left: 27px;
     width: 160px;
     height: 4px;
-    background-color: #333;
+    background-color: rgba(139,69,19,0.8);
 }
 
 /* ============================== 调整阅读更多样式 ======================================= */
 .post .post-content .read-more .read-more-link {
-    border: 2px solid #222;
+    border: 2px solid #9F673F;
     padding: 0.5em 1em;
-    background-color: #222;
+    background-color: #9F673F;
     color: #fff;
 }
 
 .post .post-content .read-more .read-more-link:hover {
-    border-bottom: 2px solid #222;
-	color: #222;
+    border: 2px solid #9F673F;
+	color: #333;
     background: #fff;
 }
 
@@ -124,7 +124,7 @@ a {
 /* 设置文章标题hover样式 */
 .post .post-header .post-link:hover {
     background-color: #CCCCCC;
-	padding: 1px 10px;
+	padding: 0 10px;
 	border-radius: 6px;
 }
 
