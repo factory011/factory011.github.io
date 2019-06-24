@@ -6,18 +6,27 @@
     <description>Recent content in Posts on 浪里个小胖子</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 06 Mar 2018 16:01:23 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 24 Jun 2019 09:50:50 +0800</lastBuildDate>
     
 	<atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Jane 主题预览</title>
-      <link>http://localhost:1313/post/jane-theme-preview/</link>
+      <title>Even自定义效果预览</title>
+      <link>http://localhost:1313/post/2018-03-06-even%E4%B8%BB%E9%A2%98%E8%87%AA%E5%AE%9A%E4%B9%89%E6%95%88%E6%9E%9C%E9%A2%84%E8%A7%88/</link>
       <pubDate>Tue, 06 Mar 2018 16:01:23 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/jane-theme-preview/</guid>
-      <description>主题预览,内容有待填充。 You can also defin another contentCopyright. e.g. contentCopyright You can also define another contentCopyright. e.g. contentCopyright You can also define another contentCopyright. e.g. contentCopyright You can also define another contentCopyright. e.g. contentCopyright You can also define another contentCopyright. e.g. contentCopyright You can also define another contentCopyright. e.g. contentCopyright You can also define another contentCopyright. e.g. contentCopyright You can</description>
+      <guid>http://localhost:1313/post/2018-03-06-even%E4%B8%BB%E9%A2%98%E8%87%AA%E5%AE%9A%E4%B9%89%E6%95%88%E6%9E%9C%E9%A2%84%E8%A7%88/</guid>
+      <description>1 md引用：&amp;gt; + （space or enter）显示效果 To the world you may be one person, but to one person you may be the world 对于世界而言，你是一个人；但是对于某个人，你是他的</description>
+    </item>
+    
+    <item>
+      <title>Hugo、Hexo博客搭建及Hugo的自定义配置</title>
+      <link>http://localhost:1313/post/2019-06-24-hugohexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E5%8F%8Ahugo%E7%9A%84%E8%87%AA%E5%AE%9A%E4%B9%89%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Mon, 24 Jun 2019 09:50:50 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/2019-06-24-hugohexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E5%8F%8Ahugo%E7%9A%84%E8%87%AA%E5%AE%9A%E4%B9%89%E9%85%8D%E7%BD%AE/</guid>
+      <description>1 Hugo介绍 &amp;emsp;&amp;emsp;世界上最快的网站构建框架。 &amp;emsp;&amp;emsp;Hugo是最受欢迎的开源静态站点生成器之一。凭借其惊</description>
     </item>
     
     <item>

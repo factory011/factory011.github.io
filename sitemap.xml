@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://localhost:1313/post/jane-theme-preview/</loc>
+    <loc>http://localhost:1313/post/2018-03-06-even%E4%B8%BB%E9%A2%98%E8%87%AA%E5%AE%9A%E4%B9%89%E6%95%88%E6%9E%9C%E9%A2%84%E8%A7%88/</loc>
     <lastmod>2018-03-06T16:01:23+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -16,20 +16,45 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/categories/</loc>
-    <lastmod>2018-03-06T16:01:23+08:00</lastmod>
+    <loc>http://localhost:1313/categories/blog/</loc>
+    <lastmod>2019-06-24T09:50:50+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
+    <loc>http://localhost:1313/categories/</loc>
+    <lastmod>2019-06-24T09:50:50+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/hugo/</loc>
+    <lastmod>2019-06-24T09:50:50+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/post/2019-06-24-hugohexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E5%8F%8Ahugo%E7%9A%84%E8%87%AA%E5%AE%9A%E4%B9%89%E9%85%8D%E7%BD%AE/</loc>
+    <lastmod>2019-06-24T09:50:50+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://localhost:1313/post/</loc>
-    <lastmod>2018-03-06T16:01:23+08:00</lastmod>
+    <lastmod>2019-06-24T09:50:50+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2018-03-06T16:01:23+08:00</lastmod>
+    <lastmod>2019-06-24T09:50:50+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2019-06-24T09:50:50+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -59,12 +84,6 @@
   
   <url>
     <loc>http://localhost:1313/tags/tag-6/</loc>
-    <lastmod>2018-03-06T16:01:23+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/</loc>
     <lastmod>2018-03-06T16:01:23+08:00</lastmod>
     <priority>0</priority>
   </url>
@@ -199,12 +218,6 @@
     <lastmod>2014-04-02T00:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/hugo/</loc>
-    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>

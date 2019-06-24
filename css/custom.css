@@ -117,9 +117,13 @@ a {
 	-webkit-box-shadow: box-shadow: 0 8px 8px rgba(10,16,20,.24), 0 0 8px rgba(10,16,20,.12);
 }
 
-/* 设置文章目录的ul样式 */
+/* 设置文章目录的ul样式telugu */
 .post .post-toc .post-toc-content ul {
-    list-style: telugu;
+    list-style: hangul-consonant;
+}
+
+.post .post-header {
+	text-align: center;
 }
 
 /* 设置文章标题hover样式 */
@@ -133,6 +137,16 @@ a {
 .post .post-content code, .post .post-content pre {
     background: none; 
 }	
+
+/* 设置文章代码左侧的水平滚动条 */
+.post .post-content .highlight>.chroma .lntd:first-child pre {
+    overflow: hidden;
+}
+
+/* 设置文章目录字体大小 */
+.post .post-toc .post-toc-content {
+    font-size: 14px;
+}
 
 /* 让阅读更多居中 */
 .read-more {

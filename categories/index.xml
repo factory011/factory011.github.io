@@ -6,10 +6,19 @@
     <description>Recent content in Categories on 浪里个小胖子</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 06 Mar 2018 16:01:23 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 24 Jun 2019 09:50:50 +0800</lastBuildDate>
     
 	<atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Blog</title>
+      <link>http://localhost:1313/categories/blog/</link>
+      <pubDate>Mon, 24 Jun 2019 09:50:50 +0800</pubDate>
+      
+      <guid>http://localhost:1313/categories/blog/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>index</title>
