@@ -12,7 +12,16 @@
     
     
     <item>
-      <title>Hugo</title>
+      <title>hexo</title>
+      <link>http://localhost:1313/tags/hexo/</link>
+      <pubDate>Mon, 24 Jun 2019 09:50:50 +0800</pubDate>
+      
+      <guid>http://localhost:1313/tags/hexo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hugo</title>
       <link>http://localhost:1313/tags/hugo/</link>
       <pubDate>Mon, 24 Jun 2019 09:50:50 +0800</pubDate>
       
@@ -21,29 +30,11 @@
     </item>
     
     <item>
-      <title>preview</title>
-      <link>http://localhost:1313/tags/preview/</link>
+      <title>markdown</title>
+      <link>http://localhost:1313/tags/markdown/</link>
       <pubDate>Tue, 06 Mar 2018 16:01:23 +0800</pubDate>
       
-      <guid>http://localhost:1313/tags/preview/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>shortcodes</title>
-      <link>http://localhost:1313/tags/shortcodes/</link>
-      <pubDate>Tue, 06 Mar 2018 16:01:23 +0800</pubDate>
-      
-      <guid>http://localhost:1313/tags/shortcodes/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>tag-6</title>
-      <link>http://localhost:1313/tags/tag-6/</link>
-      <pubDate>Tue, 06 Mar 2018 16:01:23 +0800</pubDate>
-      
-      <guid>http://localhost:1313/tags/tag-6/</guid>
+      <guid>http://localhost:1313/tags/markdown/</guid>
       <description></description>
     </item>
     
@@ -53,15 +44,6 @@
       <pubDate>Thu, 01 Mar 2018 16:01:23 +0800</pubDate>
       
       <guid>http://localhost:1313/tags/footnote/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>markdown</title>
-      <link>http://localhost:1313/tags/markdown/</link>
-      <pubDate>Thu, 01 Mar 2018 16:01:23 +0800</pubDate>
-      
-      <guid>http://localhost:1313/tags/markdown/</guid>
       <description></description>
     </item>
     
@@ -80,6 +62,15 @@
       <pubDate>Thu, 31 Aug 2017 15:43:48 +0800</pubDate>
       
       <guid>http://localhost:1313/tags/english/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>preview</title>
+      <link>http://localhost:1313/tags/preview/</link>
+      <pubDate>Thu, 31 Aug 2017 15:43:48 +0800</pubDate>
+      
+      <guid>http://localhost:1313/tags/preview/</guid>
       <description></description>
     </item>
     

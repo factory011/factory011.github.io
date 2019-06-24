@@ -12,7 +12,7 @@
     
     
     <item>
-      <title>Blog</title>
+      <title>blog</title>
       <link>http://localhost:1313/categories/blog/</link>
       <pubDate>Mon, 24 Jun 2019 09:50:50 +0800</pubDate>
       
@@ -21,20 +21,11 @@
     </item>
     
     <item>
-      <title>index</title>
-      <link>http://localhost:1313/categories/index/</link>
+      <title>markdown</title>
+      <link>http://localhost:1313/categories/markdown/</link>
       <pubDate>Tue, 06 Mar 2018 16:01:23 +0800</pubDate>
       
-      <guid>http://localhost:1313/categories/index/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>shortcodes</title>
-      <link>http://localhost:1313/categories/shortcodes/</link>
-      <pubDate>Tue, 06 Mar 2018 16:01:23 +0800</pubDate>
-      
-      <guid>http://localhost:1313/categories/shortcodes/</guid>
+      <guid>http://localhost:1313/categories/markdown/</guid>
       <description></description>
     </item>
     
@@ -44,6 +35,15 @@
       <pubDate>Thu, 01 Mar 2018 16:01:23 +0800</pubDate>
       
       <guid>http://localhost:1313/categories/docs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>index</title>
+      <link>http://localhost:1313/categories/index/</link>
+      <pubDate>Thu, 01 Mar 2018 16:01:23 +0800</pubDate>
+      
+      <guid>http://localhost:1313/categories/index/</guid>
       <description></description>
     </item>
     
