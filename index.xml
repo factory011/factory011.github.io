@@ -12,21 +12,12 @@
     
     
     <item>
-      <title>Even自定义效果预览</title>
-      <link>http://localhost:1313/post/2018-03-06-even%E4%B8%BB%E9%A2%98%E8%87%AA%E5%AE%9A%E4%B9%89%E6%95%88%E6%9E%9C%E9%A2%84%E8%A7%88/</link>
+      <title>Blog中的Markdown语法效果预览</title>
+      <link>http://localhost:1313/post/2018-03-06-blog%E4%B8%AD%E7%9A%84markdown%E8%AF%AD%E6%B3%95%E6%95%88%E6%9E%9C%E9%A2%84%E8%A7%88/</link>
       <pubDate>Tue, 06 Mar 2018 16:01:23 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/2018-03-06-even%E4%B8%BB%E9%A2%98%E8%87%AA%E5%AE%9A%E4%B9%89%E6%95%88%E6%9E%9C%E9%A2%84%E8%A7%88/</guid>
+      <guid>http://localhost:1313/post/2018-03-06-blog%E4%B8%AD%E7%9A%84markdown%E8%AF%AD%E6%B3%95%E6%95%88%E6%9E%9C%E9%A2%84%E8%A7%88/</guid>
       <description>1 md引用：&amp;gt; + （space or enter）显示效果 To the world you may be one person, but to one person you may be the world 对于世界而言，你是一个人；但是对于某个人，你是他的</description>
-    </item>
-    
-    <item>
-      <title>关于</title>
-      <link>http://localhost:1313/about/</link>
-      <pubDate>Sun, 20 Aug 2017 21:38:52 +0800</pubDate>
-      
-      <guid>http://localhost:1313/about/</guid>
-      <description>Hugo is a static site engine written in Go. It makes use of a variety of open source projects including: Cobra Viper J Walter Weatherman Cast Learn more and contribute on GitHub.</description>
     </item>
     
     <item>
@@ -65,6 +56,15 @@
       
       <guid>http://localhost:1313/post/this-is-a-very-long-title/</guid>
       <description>This is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long title</description>
+    </item>
+    
+    <item>
+      <title>关于</title>
+      <link>http://localhost:1313/about/</link>
+      <pubDate>Sun, 20 Aug 2017 21:38:52 +0800</pubDate>
+      
+      <guid>http://localhost:1313/about/</guid>
+      <description>&amp;emsp;&amp;emsp;长到这么大，我说不出来我最爱的一部电影，说不出来我最爱的一首歌，说不出来我最爱的一个人。时常觉得人生其实没那么有趣。</description>
     </item>
     
     <item>

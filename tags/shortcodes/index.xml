@@ -12,11 +12,11 @@
     
     
     <item>
-      <title>Even自定义效果预览</title>
-      <link>http://localhost:1313/post/2018-03-06-even%E4%B8%BB%E9%A2%98%E8%87%AA%E5%AE%9A%E4%B9%89%E6%95%88%E6%9E%9C%E9%A2%84%E8%A7%88/</link>
+      <title>Blog中的Markdown语法效果预览</title>
+      <link>http://localhost:1313/post/2018-03-06-blog%E4%B8%AD%E7%9A%84markdown%E8%AF%AD%E6%B3%95%E6%95%88%E6%9E%9C%E9%A2%84%E8%A7%88/</link>
       <pubDate>Tue, 06 Mar 2018 16:01:23 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/2018-03-06-even%E4%B8%BB%E9%A2%98%E8%87%AA%E5%AE%9A%E4%B9%89%E6%95%88%E6%9E%9C%E9%A2%84%E8%A7%88/</guid>
+      <guid>http://localhost:1313/post/2018-03-06-blog%E4%B8%AD%E7%9A%84markdown%E8%AF%AD%E6%B3%95%E6%95%88%E6%9E%9C%E9%A2%84%E8%A7%88/</guid>
       <description>1 md引用：&amp;gt; + （space or enter）显示效果 To the world you may be one person, but to one person you may be the world 对于世界而言，你是一个人；但是对于某个人，你是他的</description>
     </item>
     
