@@ -1,4 +1,4 @@
-# hugo-theme-even
+# person-blog
 
 A super concise theme for Hugo
 
