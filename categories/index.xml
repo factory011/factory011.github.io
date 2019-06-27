@@ -30,24 +30,6 @@
     </item>
     
     <item>
-      <title>docs</title>
-      <link>https://factory011.github.io/categories/docs/</link>
-      <pubDate>Thu, 01 Mar 2018 16:01:23 +0800</pubDate>
-      
-      <guid>https://factory011.github.io/categories/docs/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>index</title>
-      <link>https://factory011.github.io/categories/index/</link>
-      <pubDate>Thu, 01 Mar 2018 16:01:23 +0800</pubDate>
-      
-      <guid>https://factory011.github.io/categories/index/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>English</title>
       <link>https://factory011.github.io/categories/english/</link>
       <pubDate>Thu, 31 Aug 2017 15:43:48 +0800</pubDate>
@@ -57,29 +39,11 @@
     </item>
     
     <item>
-      <title>test</title>
-      <link>https://factory011.github.io/categories/test/</link>
-      <pubDate>Wed, 30 Aug 2017 15:43:48 +0800</pubDate>
+      <title>index</title>
+      <link>https://factory011.github.io/categories/index/</link>
+      <pubDate>Thu, 31 Aug 2017 15:43:48 +0800</pubDate>
       
-      <guid>https://factory011.github.io/categories/test/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Development</title>
-      <link>https://factory011.github.io/categories/development/</link>
-      <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://factory011.github.io/categories/development/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>golang</title>
-      <link>https://factory011.github.io/categories/golang/</link>
-      <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://factory011.github.io/categories/golang/</guid>
+      <guid>https://factory011.github.io/categories/index/</guid>
       <description></description>
     </item>
     

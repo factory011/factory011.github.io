@@ -20,19 +20,5 @@
       <description>1 Hugo介绍 &amp;emsp;&amp;emsp;世界上最快的网站构建框架。 &amp;emsp;&amp;emsp;Hugo是最受欢迎的开源静态站点生成器之一。凭借其惊</description>
     </item>
     
-    <item>
-      <title>Getting Started with Hugo</title>
-      <link>https://factory011.github.io/post/hugoisforlovers/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://factory011.github.io/post/hugoisforlovers/</guid>
-      <description>Step 1. Install Hugo Goto hugo releases and download the appropriate version for your os and architecture.
-Save it somewhere specific as we will be using it in the next step.
-More complete instructions are available at installing hugo
-Step 2. Build the Docs Hugo has its own example site which happens to also be the documentation site you are reading right now.
-Follow the following steps:
- Clone the hugo repository Go into the repo Run hugo in server mode and build the docs Open your browser to http://localhost:1313  Corresponding pseudo commands:</description>
-    </item>
-    
   </channel>
 </rss>

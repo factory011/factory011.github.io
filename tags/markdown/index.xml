@@ -20,14 +20,5 @@
       <description>1 md引用：&amp;gt; + （space or enter）显示效果 To the world you may be one person, but to one person you may be the world 对于世界而言，你是一个人；但是对于某个人，你是他的</description>
     </item>
     
-    <item>
-      <title>Jane-Theme Footnote Preview</title>
-      <link>https://factory011.github.io/post/doc-footnote-preview/</link>
-      <pubDate>Thu, 01 Mar 2018 16:01:23 +0800</pubDate>
-      
-      <guid>https://factory011.github.io/post/doc-footnote-preview/</guid>
-      <description>&lt;p&gt;Hugo-theme-jane optimized for footnote. When you mouse hover the footnote&lt;sup class=&#34;footnote-ref&#34; id=&#34;fnref:example&#34;&gt;&lt;a href=&#34;#fn:example&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; , footnote content will be displayed.&lt;/p&gt;</description>
-    </item>
-    
   </channel>
 </rss>
