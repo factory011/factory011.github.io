@@ -2,6 +2,7 @@
 /* 去除顶部border */
 body {
 	border-top: 0;
+	overflow-x: hidden;
 }
 
 /* 设置a标签样式 */
@@ -199,9 +200,10 @@ a {
 	}
 }
 
+/* 加入animate css 动画 */
 .animate {
-  animation-duration: 3s;
-  animation-delay: 1s;
-  animation-iteration-count: 3;
-  display: inline-block;
+  animation-duration: 2s;
+  animation-delay: 0s;
+  animation-iteration-count: 1;
+  display: block;
 }
