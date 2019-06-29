@@ -51,9 +51,16 @@ a {
 }
 
 /* 设置菜单项hover样式 */
+.header .site-navbar .menu .menu-item {
+	transition: transform 1s;
+	-webkit-transition: transform 1s;
+}
+
 .header .site-navbar .menu .menu-item:hover {
     background-color: #CCCCCC;
 	border-radius: 6px;
+	transform: scale(1.2, 1.2);
+	-webkit-transform: scale(1.2, 1.2);
 }
 
 /* 设置title字体大小 */
@@ -206,4 +213,41 @@ a {
   animation-delay: 0s;
   animation-iteration-count: 1;
   display: block;
+}
+
+/* 加入旋转动画 */
+@-webkit-keyframes reverseOut{
+from {-webkit-transform: rotate(0deg);}
+to {-webkit-transform: rotate(-360deg);}
+}
+
+.reverseOut{
+-webkit-transform: rotate(-360deg);
+animation: reverseOut 3s linear infinite;
+-moz-animation: reverseOut 3s linear infinite;
+-webkit-animation: reverseOut 3s linear infinite;
+-o-animation: reverseOut 3s linear infinite;
+}
+
+.iconWrap {
+	display: inline-block;
+	margin-left: 40px;
+    margin-top: 16px;
+}
+
+.iconOut {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: url(/img/iconOut.png) no-repeat center center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.iconIn {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: url(/img/iconIn.png) no-repeat center center/cover;
 }
