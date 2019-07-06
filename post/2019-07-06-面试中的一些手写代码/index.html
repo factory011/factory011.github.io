@@ -1,0 +1,1517 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+  <title>面试中的一些手写代码 - 浪里个小胖子</title>
+  <meta name="renderer" content="webkit" />
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f5f5f5" />
+<meta name="msapplication-navbutton-color" content="#f5f5f5">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f5f5f5">
+
+
+<meta name="author" content="hl" /><meta name="description" content="手写call、apply、bind函数 call实现 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 // 实现 Function.prototype.myCall = function(context) { if(typeof context === &amp;#39;undefined&amp;#39; || context === null) { context = window } context.fn = this let args = [...arguments].slice(1)" /><meta name="keywords" content="Blog, Hugo, 前端, 浪里个小胖子" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.55.6 with even 4.0.0" />
+
+
+<link rel="canonical" href="https://factory011.github.io/post/2019-07-06-%E9%9D%A2%E8%AF%95%E4%B8%AD%E7%9A%84%E4%B8%80%E4%BA%9B%E6%89%8B%E5%86%99%E4%BB%A3%E7%A0%81/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="/dist/even.abc3492d.min.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+<link rel="stylesheet" href="/css/custom.min.css">
+
+
+
+<link rel="stylesheet" defer href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+
+<meta property="og:title" content="面试中的一些手写代码" />
+<meta property="og:description" content="手写call、apply、bind函数 call实现 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 // 实现 Function.prototype.myCall = function(context) { if(typeof context === &#39;undefined&#39; || context === null) { context = window } context.fn = this let args = [...arguments].slice(1)" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://factory011.github.io/post/2019-07-06-%E9%9D%A2%E8%AF%95%E4%B8%AD%E7%9A%84%E4%B8%80%E4%BA%9B%E6%89%8B%E5%86%99%E4%BB%A3%E7%A0%81/" />
+<meta property="article:published_time" content="2019-07-06T16:05:11&#43;08:00"/>
+<meta property="article:modified_time" content="2019-07-06T16:05:11&#43;08:00"/>
+
+<meta itemprop="name" content="面试中的一些手写代码">
+<meta itemprop="description" content="手写call、apply、bind函数 call实现 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 // 实现 Function.prototype.myCall = function(context) { if(typeof context === &#39;undefined&#39; || context === null) { context = window } context.fn = this let args = [...arguments].slice(1)">
+
+
+<meta itemprop="datePublished" content="2019-07-06T16:05:11&#43;08:00" />
+<meta itemprop="dateModified" content="2019-07-06T16:05:11&#43;08:00" />
+<meta itemprop="wordCount" content="3297">
+
+
+
+<meta itemprop="keywords" content="js," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="面试中的一些手写代码"/>
+<meta name="twitter:description" content="手写call、apply、bind函数 call实现 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 // 实现 Function.prototype.myCall = function(context) { if(typeof context === &#39;undefined&#39; || context === null) { context = window } context.fn = this let args = [...arguments].slice(1)"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">浪里个小胖子</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">首页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">关于</li>
+      </a>
+  </ul>
+</nav>
+  <div id="mobile-panel">
+    <header id="header" class="header">
+		<div class="container">
+			<div class="logo-wrapper">
+  <a href="/" class="logo animate swing">浪里个小胖子</a>
+</div>
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/"><i class="iconfont icon-home"></i>首页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/"><i class="iconfont icon-archives"></i>归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/"><i class="iconfont icon-tags"></i>标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/"><i class="iconfont icon-categories"></i>分类</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/"><i class="iconfont icon-"></i>关于</a>
+      </li>
+  </ul>
+</nav>
+		<div/>
+    </header>
+
+    <main id="main" class="container main animate bounceInLeft">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">面试中的一些手写代码</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2019-07-06 </span>
+        <div class="post-category">
+            <a href="/categories/%E9%9D%A2%E8%AF%95/"> 面试 </a>
+            </div>
+          <span class="more-meta"> 约 3297 字 </span>
+          <span class="more-meta"> 预计阅读 7 分钟 </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#手写call-apply-bind函数">手写call、apply、bind函数</a>
+<ul>
+<li><a href="#call实现">call实现</a></li>
+<li><a href="#apply实现">apply实现</a></li>
+<li><a href="#bind实现">bind实现</a></li>
+</ul></li>
+<li><a href="#new">new</a></li>
+<li><a href="#instanceof">instanceof</a></li>
+<li><a href="#jsonp">jsonp</a></li>
+<li><a href="#ajax">ajax</a></li>
+<li><a href="#扩展运算符">&hellip;扩展运算符</a></li>
+<li><a href="#深度克隆函数">深度克隆函数</a></li>
+<li><a href="#promise">promise</a></li>
+<li><a href="#敏感词标记">敏感词标记</a></li>
+<li><a href="#实现字符串反转">实现字符串反转</a></li>
+<li><a href="#实现数组随机排序">实现数组随机排序</a></li>
+<li><a href="#取出数组中的最大值">取出数组中的最大值</a></li>
+<li><a href="#实现lazyman">实现lazyman</a></li>
+<li><a href="#实现flattendeep">实现flattenDeep</a></li>
+<li><a href="#格式化数字-三个一组-逗号分隔">格式化数字，三个一组，逗号分隔</a></li>
+<li><a href="#手写一个函数实现斐波那契数列">手写一个函数实现斐波那契数列</a></li>
+<li><a href="#防抖与节流">防抖与节流</a></li>
+<li><a href="#js柯里化">js柯里化</a></li>
+<li><a href="#冒泡排序">冒泡排序</a></li>
+<li><a href="#快速排序">快速排序</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      
+
+<h2 id="手写call-apply-bind函数">手写call、apply、bind函数</h2>
+
+<h3 id="call实现">call实现</h3>
+
+<!-- more -->
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="c1">// 实现
+</span><span class="c1"></span><span class="nb">Function</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">myCall</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">context</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span><span class="p">(</span><span class="k">typeof</span> <span class="nx">context</span> <span class="o">===</span> <span class="s1">&#39;undefined&#39;</span> <span class="o">||</span> <span class="nx">context</span> <span class="o">===</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">context</span> <span class="o">=</span> <span class="nb">window</span>
+    <span class="p">}</span>
+    <span class="nx">context</span><span class="p">.</span><span class="nx">fn</span> <span class="o">=</span> <span class="k">this</span>
+    <span class="kd">let</span> <span class="nx">args</span> <span class="o">=</span> <span class="p">[...</span><span class="nx">arguments</span><span class="p">].</span><span class="nx">slice</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">context</span><span class="p">.</span><span class="nx">fn</span><span class="p">(...</span><span class="nx">args</span><span class="p">)</span>
+    <span class="k">delete</span> <span class="nx">context</span><span class="p">.</span><span class="nx">fn</span>
+    <span class="k">return</span> <span class="nx">result</span>
+<span class="p">}</span>
+
+<span class="c1">// 测试
+</span><span class="c1"></span><span class="kd">function</span> <span class="nx">test</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="k">const</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span><span class="nx">name</span><span class="o">:</span> <span class="mi">123</span><span class="p">}</span>
+<span class="nx">test</span><span class="p">.</span><span class="nx">myCall</span><span class="p">(</span><span class="nx">obj</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="apply实现">apply实现</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="c1">// 实现
+</span><span class="c1"></span><span class="nb">Function</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">myApply</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">context</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span><span class="p">(</span><span class="k">typeof</span> <span class="nx">context</span> <span class="o">===</span> <span class="s1">&#39;undefined&#39;</span> <span class="o">||</span> <span class="nx">context</span> <span class="o">===</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">context</span> <span class="o">=</span> <span class="nb">window</span>
+    <span class="p">}</span>
+    <span class="nx">context</span><span class="p">.</span><span class="nx">fn</span> <span class="o">=</span> <span class="k">this</span>
+    <span class="kd">let</span> <span class="nx">args</span> <span class="o">=</span> <span class="nx">arguments</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="kd">let</span> <span class="nx">result</span> 
+    <span class="k">if</span><span class="p">(</span><span class="nx">args</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">result</span> <span class="o">=</span> <span class="nx">context</span><span class="p">.</span><span class="nx">fn</span><span class="p">(...</span><span class="nx">args</span><span class="p">)</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="nx">result</span> <span class="o">=</span> <span class="nx">context</span><span class="p">.</span><span class="nx">fn</span><span class="p">()</span>
+    <span class="p">}</span>
+    <span class="k">delete</span> <span class="nx">context</span><span class="p">.</span><span class="nx">fn</span>
+    <span class="k">return</span> <span class="nx">result</span>
+<span class="p">}</span>
+
+<span class="c1">// 测试
+</span><span class="c1"></span><span class="kd">function</span> <span class="nx">test</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="k">const</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span><span class="nx">name</span><span class="o">:</span> <span class="mi">456</span><span class="p">}</span>
+<span class="nx">test</span><span class="p">.</span><span class="nx">myApply</span><span class="p">(</span><span class="nx">obj</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="bind实现">bind实现</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="c1">// 实现
+</span><span class="c1"></span><span class="nb">Function</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">myBind</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">context</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="k">typeof</span> <span class="k">this</span> <span class="o">!==</span> <span class="s1">&#39;function&#39;</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">throw</span> <span class="k">new</span> <span class="nx">TypeError</span><span class="p">(</span><span class="s1">&#39;Error&#39;</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="kd">let</span> <span class="nx">_this</span> <span class="o">=</span> <span class="k">this</span>
+    <span class="kd">let</span> <span class="nx">args</span> <span class="o">=</span> <span class="p">[...</span><span class="nx">arguments</span><span class="p">].</span><span class="nx">slice</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="k">return</span> <span class="kd">function</span> <span class="nx">F</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="k">this</span> <span class="k">instanceof</span> <span class="nx">F</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="nx">_this</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="nx">args</span><span class="p">.</span><span class="nx">concat</span><span class="p">([...</span><span class="nx">arguments</span><span class="p">]))</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="nx">_this</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="nx">context</span><span class="p">,</span> <span class="nx">args</span><span class="p">.</span><span class="nx">concat</span><span class="p">([...</span><span class="nx">arguments</span><span class="p">]))</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// 测试
+</span><span class="c1"></span><span class="kd">function</span> <span class="nx">test</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="k">const</span> <span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">name</span><span class="o">:</span> <span class="mi">789</span>
+<span class="p">}</span>
+<span class="k">const</span> <span class="nx">p</span> <span class="o">=</span> <span class="nx">test</span><span class="p">.</span><span class="nx">myBind</span><span class="p">(</span><span class="nx">obj</span><span class="p">)</span>
+<span class="nx">p</span><span class="p">()</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="new">new</h2>
+
+<ol>
+<li>用new Object() 的方式新建了一个对象 obj</li>
+<li>取出第一个参数，就是我们要传入的构造函数。此外因为 shift 会修改原数组，所以 arguments 会被去除第一个参数</li>
+<li>将 obj 的原型指向构造函数，这样 obj 就可以访问到构造函数原型中的属性</li>
+<li>使用 apply，改变构造函数 this 的指向到新建的对象，这样 obj 就可以访问到构造函数中的属性</li>
+<li>判断返回的值是不是一个对象，如果是一个对象，我们就返回这个对象，如果没有，我们该返回什么就返回什么</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="c1">// 实现
+</span><span class="c1"></span><span class="kd">function</span> <span class="nx">objectFactory</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Object</span><span class="p">(),</span>
+    <span class="nx">Constructor</span> <span class="o">=</span> <span class="p">[].</span><span class="nx">shift</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">arguments</span><span class="p">)</span>
+    <span class="nx">obj</span><span class="p">.</span><span class="nx">__proto__</span> <span class="o">=</span> <span class="nx">Constructor</span><span class="p">.</span><span class="nx">prototype</span>
+    <span class="kd">var</span> <span class="nx">ret</span> <span class="o">=</span> <span class="nx">Constructor</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="nx">obj</span><span class="p">,</span> <span class="nx">arguments</span><span class="p">)</span>
+    <span class="k">return</span> <span class="k">typeof</span> <span class="nx">ret</span> <span class="o">===</span> <span class="s1">&#39;object&#39;</span> <span class="o">?</span> <span class="nx">ret</span> <span class="o">:</span> <span class="nx">obj</span>
+<span class="p">}</span>
+
+<span class="c1">// 测试
+</span><span class="c1"></span><span class="kd">function</span> <span class="nx">Otaku</span> <span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">age</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">name</span> <span class="o">=</span> <span class="nx">name</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">age</span> <span class="o">=</span> <span class="nx">age</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">habit</span> <span class="o">=</span> <span class="s1">&#39;Games&#39;</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nx">Otaku</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">strength</span> <span class="o">=</span> <span class="mi">60</span><span class="p">;</span>
+<span class="nx">Otaku</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">sayYourName</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;I am &#39;</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="kd">var</span> <span class="nx">person1</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Otaku</span><span class="p">(</span><span class="s1">&#39;Kevin&#39;</span><span class="p">,</span> <span class="s1">&#39;18&#39;</span><span class="p">)</span>
+<span class="kd">var</span> <span class="nx">person2</span> <span class="o">=</span> <span class="nx">objectFactory</span><span class="p">(</span><span class="nx">Otaku</span><span class="p">,</span> <span class="s1">&#39;Kevin&#39;</span><span class="p">,</span> <span class="s1">&#39;18&#39;</span><span class="p">)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">person1</span><span class="p">)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">person2</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="instanceof">instanceof</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="c1">// 实现
+</span><span class="c1"></span><span class="kd">function</span> <span class="nx">my_instanceof</span><span class="p">(</span><span class="nx">obj</span><span class="p">,</span> <span class="nx">constructor</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">let</span> <span class="nx">constuctProto</span> <span class="o">=</span> <span class="nx">constructor</span><span class="p">.</span><span class="nx">prototype</span>
+    <span class="k">while</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span><span class="p">(</span><span class="nx">obj</span><span class="p">.</span><span class="nx">__proto__</span> <span class="o">===</span> <span class="kc">null</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="kc">false</span>
+        <span class="p">}</span>
+        <span class="k">if</span><span class="p">(</span><span class="nx">obj</span><span class="p">.</span><span class="nx">__proto__</span> <span class="o">===</span> <span class="nx">constuctProto</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="kc">true</span>
+        <span class="p">}</span>
+        <span class="nx">obj</span> <span class="o">=</span> <span class="nx">obj</span><span class="p">.</span><span class="nx">__proto__</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// 测试
+</span><span class="c1"></span><span class="kd">function</span> <span class="nx">Car</span><span class="p">(</span><span class="nx">make</span><span class="p">,</span> <span class="nx">model</span><span class="p">,</span> <span class="nx">year</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">make</span> <span class="o">=</span> <span class="nx">make</span><span class="p">;</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">model</span> <span class="o">=</span> <span class="nx">model</span><span class="p">;</span>
+  <span class="k">this</span><span class="p">.</span><span class="nx">year</span> <span class="o">=</span> <span class="nx">year</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kd">var</span> <span class="nx">mycar</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Car</span><span class="p">(</span><span class="s2">&#34;Honda&#34;</span><span class="p">,</span> <span class="s2">&#34;Accord&#34;</span><span class="p">,</span> <span class="mi">1998</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">my_instanceof</span><span class="p">(</span><span class="nx">mycar</span><span class="p">,</span> <span class="nx">Car</span><span class="p">))</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="jsonp">jsonp</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="c1">// 实现
+</span><span class="c1"></span><span class="kd">function</span> <span class="nx">jsonp</span><span class="p">(</span><span class="nx">url</span><span class="p">,</span> <span class="nx">success</span><span class="p">)</span> <span class="p">{</span>
+      <span class="c1">// 生成一个随机函数名
+</span><span class="c1"></span>      <span class="kd">let</span> <span class="nx">fnName</span> <span class="o">=</span> <span class="s2">&#34;__jsonpFn&#34;</span> <span class="o">+</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">().</span><span class="nx">toString</span><span class="p">().</span><span class="nx">replace</span><span class="p">(</span><span class="s2">&#34;.&#34;</span><span class="p">,</span> <span class="s2">&#34;&#34;</span><span class="p">);</span>
+      <span class="c1">// 创建script标签
+</span><span class="c1"></span>      <span class="kd">let</span> <span class="nx">script</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">&#39;script&#39;</span><span class="p">)</span>
+      <span class="c1">// 设置script标签的src属性（需要判断url中是否带有参数）
+</span><span class="c1"></span>      <span class="nx">script</span><span class="p">.</span><span class="nx">src</span> <span class="o">=</span> <span class="nx">url</span> <span class="o">+</span> <span class="p">(</span><span class="nb">RegExp</span><span class="p">(</span><span class="sr">/\?/</span><span class="p">).</span><span class="nx">test</span><span class="p">(</span><span class="nx">url</span><span class="p">)</span> <span class="o">==</span> <span class="kc">true</span> <span class="o">?</span> <span class="s1">&#39;&amp;&#39;</span> <span class="o">:</span> <span class="s1">&#39;?&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;callback=&#39;</span> <span class="o">+</span> <span class="nx">fnName</span>
+      <span class="c1">// 默认异步执行
+</span><span class="c1"></span>      <span class="nx">script</span><span class="p">.</span><span class="kr">async</span> <span class="o">=</span> <span class="kc">true</span>
+      <span class="c1">// 设置script标签的type属性
+</span><span class="c1"></span>      <span class="nx">script</span><span class="p">.</span><span class="nx">type</span> <span class="o">=</span> <span class="s1">&#39;text/javascript&#39;</span>
+      <span class="c1">// 绑定函数
+</span><span class="c1"></span>      <span class="nb">window</span><span class="p">[</span><span class="nx">fnName</span><span class="p">]</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">success</span> <span class="o">&amp;&amp;</span> <span class="nx">success</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span>
+        <span class="c1">// 调用回调函数后删除script标签
+</span><span class="c1"></span>        <span class="k">delete</span> <span class="nb">window</span><span class="p">[</span><span class="nx">fnName</span><span class="p">];</span>
+        <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">removeChild</span><span class="p">(</span><span class="nx">script</span><span class="p">);</span>
+      <span class="p">}</span>
+      <span class="c1">// 将script标签加到页面中
+</span><span class="c1"></span>      <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">script</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="c1">// 测试
+</span><span class="c1"></span><span class="nx">jsonp</span><span class="p">(</span>
+    <span class="c1">// &#39;https://api.asilu.com/weather/&#39;,
+</span><span class="c1"></span>    <span class="s1">&#39;https://api.asilu.com/weather/?city=&#34;武汉&#34;&#39;</span><span class="p">,</span>
+    <span class="kd">function</span> <span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span>
+    <span class="p">})</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="ajax">ajax</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-JS" data-lang="JS"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-JS" data-lang="JS"> <span class="kd">let</span> <span class="nx">xhr</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLHttpRequest</span><span class="p">()</span>
+ <span class="nx">xhr</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s1">&#39;get&#39;</span><span class="p">,</span> <span class="nx">url</span><span class="p">,</span> <span class="kc">true</span><span class="p">)</span>
+ <span class="nx">xhr</span><span class="p">.</span><span class="nx">onreadystatechange</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+    <span class="k">if</span><span class="p">(</span><span class="nx">xhr</span><span class="p">.</span><span class="nx">readyState</span> <span class="o">===</span> <span class="mi">4</span><span class="p">){</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;请求完成&#39;</span><span class="p">)</span>
+        <span class="k">if</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">status</span> <span class="o">&gt;=</span> <span class="mi">200</span> <span class="o">&amp;&amp;</span><span class="k">this</span><span class="p">.</span><span class="nx">status</span><span class="o">&lt;</span><span class="mi">300</span><span class="p">){</span> 
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;成功&#39;</span><span class="p">)</span>
+        <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;失败&#39;</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+ <span class="p">}</span>
+ <span class="nx">xhr</span><span class="p">.</span><span class="nx">onerror</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;连接失败&#39;</span><span class="p">)</span>
+ <span class="p">}</span>
+ <span class="nx">xhr</span><span class="p">.</span><span class="nx">send</span><span class="p">()</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="扩展运算符">&hellip;扩展运算符</h2>
+
+<p><code>rest参数</code>的形式为 <code>...变量名</code><br />
+用于获取函数调用时传入的参数.  顾名思义, rest参数表示的是除了明确指定的参数外，剩下的参数的集合， 它的类型是Array</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">restFunc</span><span class="p">(...</span><span class="nx">args</span><span class="p">)</span>
+<span class="p">{</span>
+   <span class="k">return</span> <span class="nx">args</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nx">restFunc</span><span class="p">(</span><span class="s1">&#39;This&#39;</span><span class="p">,</span><span class="s1">&#39;is&#39;</span><span class="p">,</span><span class="s1">&#39;rest&#39;</span><span class="p">,</span><span class="s1">&#39;test&#39;</span><span class="p">);</span> <span class="c1">// 输出4 参数的个数为4
+</span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">function</span> <span class="nx">restFunc</span><span class="p">(</span><span class="nx">firstArgs</span><span class="p">,...</span><span class="nx">restArgs</span><span class="p">)</span>
+<span class="p">{</span>
+ <span class="c1">// true   
+</span><span class="c1"></span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nb">Array</span><span class="p">.</span><span class="nx">isArray</span><span class="p">(</span><span class="nx">restArgs</span><span class="p">));</span> 
+ <span class="c1">// 5 [6,7,8,9]   
+</span><span class="c1"></span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">firstArgs</span><span class="p">,</span><span class="nx">restArgs</span><span class="p">);</span>     
+<span class="p">}</span>
+<span class="nx">restFunc</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">);</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+<p>spread运算符 &hellip;
+扩展运算符 &hellip;可以用于 数组的构造，也可以用于调用函数时，将一个数组用作函数参数（就是把这个数组转化为参数的列表，所以也就成了一个函数的参数）</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-JS" data-lang="JS"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-JS" data-lang="JS"><span class="c1">// 数组合并
+</span><span class="c1"></span><span class="kd">var</span>  <span class="nx">arr1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">];</span>
+<span class="kd">var</span>  <span class="nx">arr2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">6</span><span class="p">];</span>
+<span class="p">[...</span><span class="nx">arr1</span><span class="p">,...</span><span class="nx">arr2</span><span class="p">]</span>  <span class="c1">// 输出 [1,3,5,2,4,6]
+</span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-JS" data-lang="JS"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-JS" data-lang="JS"><span class="c1">// 函数参数
+</span><span class="c1"></span><span class="kd">function</span> <span class="nx">testFunc</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span><span class="nx">y</span><span class="p">,</span><span class="nx">z</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="nx">x</span> <span class="o">+</span> <span class="nx">y</span> <span class="o">+</span> <span class="nx">z</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kd">var</span> <span class="nx">args</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">];</span>
+<span class="nx">testFunc</span><span class="p">(...</span><span class="nx">args</span><span class="p">);</span>  <span class="c1">//输出 6
+</span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="c1">// 浅拷贝
+</span><span class="c1"></span><span class="kd">let</span> <span class="nx">a</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="nx">age</span><span class="o">:</span> <span class="mi">1</span>
+<span class="p">}</span>
+<span class="kd">let</span> <span class="nx">b</span> <span class="o">=</span> <span class="p">{</span> <span class="p">...</span><span class="nx">a</span> <span class="p">}</span>
+<span class="nx">a</span><span class="p">.</span><span class="nx">age</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">b</span><span class="p">.</span><span class="nx">age</span><span class="p">)</span> <span class="c1">// 1
+</span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-JS" data-lang="JS"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-JS" data-lang="JS"><span class="c1">// 字符串转成数组
+</span><span class="c1"></span><span class="kd">var</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[...</span><span class="s1">&#39;hello&#39;</span><span class="p">]</span> 
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">arr</span><span class="p">)</span>
+<span class="c1">//[&#34;h&#34;, &#34;e&#34;, &#34;l&#34;, &#34;l&#34;, &#34;o&#34;]
+</span></code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="深度克隆函数">深度克隆函数</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-JS" data-lang="JS"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-JS" data-lang="JS"><span class="kd">var</span> <span class="nx">deepClone</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">target</span><span class="p">,</span> <span class="nx">obj</span><span class="p">){</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">key</span> <span class="k">in</span> <span class="nx">obj</span><span class="p">){</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">obj</span><span class="p">.</span><span class="nx">hasOwnProperty</span><span class="p">(</span><span class="nx">key</span><span class="p">)){</span>
+            <span class="kd">var</span> <span class="nx">val</span> <span class="o">=</span> <span class="nx">obj</span><span class="p">[</span><span class="nx">key</span><span class="p">];</span>
+            <span class="k">if</span> <span class="p">(</span><span class="k">typeof</span> <span class="nx">val</span> <span class="o">===</span> <span class="s2">&#34;object&#34;</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nx">target</span><span class="p">[</span><span class="nx">key</span><span class="p">]</span> <span class="o">=</span> <span class="p">{};</span>
+                <span class="nx">deepClone</span><span class="p">(</span><span class="nx">target</span><span class="p">[</span><span class="nx">key</span><span class="p">],</span> <span class="nx">val</span><span class="p">)</span>
+            <span class="p">}</span><span class="k">else</span> <span class="p">{</span>
+                <span class="nx">target</span><span class="p">[</span><span class="nx">key</span><span class="p">]</span> <span class="o">=</span> <span class="nx">val</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nx">target</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="promise">promise</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-JS" data-lang="JS"><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span><span class="lnt">111
+</span><span class="lnt">112
+</span><span class="lnt">113
+</span><span class="lnt">114
+</span><span class="lnt">115
+</span><span class="lnt">116
+</span><span class="lnt">117
+</span><span class="lnt">118
+</span><span class="lnt">119
+</span><span class="lnt">120
+</span><span class="lnt">121
+</span><span class="lnt">122
+</span><span class="lnt">123
+</span><span class="lnt">124
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-JS" data-lang="JS"><span class="k">const</span> <span class="nx">PROMISE_STATUS</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">PENDING</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="nx">RESOLVED</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="nx">REJECTED</span><span class="o">:</span> <span class="mi">3</span>
+<span class="p">};</span>
+
+<span class="kd">let</span> <span class="nx">util</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">isFunc</span><span class="p">(</span><span class="nx">fn</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">typeof</span> <span class="nx">fn</span> <span class="o">===</span> <span class="s2">&#34;function&#34;</span><span class="p">;</span>
+    <span class="p">},</span>
+    <span class="nx">isPromise</span><span class="p">(</span><span class="nx">obj</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">obj</span> <span class="o">&amp;&amp;</span> <span class="k">this</span><span class="p">.</span><span class="nx">isFunc</span><span class="p">(</span><span class="nx">obj</span><span class="p">.</span><span class="nx">then</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="kd">function</span> <span class="nx">MyPromise</span><span class="p">(</span><span class="nx">exector</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">status</span> <span class="o">=</span> <span class="nx">PROMISE_STATUS</span><span class="p">.</span><span class="nx">PENDING</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">val</span> <span class="o">=</span> <span class="kc">undefined</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">reason</span> <span class="o">=</span> <span class="kc">undefined</span><span class="p">;</span>
+
+    <span class="k">this</span><span class="p">.</span><span class="nx">resolveCallback</span> <span class="o">=</span> <span class="kc">undefined</span><span class="p">;</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">rejectCallback</span> <span class="o">=</span> <span class="kc">undefined</span><span class="p">;</span>
+
+    <span class="kd">let</span> <span class="nx">resolve</span> <span class="o">=</span> <span class="nx">val</span> <span class="p">=&gt;</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">status</span> <span class="o">===</span> <span class="nx">PROMISE_STATUS</span><span class="p">.</span><span class="nx">PENDING</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">status</span> <span class="o">=</span> <span class="nx">PROMISE_STATUS</span><span class="p">.</span><span class="nx">RESOLVED</span><span class="p">;</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">val</span> <span class="o">=</span> <span class="nx">val</span><span class="p">;</span>
+
+            <span class="k">if</span> <span class="p">(</span><span class="nx">util</span><span class="p">.</span><span class="nx">isFunc</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">resolveCallback</span><span class="p">))</span> <span class="p">{</span>
+                <span class="k">this</span><span class="p">.</span><span class="nx">resolveCallback</span><span class="p">();</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">};</span>
+
+    <span class="kd">let</span> <span class="nx">reject</span> <span class="o">=</span> <span class="nx">reason</span> <span class="p">=&gt;</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">status</span> <span class="o">===</span> <span class="nx">PROMISE_STATUS</span><span class="p">.</span><span class="nx">PENDING</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">status</span> <span class="o">=</span> <span class="nx">PROMISE_STATUS</span><span class="p">.</span><span class="nx">REJECTED</span><span class="p">;</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">reason</span> <span class="o">=</span> <span class="nx">reason</span><span class="p">;</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nx">util</span><span class="p">.</span><span class="nx">isFunc</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">rejectCallback</span><span class="p">))</span> <span class="p">{</span>
+                <span class="k">this</span><span class="p">.</span><span class="nx">rejectCallback</span><span class="p">();</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">};</span>
+
+    <span class="c1">// 在构造函数中立即执行exector，并由用户根据业务手动调用resolve或者reject
+</span><span class="c1"></span>    <span class="nx">exector</span><span class="p">(</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nx">MyPromise</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">then</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">onFull</span><span class="p">,</span> <span class="nx">onReject</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">new</span> <span class="nx">MyPromise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+        <span class="kd">let</span> <span class="nx">success</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+            <span class="c1">// 具体的返回值有Promise A+规范决定, 根据onFull 的结果处理后面一个then的调用，
+</span><span class="c1"></span>            <span class="c1">// 1. 如果onFull结果为报错，进入catch，调用reject
+</span><span class="c1"></span>            <span class="c1">// 2. 如果onFull结果为Promise，则根据promise的状态调用resolve或者reject
+</span><span class="c1"></span>            <span class="c1">// 3. 如果onFull结果为普通值，则直接调用resolve
+</span><span class="c1"></span>            <span class="k">try</span> <span class="p">{</span>
+                <span class="kd">let</span> <span class="nx">result</span> <span class="o">=</span> <span class="nx">onFull</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">val</span><span class="p">);</span>
+                <span class="k">if</span> <span class="p">(</span><span class="nx">util</span><span class="p">.</span><span class="nx">isPromise</span><span class="p">(</span><span class="nx">result</span><span class="p">))</span> <span class="p">{</span>
+                    <span class="nx">result</span><span class="p">.</span><span class="nx">then</span><span class="p">(</span>
+                        <span class="nx">res</span> <span class="p">=&gt;</span> <span class="p">{</span>
+                            <span class="nx">resolve</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
+                        <span class="p">},</span>
+                        <span class="nx">e</span> <span class="p">=&gt;</span> <span class="p">{</span>
+                            <span class="nx">reject</span><span class="p">(</span><span class="nx">e</span><span class="p">);</span>
+                        <span class="p">}</span>
+                    <span class="p">);</span>
+                <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                    <span class="nx">resolve</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
+                <span class="p">}</span>
+            <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nx">reject</span><span class="p">(</span><span class="nx">e</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">};</span>
+
+        <span class="kd">let</span> <span class="nx">error</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+            <span class="kd">let</span> <span class="nx">reason</span> <span class="o">=</span> <span class="nx">util</span><span class="p">.</span><span class="nx">isFunc</span><span class="p">(</span><span class="nx">onReject</span><span class="p">)</span> <span class="o">?</span> <span class="nx">onReject</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">reason</span><span class="p">)</span> <span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">reason</span><span class="p">;</span>
+            <span class="nx">reject</span><span class="p">(</span><span class="nx">reason</span><span class="p">);</span>
+        <span class="p">};</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">status</span> <span class="o">===</span> <span class="nx">PROMISE_STATUS</span><span class="p">.</span><span class="nx">RESOLVED</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">success</span><span class="p">();</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">status</span> <span class="o">===</span> <span class="nx">PROMISE_STATUS</span><span class="p">.</span><span class="nx">REJECTED</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">error</span><span class="p">();</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">status</span> <span class="o">===</span> <span class="nx">PROMISE_STATUS</span><span class="p">.</span><span class="nx">PENDING</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">resolveCallback</span> <span class="o">=</span> <span class="nx">success</span><span class="p">;</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">rejectCallback</span> <span class="o">=</span> <span class="nx">error</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">});</span>
+<span class="p">};</span>
+
+<span class="kd">let</span> <span class="nx">myPromise</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MyPromise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="nx">setTimeout</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+        <span class="nx">resolve</span><span class="p">(</span><span class="s2">&#34;setTimeout result&#34;</span><span class="p">);</span>
+    <span class="p">},</span> <span class="mi">100</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="kd">let</span> <span class="nx">myP2</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MyPromise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="nx">setTimeout</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+
+        <span class="nx">resolve</span><span class="p">(</span><span class="s2">&#34;async2 result&#34;</span><span class="p">);</span>
+    <span class="p">},</span> <span class="mi">100</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="nx">myPromise</span>
+    <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">res</span> <span class="p">=&gt;</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;res1: &#34;</span><span class="p">,</span> <span class="nx">res</span><span class="p">);</span>
+        <span class="k">throw</span> <span class="s1">&#39;onfull error&#39;</span>
+        <span class="k">return</span> <span class="nx">myP2</span><span class="p">;</span>
+    <span class="p">})</span>
+    <span class="p">.</span><span class="nx">then</span><span class="p">(</span>
+        <span class="nx">res</span> <span class="p">=&gt;</span> <span class="p">{</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">&#34;res2: &#34;</span><span class="p">,</span> <span class="nx">res</span><span class="p">);</span>
+            <span class="k">return</span> <span class="nx">res</span><span class="p">;</span>
+        <span class="p">},</span>
+        <span class="nx">err</span> <span class="p">=&gt;</span> <span class="p">{</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">)</span>
+    <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">res</span> <span class="p">=&gt;</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span> <span class="c1">// res2:
+</span><span class="c1"></span>    <span class="p">})</span>
+    <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">res</span> <span class="p">=&gt;</span> <span class="p">{</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span> <span class="c1">// undefined
+</span><span class="c1"></span>    <span class="p">});</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="敏感词标记">敏感词标记</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-JS" data-lang="JS"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-JS" data-lang="JS"><span class="kd">var</span> <span class="nx">content</span> <span class="o">=</span> <span class="s2">&#34;XX阿斯顿撒旦撒旦和轻微oo饥饿和武as器就可怜见看完你去了哇&#34;</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">res</span> <span class="o">=</span> <span class="nx">content</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/(XX|oo|as)/g</span><span class="p">,</span> <span class="s2">&#34;&lt;span&gt;$1&lt;/span&#34;</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="实现字符串反转">实现字符串反转</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-JS" data-lang="JS"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-JS" data-lang="JS"><span class="kd">var</span> <span class="nx">reverse</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">str</span><span class="p">){</span>
+    <span class="k">return</span> <span class="nx">str</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s2">&#34;&#34;</span><span class="p">).</span><span class="nx">reverse</span><span class="p">().</span><span class="nx">join</span><span class="p">(</span><span class="s2">&#34;&#34;</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="实现数组随机排序">实现数组随机排序</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-JS" data-lang="JS"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-JS" data-lang="JS"><span class="nx">arr</span><span class="p">.</span><span class="nx">srot</span><span class="p">(()=&gt;{</span>
+      <span class="k">return</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mf">0.5</span> <span class="o">?</span> <span class="mi">1</span> <span class="o">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+<span class="p">})</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="取出数组中的最大值">取出数组中的最大值</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-JS" data-lang="JS"><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-JS" data-lang="JS"><span class="c1">// 不使用遍历
+</span><span class="c1"></span><span class="kd">var</span> <span class="nx">res</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">max</span><span class="p">.</span><span class="nx">apply</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="nx">arr</span><span class="p">);</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="实现lazyman">实现lazyman</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-JS" data-lang="JS"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-JS" data-lang="JS"><span class="nx">LazyMan</span><span class="p">(</span><span class="err">“</span><span class="nx">Hank</span><span class="err">”</span><span class="p">)</span><span class="nx">输出</span><span class="o">:</span>
+<span class="nx">Hi</span><span class="o">!</span> <span class="nx">This</span> <span class="nx">is</span> <span class="nx">Hank</span><span class="o">!</span>
+
+<span class="nx">LazyMan</span><span class="p">(</span><span class="err">“</span><span class="nx">Hank</span><span class="err">”</span><span class="p">).</span><span class="nx">sleep</span><span class="p">(</span><span class="mi">10</span><span class="p">).</span><span class="nx">eat</span><span class="p">(</span><span class="err">“</span><span class="nx">dinner</span><span class="err">”</span><span class="p">)</span><span class="nx">输出</span>
+<span class="nx">Hi</span><span class="o">!</span> <span class="nx">This</span> <span class="nx">is</span> <span class="nx">Hank</span><span class="o">!</span>
+<span class="c1">//等待10秒..
+</span><span class="c1"></span><span class="nx">Wake</span> <span class="nx">up</span> <span class="nx">after</span> <span class="mi">10</span>
+<span class="nx">Eat</span> <span class="nx">dinner</span><span class="o">~</span>
+
+<span class="nx">LazyMan</span><span class="p">(</span><span class="err">“</span><span class="nx">Hank</span><span class="err">”</span><span class="p">).</span><span class="nx">eat</span><span class="p">(</span><span class="err">“</span><span class="nx">dinner</span><span class="err">”</span><span class="p">).</span><span class="nx">eat</span><span class="p">(</span><span class="err">“</span><span class="nx">supper</span><span class="err">”</span><span class="p">)</span><span class="nx">输出</span>
+<span class="nx">Hi</span> <span class="nx">This</span> <span class="nx">is</span> <span class="nx">Hank</span><span class="o">!</span>
+<span class="nx">Eat</span> <span class="nx">dinner</span><span class="o">~</span>
+<span class="nx">Eat</span> <span class="nx">supper</span><span class="o">~</span>
+
+<span class="nx">LazyMan</span><span class="p">(</span><span class="err">“</span><span class="nx">Hank</span><span class="err">”</span><span class="p">).</span><span class="nx">sleepFirst</span><span class="p">(</span><span class="mi">5</span><span class="p">).</span><span class="nx">eat</span><span class="p">(</span><span class="err">“</span><span class="nx">supper</span><span class="err">”</span><span class="p">)</span><span class="nx">输出</span>
+<span class="c1">//等待5秒
+</span><span class="c1"></span><span class="nx">Wake</span> <span class="nx">up</span> <span class="nx">after</span> <span class="mi">5</span>
+<span class="nx">Hi</span> <span class="nx">This</span> <span class="nx">is</span> <span class="nx">Hank</span><span class="o">!</span>
+<span class="nx">Eat</span> <span class="nx">supper</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="实现flattendeep">实现flattenDeep</h2>
+
+<p>将输入[1,[2,[3,4]],5]转换成一维数组[1,2,3,4,5]</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-JS" data-lang="JS"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-JS" data-lang="JS"><span class="kd">function</span> <span class="nx">flattenDeep</span><span class="p">(</span><span class="nx">array</span><span class="p">){</span>
+    <span class="kd">let</span> <span class="nx">res</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="nx">array</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">item</span><span class="p">=&gt;{</span>
+        <span class="k">if</span><span class="p">(</span><span class="nb">Array</span><span class="p">.</span><span class="nx">isArray</span><span class="p">(</span><span class="nx">item</span><span class="p">)){</span>
+            <span class="nx">res</span> <span class="o">=</span> <span class="nx">res</span><span class="p">.</span><span class="nx">concat</span><span class="p">(</span><span class="nx">flattenDeep</span><span class="p">(</span><span class="nx">item</span><span class="p">));</span>
+        <span class="p">}</span><span class="k">else</span> <span class="p">{</span>
+            <span class="nx">res</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">item</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">})</span>
+    <span class="k">return</span> <span class="nx">res</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="格式化数字-三个一组-逗号分隔">格式化数字，三个一组，逗号分隔</h2>
+
+<p>用零宽正则实现</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-JS" data-lang="JS"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-JS" data-lang="JS"><span class="kd">function</span> <span class="nx">toThousands</span><span class="p">(</span><span class="nx">num</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span><span class="nx">num</span> <span class="o">||</span> <span class="mi">0</span><span class="p">).</span><span class="nx">toString</span><span class="p">().</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/(\d)(?=(?:\d{3})+$)/g</span><span class="p">,</span> <span class="s1">&#39;$1,&#39;</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+<p>其实还有更简单的方法</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-JS" data-lang="JS"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-JS" data-lang="JS"><span class="nb">Number</span><span class="p">(</span><span class="mi">1234556</span><span class="p">).</span><span class="nx">toLocaleString</span><span class="p">()</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="手写一个函数实现斐波那契数列">手写一个函数实现斐波那契数列</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-JS" data-lang="JS"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-JS" data-lang="JS"><span class="k">const</span> <span class="nx">feibo</span><span class="o">=</span> <span class="nx">max</span><span class="p">=&gt;{</span>
+    <span class="kd">let</span> <span class="p">[</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">,</span><span class="nx">i</span><span class="p">]</span><span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">while</span><span class="p">(</span><span class="nx">i</span><span class="o">++&lt;=</span><span class="nx">max</span><span class="p">)</span> <span class="p">{</span>
+        <span class="p">[</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="nx">b</span><span class="p">,</span><span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span> <span class="p">]</span>
+       <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">b</span><span class="p">)</span>
+    <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">a</span>  
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="防抖与节流">防抖与节流</h2>
+
+<p>防抖定义：多次触发事件后，事件处理函数只执行一次，并且是在触发操作结束时执行。</p>
+
+<p>防抖原理：对处理函数进行延时操作，若设定的延时到来之前，再次触发事件，则清除上一次的延时操作定时器，重新定时。</p>
+
+<p>节流定义：触发函数事件后，短时间间隔内无法连续调用，只有上一次函数执行后，过了规定的时间间隔，才能进行下一次的函数调用。</p>
+
+<p>节流原理：对处理函数进行延时操作，若设定的延时到来之前，再次触发事件，则清除上一次的延时操作定时器，重新定时。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-JS" data-lang="JS"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-JS" data-lang="JS"><span class="cm">/**
+</span><span class="cm"> * 防抖函数
+</span><span class="cm"> * @param fn 事件触发的操作
+</span><span class="cm"> * @param duration 多少毫秒内连续触发事件，不会执行
+</span><span class="cm"> */</span>
+<span class="kd">function</span> <span class="nx">debounce</span><span class="p">(</span><span class="nx">fn</span><span class="p">,</span><span class="nx">duration</span><span class="p">){</span>
+            <span class="kd">var</span>  <span class="nx">timer</span>
+            <span class="nb">window</span><span class="p">.</span><span class="nx">clearTimeout</span><span class="p">(</span><span class="nx">timer</span><span class="p">)</span>
+            <span class="nx">timer</span> <span class="o">=</span> <span class="nx">setTimeout</span><span class="p">(()=&gt;{</span>
+                <span class="nx">fn</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="k">this</span><span class="p">)</span>
+            <span class="p">},</span><span class="nx">duration</span><span class="p">)</span>
+        <span class="p">}</span>
+<span class="cm">/**
+</span><span class="cm"> * 节流函数
+</span><span class="cm"> * @param fn 事件触发的操作
+</span><span class="cm"> * @param duration 间隔多少毫秒需要触发一次事件
+</span><span class="cm"> */</span>
+  <span class="kd">function</span> <span class="nx">throttle</span><span class="p">(</span><span class="nx">fn</span><span class="p">,</span><span class="nx">duration</span><span class="p">){</span>
+            <span class="kd">let</span> <span class="nx">canIRun</span>
+            <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nx">canIRun</span><span class="p">)</span><span class="k">return</span>
+            <span class="nx">fn</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="k">this</span><span class="p">)</span>
+            <span class="nx">canIRun</span> <span class="o">=</span> <span class="kc">false</span>
+            <span class="nx">setTimeout</span><span class="p">(()=&gt;{</span>
+                <span class="nx">canIRun</span> <span class="o">=</span> <span class="kc">true</span>
+            <span class="p">},</span><span class="nx">duration</span><span class="p">)</span>
+        <span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="js柯里化">js柯里化</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-JS" data-lang="JS"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-JS" data-lang="JS"><span class="k">const</span> <span class="nx">curry</span> <span class="o">=</span> <span class="p">(</span><span class="nx">fn</span><span class="p">,</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[])</span> <span class="p">=&gt;</span> <span class="p">(...</span><span class="nx">args</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">(</span>
+ <span class="nx">arg</span> <span class="p">=&gt;</span> <span class="nx">arg</span><span class="p">.</span><span class="nx">length</span> <span class="o">===</span> <span class="nx">fn</span><span class="p">.</span><span class="nx">length</span>
+ <span class="o">?</span> <span class="nx">fn</span><span class="p">(...</span><span class="nx">arg</span><span class="p">)</span>
+ <span class="o">:</span> <span class="nx">curry</span><span class="p">(</span><span class="nx">fn</span><span class="p">,</span> <span class="nx">arg</span><span class="p">)</span>
+<span class="p">)([...</span><span class="nx">arr</span><span class="p">,</span> <span class="p">...</span><span class="nx">args</span><span class="p">])</span>
+
+<span class="kd">let</span> <span class="nx">curryTest</span><span class="o">=</span><span class="nx">curry</span><span class="p">((</span><span class="nx">a</span><span class="p">,</span><span class="nx">b</span><span class="p">,</span><span class="nx">c</span><span class="p">,</span><span class="nx">d</span><span class="p">)=&gt;</span><span class="nx">a</span><span class="o">+</span><span class="nx">b</span><span class="o">+</span><span class="nx">c</span><span class="o">+</span><span class="nx">d</span><span class="p">)</span>
+<span class="nx">curryTest</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)(</span><span class="mi">4</span><span class="p">)</span> <span class="c1">//返回10
+</span><span class="c1"></span><span class="nx">curryTest</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)(</span><span class="mi">4</span><span class="p">)(</span><span class="mi">3</span><span class="p">)</span> <span class="c1">//返回10
+</span><span class="c1"></span><span class="nx">curryTest</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span> <span class="c1">//返回10
+</span></code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="冒泡排序">冒泡排序</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-JS" data-lang="JS"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-JS" data-lang="JS"><span class="kd">function</span> <span class="nx">bubbleSort</span><span class="p">(</span><span class="nx">arr</span><span class="p">)</span> <span class="p">{</span>
+      <span class="kd">var</span> <span class="nx">len</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">length</span>
+      <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">len</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">j</span> <span class="o">&lt;</span> <span class="nx">len</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">-</span> <span class="nx">i</span><span class="p">;</span> <span class="nx">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+          <span class="k">if</span> <span class="p">(</span><span class="nx">arr</span><span class="p">[</span><span class="nx">j</span><span class="p">]</span> <span class="o">&gt;</span> <span class="nx">arr</span><span class="p">[</span><span class="nx">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">])</span> <span class="p">{</span>
+            <span class="kd">var</span> <span class="nx">temp</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">[</span><span class="nx">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span>
+            <span class="nx">arr</span><span class="p">[</span><span class="nx">j</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">[</span><span class="nx">j</span><span class="p">]</span>
+            <span class="nx">arr</span><span class="p">[</span><span class="nx">j</span><span class="p">]</span> <span class="o">=</span> <span class="nx">temp</span>
+          <span class="p">}</span>
+        <span class="p">}</span>
+      <span class="p">}</span>
+      <span class="k">return</span> <span class="nx">arr</span>
+    <span class="p">}</span>
+    <span class="c1">// 测试
+</span><span class="c1"></span>    <span class="kd">var</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">31</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">25</span><span class="p">]</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;冒泡排序&#39;</span><span class="p">,</span> <span class="nx">bubbleSort</span><span class="p">(</span><span class="nx">arr</span><span class="p">))</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="快速排序">快速排序</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-JS" data-lang="JS"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-JS" data-lang="JS"><span class="kd">function</span> <span class="nx">quickSort</span><span class="p">(</span><span class="nx">arr</span><span class="p">,</span> <span class="nx">left</span><span class="p">,</span> <span class="nx">right</span><span class="p">)</span> <span class="p">{</span>
+      <span class="kd">var</span> <span class="nx">len</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">.</span><span class="nx">length</span><span class="p">,</span>
+        <span class="nx">partitionIndex</span><span class="p">,</span>
+        <span class="nx">left</span> <span class="o">=</span> <span class="k">typeof</span> <span class="nx">left</span> <span class="o">!=</span> <span class="s1">&#39;number&#39;</span> <span class="o">?</span> <span class="mi">0</span> <span class="o">:</span> <span class="nx">left</span><span class="p">,</span>
+        <span class="nx">right</span> <span class="o">=</span> <span class="k">typeof</span> <span class="nx">right</span> <span class="o">!=</span> <span class="s1">&#39;number&#39;</span> <span class="o">?</span> <span class="nx">len</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">:</span> <span class="nx">right</span><span class="p">;</span>
+
+      <span class="k">if</span> <span class="p">(</span><span class="nx">left</span> <span class="o">&lt;</span> <span class="nx">right</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">partitionIndex</span> <span class="o">=</span> <span class="nx">partition</span><span class="p">(</span><span class="nx">arr</span><span class="p">,</span> <span class="nx">left</span><span class="p">,</span> <span class="nx">right</span><span class="p">);</span>
+        <span class="nx">quickSort</span><span class="p">(</span><span class="nx">arr</span><span class="p">,</span> <span class="nx">left</span><span class="p">,</span> <span class="nx">partitionIndex</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
+        <span class="nx">quickSort</span><span class="p">(</span><span class="nx">arr</span><span class="p">,</span> <span class="nx">partitionIndex</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="nx">right</span><span class="p">);</span>
+      <span class="p">}</span>
+      <span class="k">return</span> <span class="nx">arr</span><span class="p">;</span>
+    <span class="p">}</span>
+
+	<span class="c1">// 分区操作
+</span><span class="c1"></span>    <span class="kd">function</span> <span class="nx">partition</span><span class="p">(</span><span class="nx">arr</span><span class="p">,</span> <span class="nx">left</span><span class="p">,</span> <span class="nx">right</span><span class="p">)</span> <span class="p">{</span> 
+      <span class="kd">var</span> <span class="nx">pivot</span> <span class="o">=</span> <span class="nx">left</span><span class="p">,</span> <span class="c1">// 设定基准值（pivot）
+</span><span class="c1"></span>        <span class="nx">index</span> <span class="o">=</span> <span class="nx">pivot</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+      <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="nx">index</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;=</span> <span class="nx">right</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">arr</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="nx">arr</span><span class="p">[</span><span class="nx">pivot</span><span class="p">])</span> <span class="p">{</span>
+          <span class="nx">swap</span><span class="p">(</span><span class="nx">arr</span><span class="p">,</span> <span class="nx">i</span><span class="p">,</span> <span class="nx">index</span><span class="p">);</span>
+          <span class="nx">index</span><span class="o">++</span><span class="p">;</span>
+        <span class="p">}</span>
+      <span class="p">}</span>
+      <span class="nx">swap</span><span class="p">(</span><span class="nx">arr</span><span class="p">,</span> <span class="nx">pivot</span><span class="p">,</span> <span class="nx">index</span> <span class="o">-</span> <span class="mi">1</span><span class="p">);</span>
+      <span class="k">return</span> <span class="nx">index</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="kd">function</span> <span class="nx">swap</span><span class="p">(</span><span class="nx">arr</span><span class="p">,</span> <span class="nx">i</span><span class="p">,</span> <span class="nx">j</span><span class="p">)</span> <span class="p">{</span>
+      <span class="kd">var</span> <span class="nx">temp</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+      <span class="nx">arr</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">[</span><span class="nx">j</span><span class="p">];</span>
+      <span class="nx">arr</span><span class="p">[</span><span class="nx">j</span><span class="p">]</span> <span class="o">=</span> <span class="nx">temp</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// 测试
+</span><span class="c1"></span>    <span class="kd">var</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="mi">31</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">45</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">25</span><span class="p">]</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;快速排序&#39;</span><span class="p">,</span> <span class="nx">quickSort</span><span class="p">(</span><span class="nx">arr</span><span class="p">))</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">hl</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2019-07-06
+        
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/wechat.png">
+        <span>微信打赏</span>
+      </label>
+    
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/js/">js</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/2019-07-06-%E9%82%A3%E5%B9%B4%E5%A4%8F%E5%A4%A9%E9%81%87%E8%A7%81%E7%9A%84%E9%9D%A2%E8%AF%95%E9%A2%98/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">2019 07 06 那年夏天遇见的面试题</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/2019-06-24-hugohexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E5%8F%8Ahugo%E7%9A%84%E8%87%AA%E5%AE%9A%E4%B9%89%E9%85%8D%E7%BD%AE/">
+            <span class="next-text nav-default">Hugo、Hexo博客搭建及Hugo的自定义配置</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  <script type="text/javascript">
+    window.MathJax = {
+      showProcessingMessages: false,
+      messageStyle: 'none'
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"  integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script>
+  
+
+  <div id="comments-gitment"></div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/default.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/gitment.browser.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var gitment = new Gitment({
+        id: '2019-07-06 16:05:11 \x2b0800 CST',
+        title: '面试中的一些手写代码',
+        link: decodeURI(location.href),
+        desc: '手写call、apply、bind函数 call实现 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 \/\/ 实现 Function.prototype.myCall = function(context) { if(typeof context === \x26#39;undefined\x26#39; || context === null) { context = window } context.fn = this let args = [...arguments].slice(1)',
+        owner: 'factory011',
+        repo: 'factory011.github.io',
+        oauth: {
+          client_id: '119efc9ab3446717371a',
+          client_secret: '8c57c5ba3c166b577ea4390a102dccb1efa729ff'
+        }
+      });
+      gitment.render('comments-gitment');
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/imsun/gitment">comments powered by gitment.</a></noscript>
+  
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+		<div class="social-links">
+      <a href="https://github.com/factory011" class="iconfont icon-github" title="github" target="_blank"></a>
+      <a href="https://blog.csdn.net/qq_37908043" class="iconfont icon-csdn" title="csdn" target="_blank"></a>
+      <a href="mailto:lhweb@foxmail.com" class="iconfont icon-email" title="email" target="_blank"></a>
+  <a href="https://factory011.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">hl</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
