@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+  <title>ElementUI中统计Table筛选结果数量 - 浪里个小胖子</title>
+  <meta name="renderer" content="webkit" />
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f5f5f5" />
+<meta name="msapplication-navbutton-color" content="#f5f5f5">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f5f5f5">
+
+
+<meta name="author" content="hl" /><meta name="description" content="1、el-table标签栏添加@filter-change=&amp;quot;filterChange&amp;quot; 2、需过滤的列el-table-" /><meta name="keywords" content="Blog, Hugo, 前端, 浪里个小胖子" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.55.6 with even 4.0.0" />
+
+
+<link rel="canonical" href="https://factory011.github.io/post/2019-10-26-elementui%E4%B8%AD%E7%BB%9F%E8%AE%A1table%E7%AD%9B%E9%80%89%E7%BB%93%E6%9E%9C%E6%95%B0%E9%87%8F/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="/dist/even.abc3492d.min.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+<link rel="stylesheet" href="/css/custom.min.css">
+
+
+
+<link rel="stylesheet" defer href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+
+<meta property="og:title" content="ElementUI中统计Table筛选结果数量" />
+<meta property="og:description" content="1、el-table标签栏添加@filter-change=&quot;filterChange&quot; 2、需过滤的列el-table-" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://factory011.github.io/post/2019-10-26-elementui%E4%B8%AD%E7%BB%9F%E8%AE%A1table%E7%AD%9B%E9%80%89%E7%BB%93%E6%9E%9C%E6%95%B0%E9%87%8F/" />
+<meta property="article:published_time" content="2019-10-26T08:19:44&#43;08:00"/>
+<meta property="article:modified_time" content="2019-10-26T08:19:44&#43;08:00"/>
+
+<meta itemprop="name" content="ElementUI中统计Table筛选结果数量">
+<meta itemprop="description" content="1、el-table标签栏添加@filter-change=&quot;filterChange&quot; 2、需过滤的列el-table-">
+
+
+<meta itemprop="datePublished" content="2019-10-26T08:19:44&#43;08:00" />
+<meta itemprop="dateModified" content="2019-10-26T08:19:44&#43;08:00" />
+<meta itemprop="wordCount" content="1238">
+
+
+
+<meta itemprop="keywords" content="elementUI," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="ElementUI中统计Table筛选结果数量"/>
+<meta name="twitter:description" content="1、el-table标签栏添加@filter-change=&quot;filterChange&quot; 2、需过滤的列el-table-"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">浪里个小胖子</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">首页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">关于</li>
+      </a>
+  </ul>
+</nav>
+  <div id="mobile-panel">
+    <header id="header" class="header">
+		<div class="container">
+			<div class="logo-wrapper">
+  <a href="/" class="logo animate swing">浪里个小胖子</a>
+</div>
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/"><i class="iconfont icon-home"></i>首页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/"><i class="iconfont icon-archives"></i>归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/"><i class="iconfont icon-tags"></i>标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/"><i class="iconfont icon-categories"></i>分类</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/"><i class="iconfont icon-"></i>关于</a>
+      </li>
+  </ul>
+</nav>
+		<div/>
+    </header>
+
+    <main id="main" class="container main animate bounceInLeft">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">ElementUI中统计Table筛选结果数量</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2019-10-26 </span>
+        <div class="post-category">
+            <a href="/categories/elementui/"> elementUI </a>
+            </div>
+          <span class="more-meta"> 约 1238 字 </span>
+          <span class="more-meta"> 预计阅读 3 分钟 </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    
+  </div>
+</div>
+    <div class="post-content">
+      <p><img src="/img/eletable.png" alt="eletable" /></p>
+
+<p>1、el-table标签栏添加<code>@filter-change=&quot;filterChange&quot;</code></p>
+
+<p>2、需过滤的列el-table-column加上</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-JS" data-lang="JS"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-JS" data-lang="JS"><span class="o">:</span><span class="nx">filters</span><span class="o">=</span><span class="s2">&#34;type&#34;</span>
+<span class="o">:</span><span class="nx">filter</span><span class="o">-</span><span class="nx">multiple</span><span class="o">=</span><span class="s1">&#39;false&#39;</span>
+<span class="nx">filter</span><span class="o">-</span><span class="nx">placement</span><span class="o">=</span><span class="s1">&#39;right-end&#39;</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+<p>3、初始化页面界面显示数据</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">created</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">tableData</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">tableTempData</span> <span class="c1">// tableTempData为临时静态数据
+</span><span class="c1"></span><span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+<p>4、监听计算表格数量</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">computed</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">num</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">tableData</span><span class="p">.</span><span class="nx">length</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+<p>5、过滤事件</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">filterChange</span> <span class="p">(</span><span class="nx">filters</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="nx">key</span> <span class="k">in</span> <span class="nx">filters</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nx">filters</span><span class="p">[</span><span class="nx">key</span><span class="p">].</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+            <span class="c1">// 配合data中定义的数据枚举数组type，确定操作的是那一列
+</span><span class="c1"></span>            <span class="k">if</span> <span class="p">(</span><span class="nx">filters</span><span class="p">[</span><span class="nx">key</span><span class="p">][</span><span class="mi">0</span><span class="p">].</span><span class="nx">substr</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="o">===</span> <span class="s1">&#39;p&#39;</span><span class="p">)</span> <span class="p">{</span>
+                <span class="kd">let</span> <span class="nx">queryParams</span> <span class="o">=</span> <span class="kc">null</span>
+                <span class="c1">// 获取选中的枚举值
+</span><span class="c1"></span>                <span class="nx">queryParams</span> <span class="o">=</span> <span class="nx">filters</span><span class="p">[</span><span class="nx">key</span><span class="p">][</span><span class="mi">0</span><span class="p">].</span><span class="nx">substr</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+                <span class="c1">// 1、用的是静态数据，根据枚举值确定tableData
+</span><span class="c1"></span>                <span class="c1">// 2、如果用的是http请求的话，将queryParams作为参数去获取结果集，赋值给tableData即可
+</span><span class="c1"></span>                <span class="k">if</span> <span class="p">(</span><span class="nx">queryParams</span> <span class="o">===</span> <span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="k">this</span><span class="p">.</span><span class="nx">tableData</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">tableTempData</span>
+                <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                    <span class="k">this</span><span class="p">.</span><span class="nx">tableData</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">tableTempData</span><span class="p">.</span><span class="nx">filter</span><span class="p">((</span><span class="nx">item</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">item</span><span class="p">.</span><span class="nx">status</span> <span class="o">===</span> <span class="nx">queryParams</span><span class="p">)</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+<p>6、隐藏掉组件自带的<code>全部</code>枚举，使用自定义的</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-css" data-lang="css"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-css" data-lang="css"><span class="p">.</span><span class="nc">el-table-filter__list</span> <span class="nt">li</span><span class="p">:</span><span class="nd">first-child</span> <span class="p">{</span>
+  <span class="k">display</span><span class="p">:</span> <span class="kc">none</span><span class="p">;</span>
+<span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>7、单页面的完整代码</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span><span class="lnt">111
+</span><span class="lnt">112
+</span><span class="lnt">113
+</span><span class="lnt">114
+</span><span class="lnt">115
+</span><span class="lnt">116
+</span><span class="lnt">117
+</span><span class="lnt">118
+</span><span class="lnt">119
+</span><span class="lnt">120
+</span><span class="lnt">121
+</span><span class="lnt">122
+</span><span class="lnt">123
+</span><span class="lnt">124
+</span><span class="lnt">125
+</span><span class="lnt">126
+</span><span class="lnt">127
+</span><span class="lnt">128
+</span><span class="lnt">129
+</span><span class="lnt">130
+</span><span class="lnt">131
+</span><span class="lnt">132
+</span><span class="lnt">133
+</span><span class="lnt">134
+</span><span class="lnt">135
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">&lt;template&gt;
+  &lt;div class=&#34;ele-table&#34;&gt;
+    &lt;h3&gt;数量（{{num}}）&lt;/h3&gt;
+    &lt;el-table ref=&#34;filterTable&#34;
+              :data=&#34;tableData&#34;
+              style=&#34;width: 100%&#34;
+              @filter-change=&#34;filterChange&#34;&gt;
+      &lt;el-table-column prop=&#34;date&#34;
+                       label=&#34;日期&#34;
+                       width=&#34;180&#34;&gt;
+      &lt;/el-table-column&gt;
+      &lt;el-table-column prop=&#34;name&#34;
+                       label=&#34;姓名&#34;
+                       width=&#34;180&#34;&gt;
+      &lt;/el-table-column&gt;
+      &lt;el-table-column prop=&#34;status&#34;
+                       label=&#34;订单状态&#34;
+                       width=&#34;180&#34;
+                       column-key=&#34;status&#34;
+                       :filters=&#34;type&#34;
+                       :filter-multiple=&#39;false&#39;
+                       filter-placement=&#39;right-end&#39;&gt;
+        &lt;template slot-scope=&#39;scope&#39;&gt;
+          &lt;span v-if=&#39;scope.row.status === &#34;1&#34;&#39;&gt;状态01&lt;/span&gt;
+          &lt;span v-if=&#39;scope.row.status === &#34;2&#34;&#39;&gt;状态02&lt;/span&gt;
+          &lt;span v-if=&#39;scope.row.status === &#34;3&#34;&#39;&gt;状态03&lt;/span&gt;
+          &lt;span v-if=&#39;scope.row.status === &#34;4&#34;&#39;&gt;状态04&lt;/span&gt;
+        &lt;/template&gt;
+      &lt;/el-table-column&gt;
+      &lt;el-table-column prop=&#34;address&#34;
+                       label=&#34;地址&#34;
+                       :formatter=&#34;formatter&#34;&gt;
+      &lt;/el-table-column&gt;
+    &lt;/el-table&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+export default {
+  data () {
+    return {
+      tableData: [],
+      tableTempData: [{
+        date: &#39;2016-05-02&#39;,
+        name: &#39;王小虎&#39;,
+        status: &#39;1&#39;,
+        address: &#39;上海市普陀区金沙江路 1518 弄&#39;,
+      }, {
+        date: &#39;2016-05-04&#39;,
+        name: &#39;王小虎&#39;,
+        status: &#39;2&#39;,
+        address: &#39;上海市普陀区金沙江路 1517 弄&#39;,
+      }, {
+        date: &#39;2016-05-01&#39;,
+        name: &#39;王小虎&#39;,
+        status: &#39;2&#39;,
+        address: &#39;上海市普陀区金沙江路 1519 弄&#39;,
+      }, {
+        date: &#39;2016-05-03&#39;,
+        name: &#39;王小虎&#39;,
+        status: &#39;4&#39;,
+        address: &#39;上海市普陀区金沙江路 1516 弄&#39;,
+      }],
+      type: [
+        {
+          text: &#39;全部&#39;,
+          value: &#39;p&#39;
+        }, {
+          text: &#39;状态01&#39;,
+          value: &#39;p1&#39;
+        }, {
+          text: &#39;状态02&#39;,
+          value: &#39;p2&#39;
+        },
+        {
+          text: &#39;状态03&#39;,
+          value: &#39;p3&#39;
+        }, {
+          text: &#39;状态04&#39;,
+          value: &#39;p4&#39;
+        }
+      ],
+    }
+  },
+  created () {
+    this.tableData = this.tableTempData
+  },
+  computed: {
+    num: function () {
+      return this.tableData.length
+    }
+  },
+  methods: {
+    formatter (row) {
+      return row.address
+    },
+    filterChange (filters) {
+      for (const key in filters) {
+        if (filters[key].length &gt; 0) {
+          if (filters[key][0].substr(0, 1) === &#39;p&#39;) {
+            let queryParams = null
+            queryParams = filters[key][0].substr(1, 2)
+            if (queryParams === &#39;&#39;) {
+              this.tableData = this.tableTempData
+            } else {
+              this.tableData = this.tableTempData.filter((item) =&gt; item.status === queryParams)
+              console.log(queryParams, this.tableData, filters)
+            }
+          }
+        }
+      }
+    }
+  }
+}
+&lt;/script&gt;
+
+
+&lt;style&gt;
+.el-table-filter__list li:first-child {
+  display: none;
+}
+&lt;/style&gt;
+&lt;style scoped&gt;
+.ele-table {
+  margin-top: 20px;
+}
+h3 {
+  text-indent: 2rem;
+}
+.el-table--fit {
+  margin-top: 20px;
+  padding: 0 30px 30px 30px;
+  border-top: 1px solid #ccc;
+}
+&lt;/style&gt;</pre></td></tr></table>
+</div>
+</div>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">hl</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2019-10-26
+        
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/wechat.png">
+        <span>微信打赏</span>
+      </label>
+    
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/elementui/">elementUI</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/2019-10-26-vue%E4%B8%AD%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0/">
+            <span class="next-text nav-default">Vue中文件下载功能实现</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  <script type="text/javascript">
+    window.MathJax = {
+      showProcessingMessages: false,
+      messageStyle: 'none'
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"  integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script>
+  
+
+  <div id="comments-gitment"></div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/default.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/gitment.browser.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var gitment = new Gitment({
+        id: '2019-10-26 08:19:44 \x2b0800 CST',
+        title: 'ElementUI中统计Table筛选结果数量',
+        link: decodeURI(location.href),
+        desc: '1、el-table标签栏添加@filter-change=\x26quot;filterChange\x26quot; 2、需过滤的列el-table-',
+        owner: 'factory011',
+        repo: 'factory011.github.io',
+        oauth: {
+          client_id: '119efc9ab3446717371a',
+          client_secret: '8c57c5ba3c166b577ea4390a102dccb1efa729ff'
+        }
+      });
+      gitment.render('comments-gitment');
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/imsun/gitment">comments powered by gitment.</a></noscript>
+  
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+		<div class="social-links">
+      <a href="https://github.com/factory011" class="iconfont icon-github" title="github" target="_blank"></a>
+      <a href="https://blog.csdn.net/qq_37908043" class="iconfont icon-csdn" title="csdn" target="_blank"></a>
+      <a href="mailto:lhweb@foxmail.com" class="iconfont icon-email" title="email" target="_blank"></a>
+  <a href="https://factory011.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2019
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">hl</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
