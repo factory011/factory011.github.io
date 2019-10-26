@@ -2,6 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+<<<<<<< HEAD
     <loc>https://factory011.github.io/categories/</loc>
     <lastmod>2019-10-26T08:19:44+08:00</lastmod>
     <priority>0</priority>
@@ -10,11 +11,16 @@
   <url>
     <loc>https://factory011.github.io/post/2019-10-26-elementui%E4%B8%AD%E7%BB%9F%E8%AE%A1table%E7%AD%9B%E9%80%89%E7%BB%93%E6%9E%9C%E6%95%B0%E9%87%8F/</loc>
     <lastmod>2019-10-26T08:19:44+08:00</lastmod>
+=======
+    <loc>https://factory011.github.io/post/2018-03-06-blog%E4%B8%AD%E7%9A%84markdown%E8%AF%AD%E6%B3%95%E6%95%88%E6%9E%9C%E9%A2%84%E8%A7%88/</loc>
+    <lastmod>2018-03-06T16:01:23+08:00</lastmod>
+>>>>>>> baa2749d3d26d852e06a7f00b639b9849fefedcc
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
+<<<<<<< HEAD
     <loc>https://factory011.github.io/post/</loc>
     <lastmod>2019-10-26T08:19:44+08:00</lastmod>
     <priority>0</priority>
@@ -29,22 +35,37 @@
   <url>
     <loc>https://factory011.github.io/categories/elementui/</loc>
     <lastmod>2019-10-26T08:19:44+08:00</lastmod>
+=======
+    <loc>https://factory011.github.io/categories/</loc>
+    <lastmod>2019-07-06T16:15:34+08:00</lastmod>
+>>>>>>> baa2749d3d26d852e06a7f00b639b9849fefedcc
     <priority>0</priority>
   </url>
   
   <url>
+<<<<<<< HEAD
     <loc>https://factory011.github.io/tags/elementui/</loc>
     <lastmod>2019-10-26T08:19:44+08:00</lastmod>
+=======
+    <loc>https://factory011.github.io/post/</loc>
+    <lastmod>2019-07-06T16:15:34+08:00</lastmod>
+>>>>>>> baa2749d3d26d852e06a7f00b639b9849fefedcc
     <priority>0</priority>
   </url>
   
   <url>
+<<<<<<< HEAD
     <loc>https://factory011.github.io/</loc>
     <lastmod>2019-10-26T08:19:44+08:00</lastmod>
+=======
+    <loc>https://factory011.github.io/tags/</loc>
+    <lastmod>2019-07-06T16:15:34+08:00</lastmod>
+>>>>>>> baa2749d3d26d852e06a7f00b639b9849fefedcc
     <priority>0</priority>
   </url>
   
   <url>
+<<<<<<< HEAD
     <loc>https://factory011.github.io/post/2019-10-26-vue%E4%B8%AD%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0/</loc>
     <lastmod>2019-10-26T08:19:02+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -54,17 +75,29 @@
   <url>
     <loc>https://factory011.github.io/categories/vue/</loc>
     <lastmod>2019-10-26T08:19:02+08:00</lastmod>
+=======
+    <loc>https://factory011.github.io/tags/js/</loc>
+    <lastmod>2019-07-06T16:15:34+08:00</lastmod>
+>>>>>>> baa2749d3d26d852e06a7f00b639b9849fefedcc
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://factory011.github.io/tags/vue/</loc>
+<<<<<<< HEAD
     <lastmod>2019-10-26T08:19:02+08:00</lastmod>
+=======
+    <lastmod>2019-07-06T16:15:34+08:00</lastmod>
+>>>>>>> baa2749d3d26d852e06a7f00b639b9849fefedcc
     <priority>0</priority>
   </url>
   
   <url>
+<<<<<<< HEAD
     <loc>https://factory011.github.io/tags/js/</loc>
+=======
+    <loc>https://factory011.github.io/</loc>
+>>>>>>> baa2749d3d26d852e06a7f00b639b9849fefedcc
     <lastmod>2019-07-06T16:15:34+08:00</lastmod>
     <priority>0</priority>
   </url>
@@ -115,6 +148,7 @@
   </url>
   
   <url>
+<<<<<<< HEAD
     <loc>https://factory011.github.io/post/2018-03-06-blog%E4%B8%AD%E7%9A%84markdown%E8%AF%AD%E6%B3%95%E6%95%88%E6%9E%9C%E9%A2%84%E8%A7%88/</loc>
     <lastmod>2018-03-06T16:01:23+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -123,12 +157,19 @@
   
   <url>
     <loc>https://factory011.github.io/categories/markdown/</loc>
+=======
+    <loc>https://factory011.github.io/tags/markdown/</loc>
+>>>>>>> baa2749d3d26d852e06a7f00b639b9849fefedcc
     <lastmod>2018-03-06T16:01:23+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
+<<<<<<< HEAD
     <loc>https://factory011.github.io/tags/markdown/</loc>
+=======
+    <loc>https://factory011.github.io/categories/markdown/</loc>
+>>>>>>> baa2749d3d26d852e06a7f00b639b9849fefedcc
     <lastmod>2018-03-06T16:01:23+08:00</lastmod>
     <priority>0</priority>
   </url>

@@ -6,12 +6,17 @@
     <description>Recent content in Categories on 浪里个小胖子</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
+<<<<<<< HEAD
     <lastBuildDate>Sat, 26 Oct 2019 08:19:44 +0800</lastBuildDate>
+=======
+    <lastBuildDate>Sat, 06 Jul 2019 16:15:34 +0800</lastBuildDate>
+>>>>>>> baa2749d3d26d852e06a7f00b639b9849fefedcc
     
 	<atom:link href="https://factory011.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+<<<<<<< HEAD
       <title>elementUI</title>
       <link>https://factory011.github.io/categories/elementui/</link>
       <pubDate>Sat, 26 Oct 2019 08:19:44 +0800</pubDate>
@@ -30,6 +35,8 @@
     </item>
     
     <item>
+=======
+>>>>>>> baa2749d3d26d852e06a7f00b639b9849fefedcc
       <title>面试</title>
       <link>https://factory011.github.io/categories/%E9%9D%A2%E8%AF%95/</link>
       <pubDate>Sat, 06 Jul 2019 16:15:34 +0800</pubDate>
