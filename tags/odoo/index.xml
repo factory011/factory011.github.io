@@ -20,5 +20,14 @@
       <description>开发一个模块 zerone_books 创建自定义模块 在自定义文件目录 custom_addons中创建 zerone_books模块 1 python odoo-bin scaffold zerone_books custom_addons 建立数据模型 新建编辑 zerone_book.py 1</description>
     </item>
     
+    <item>
+      <title>Odoo自定义模块开发</title>
+      <link>https://factory011.github.io/post/2020-10-16-test/</link>
+      <pubDate>Thu, 20 Aug 2020 22:34:15 +0800</pubDate>
+      
+      <guid>https://factory011.github.io/post/2020-10-16-test/</guid>
+      <description>暗示的健康哈三联空当接龙卡加斯第六课j</description>
+    </item>
+    
   </channel>
 </rss>
