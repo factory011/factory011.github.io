@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>nginx on 浪里个小胖子</title>
+    <link>https://factory011.github.io/categories/nginx/</link>
+    <description>Recent content in nginx on 浪里个小胖子</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 16 Oct 2020 22:35:51 +0800</lastBuildDate>
+    
+	<atom:link href="https://factory011.github.io/categories/nginx/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>nginx配置</title>
+      <link>https://factory011.github.io/post/2020-10-16-nginx%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Fri, 16 Oct 2020 22:35:51 +0800</pubDate>
+      
+      <guid>https://factory011.github.io/post/2020-10-16-nginx%E9%85%8D%E7%BD%AE/</guid>
+      <description>linux安装nginx并配置https、gzip模块 可以使用wget命令直接下载 1 wget http://nginx.org/download/nginx-1.19.6.tar.gz 将源码解压到 /usr/local/src 目录 1 tar -zxvf nginx-1.19.6.tar.gz -C /usr/local/src/ 安装依赖 1 yum -y install gcc pcre-devel zlib-devel</description>
+    </item>
+    
+  </channel>
+</rss>

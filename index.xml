@@ -6,10 +6,19 @@
     <description>Recent content on 浪里个小胖子</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 15 Oct 2020 22:35:51 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 16 Oct 2020 22:35:51 +0800</lastBuildDate>
     
 	<atom:link href="https://factory011.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>nginx配置</title>
+      <link>https://factory011.github.io/post/2020-10-16-nginx%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Fri, 16 Oct 2020 22:35:51 +0800</pubDate>
+      
+      <guid>https://factory011.github.io/post/2020-10-16-nginx%E9%85%8D%E7%BD%AE/</guid>
+      <description>linux安装nginx并配置https、gzip模块 可以使用wget命令直接下载 1 wget http://nginx.org/download/nginx-1.19.6.tar.gz 将源码解压到 /usr/local/src 目录 1 tar -zxvf nginx-1.19.6.tar.gz -C /usr/local/src/ 安装依赖 1 yum -y install gcc pcre-devel zlib-devel</description>
+    </item>
     
     <item>
       <title>图片压缩上传</title>
@@ -27,15 +36,6 @@
       
       <guid>https://factory011.github.io/post/2020-08-20-odoo%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A8%A1%E5%9D%97%E5%BC%80%E5%8F%91/</guid>
       <description>开发一个模块 zerone_books 创建自定义模块 在自定义文件目录 custom_addons中创建 zerone_books模块 1 python odoo-bin scaffold zerone_books custom_addons 建立数据模型 新建编辑 zerone_book.py 1</description>
-    </item>
-    
-    <item>
-      <title>Odoo自定义模块开发</title>
-      <link>https://factory011.github.io/post/2020-10-16-test/</link>
-      <pubDate>Thu, 20 Aug 2020 22:34:15 +0800</pubDate>
-      
-      <guid>https://factory011.github.io/post/2020-10-16-test/</guid>
-      <description>暗示的健康哈三联空当接龙卡加斯第六课j</description>
     </item>
     
     <item>
