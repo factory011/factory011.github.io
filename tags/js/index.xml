@@ -21,15 +21,6 @@
     </item>
     
     <item>
-      <title>图片压缩上传测试</title>
-      <link>https://factory011.github.io/post/note/</link>
-      <pubDate>Thu, 15 Oct 2020 22:35:51 +0800</pubDate>
-      
-      <guid>https://factory011.github.io/post/note/</guid>
-      <description>1 router-view用法 可以这样理解，正常写法中，一层路径(/xxx)对应一个router-view。 比如url: /，HelloWorl</description>
-    </item>
-    
-    <item>
       <title>面试中的一些手写代码</title>
       <link>https://factory011.github.io/post/2019-07-06-%E9%9D%A2%E8%AF%95%E4%B8%AD%E7%9A%84%E4%B8%80%E4%BA%9B%E6%89%8B%E5%86%99%E4%BB%A3%E7%A0%81/</link>
       <pubDate>Sat, 06 Jul 2019 16:05:11 +0800</pubDate>

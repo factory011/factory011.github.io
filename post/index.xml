@@ -6,10 +6,19 @@
     <description>Recent content in Posts on 浪里个小胖子</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 15 Oct 2020 22:35:51 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 14 Apr 2022 12:49:00 +0800</lastBuildDate>
     
 	<atom:link href="https://factory011.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Test</title>
+      <link>https://factory011.github.io/post/test/</link>
+      <pubDate>Thu, 14 Apr 2022 12:49:00 +0800</pubDate>
+      
+      <guid>https://factory011.github.io/post/test/</guid>
+      <description>暗示的健康哈三联空当接龙卡加斯第六课j</description>
+    </item>
     
     <item>
       <title>图片压缩上传</title>
@@ -18,15 +27,6 @@
       
       <guid>https://factory011.github.io/post/2020-10-15-%E5%9B%BE%E7%89%87%E5%8E%8B%E7%BC%A9%E4%B8%8A%E4%BC%A0/</guid>
       <description>1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70</description>
-    </item>
-    
-    <item>
-      <title>图片压缩上传测试</title>
-      <link>https://factory011.github.io/post/note/</link>
-      <pubDate>Thu, 15 Oct 2020 22:35:51 +0800</pubDate>
-      
-      <guid>https://factory011.github.io/post/note/</guid>
-      <description>1 router-view用法 可以这样理解，正常写法中，一层路径(/xxx)对应一个router-view。 比如url: /，HelloWorl</description>
     </item>
     
     <item>
