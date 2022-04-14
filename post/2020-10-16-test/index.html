@@ -218,25 +218,23 @@
   <script async src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"  integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script>
   
 
-  <div id="comments-gitment"></div>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/default.min.css" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/gitment.browser.min.js" crossorigin="anonymous"></script>
+  <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js" crossorigin="anonymous"></script>
     <script type="text/javascript">
-      var gitment = new Gitment({
+      var gitalk = new Gitalk({
         id: '2020-08-20 22:34:15 \x2b0800 CST',
         title: 'Odoo自定义模块开发',
-        link: decodeURI(location.href),
-        desc: '暗示的健康哈三联空当接龙卡加斯第六课j',
-        owner: 'factory011',
+        clientID: '119efc9ab3446717371a',
+        clientSecret: 'f15af52e9ca2c8063d479c230126891966280566',
         repo: 'factory011.github.io',
-        oauth: {
-          client_id: '119efc9ab3446717371a',
-          client_secret: 'f15af52e9ca2c8063d479c230126891966280566'
-        }
+        owner: 'factory011',
+        admin: ['factory011'],
+        body: decodeURI(location.href)
       });
-      gitment.render('comments-gitment');
+      gitalk.render('gitalk-container');
     </script>
-    <noscript>Please enable JavaScript to view the <a href="https://github.com/imsun/gitment">comments powered by gitment.</a></noscript>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/gitalk/gitalk">comments powered by gitalk.</a></noscript>
   
   
 
