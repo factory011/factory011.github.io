@@ -39,6 +39,13 @@
   </url>
   
   <url>
+    <loc>https://factory011.github.io/post/note/</loc>
+    <lastmod>2020-10-15T22:35:51+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://factory011.github.io/</loc>
     <lastmod>2020-10-15T22:35:51+08:00</lastmod>
     <priority>0</priority>
