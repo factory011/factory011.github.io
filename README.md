@@ -1,4 +1,4 @@
-# person-blog123
+# person-blog
 
 A super concise theme for Hugo
 
