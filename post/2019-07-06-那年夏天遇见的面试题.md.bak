@@ -1,0 +1,325 @@
+---
+title: "那年夏天遇见的面试题"
+date: 2019-07-06T16:15:34+08:00
+draft: false
+tags: ["js", "vue"]
+categories: ["面试"]
+---
+
+### 说说vue的生命周期，每个钩子函数做了些什么？
+
+new Vue()
+
+> 启动Vue创建Vue实例
+>
+> 初始化Vue内部使用的事件以及开启Vue生命周期
+
+<!-- more -->
+
+beforeCreate
+
+> 数据初始化，将data实现数据响应式
+
+created
+
+> 判断有无el，当没有提供el选项的时候，会尝试调用$mount('#app')方法来指定Vue管理的范围
+>
+> 判断有无template，有的话将template的内容作为模板进行编译，无的话，将el指向的DOM对象作为模板进行编译（解析{{}}、指令）
+
+beforeMount
+
+> 创建vm.$el替换el中的内容，模板编译完成未挂载
+>
+> 优先级：render函数选项  > template选项  >  outer Html
+
+mounted
+
+> 完成创建vm.$el，和双向绑定
+>
+> 完成挂载DOM 和渲染、可在mounted钩子对挂载的dom进行操作
+
+beforeUpdate
+
+> 数据更新之前（拿到的是更新后的数据，这个数据没有渲染到界面上）
+
+updated
+
+> 数据更新之后
+
+beforeDestroy
+
+> 卸载所有的watchers、子组件以及事件（执行清理工作）
+
+destroyed
+
+> 清理开启的定时器、移除手动创建的DOM对象等
+
+| 生命周期钩子  | 组件状态                                                     | 最佳实践                                                    |
+| :------------ | :----------------------------------------------------------- | :---------------------------------------------------------- |
+| beforeCreate  | 实例初始化之后，this指向创建的实例，不能访问到data、computed、watch、methods上的方法和数据 | 常用于初始化非响应式变量                                    |
+| created       | 实例创建完成，可访问data、computed、watch、methods上的方法和数据，未挂载到DOM，不能访问到$el属性，$ref属性内容为空数组 | 常用于简单的ajax请求，页面的初始化                          |
+| beforeMount   | 在挂载开始之前被调用，beforeMount之前，会找到对应的template，并编译成render函数 | -                                                           |
+| mounted       | 实例挂载到DOM上，此时可以通过DOM API获取到DOM节点，$ref属性可以访问 | 常用于获取VNode信息和操作，ajax请求                         |
+| beforeupdate  | 响应式数据更新时调用，发生在虚拟DOM打补丁之前                | 适合在更新之前访问现有的DOM，比如手动移除已添加的事件监听器 |
+| updated       | 虚拟 DOM 重新渲染和打补丁之后调用，组件DOM已经更新，可执行依赖于DOM的操作 | 避免在这个钩子函数中操作数据，可能陷入死循环                |
+| beforeDestroy | 实例销毁之前调用。这一步，实例仍然完全可用，this仍能获取到实例 | 常用于销毁定时器、解绑全局事件、销毁插件对象等操作          |
+| destroyed     | 实例销毁后调用，调用后，Vue 实例指示的所有东西都会解绑定，所有的事件监听器会被移除，所有的子实例也会被销毁 | -                                                           |
+
+注意：
+
+1. created阶段的ajax请求与mounted请求的区别：前者页面视图未出现，如果请求信息过多，页面会长时间处于白屏状态
+2. mounted不会承诺所有的子组件也都一起被挂载。如果你希望等到整个视图都渲染完毕，可以用 vm.$nextTick
+3. vue2.0之后主动调用$destroy()不会移除dom节点，不推荐直接destroy这种做法，如果实在需要这样用可以在这个生命周期钩子中手动移除dom节点
+
+### v-if与v-show的区别？
+
+### 实现原理
+
+v-if 是“真正”的条件渲染，因为它会确保在切换过程中条件块内的事件监听器和子组件适当地被销毁和重建。
+
+v-if也是惰性的：如果在初始渲染时条件为假，则什么也不做——直到条件第一次变为真时，才会开始渲染条件块。
+
+相比之下，v-show 就简单得多——不管初始条件是什么，元素总是会被渲染，并且只是简单地基于 CSS 进行切换display:block/none。
+
+### 开销
+
+一般来说，v-if有更高的切换开销，而 v-show 有更高的初始渲染开销。
+
+### 适用场景
+
+因此，如果需要非常频繁地切换，则使用 v-show  较好；如果在运行时条件很少改变，则使用 v-if 较好。
+
+### 原型与原型链？
+
+比如我们有一个构造函数Person，person中有name、age属性和eat方法，通过new实例出一个对象小红，小红可以访问Person的属性和方法，原因是因为小红有一个`__proto__`属性，proto属性指向Person的prototype属性，也就是原型，原型有一个constructor属性指向构造函数Person，由于原型也是对象，所以原型也有原型对象，层层往上，直到Object.prototype（`Object.prototype.__proto__`为null），这就是原型链。
+注意：Function.prototype.bind()没有prototype属性
+
+### vue数据响应式原理，怎么实现的？
+
+vue实现数据双向绑定主要是：采**用数据劫持结合发布者-订阅者模式**的方式，通过**Object.defineProperty（）**来劫持各个属性的setter，getter，在数据变动时发布消息给订阅者，触发相应监听回调。当把一个普通 Javascript 对象传给 Vue 实例来作为它的 data 选项时，Vue 将遍历它的属性，用 Object.defineProperty 将它们转为 getter/setter。用户看不到 getter/setter，但是在内部它们让 Vue 追踪依赖，在属性被访问和修改时通知变化。
+
+vue的数据双向绑定 将MVVM作为数据绑定的入口，整合Observer，Compile和Watcher三者，通过Observer来监听自己的model的数据变化，通过Compile来解析编译模板指令（vue中是用来解析 {{}}），最终利用watcher搭起observer和Compile之间的通信桥梁，达到数据变化 —>视图更新；视图交互变化（input）—>数据model变更双向绑定效果。
+
+### MVC和MVVM的区别？
+
+MVVM是是Model-View-ViewModel的缩写，Model代表数据模型，定义数据操作的业务逻辑，View代表视图层，负责将数据模型渲染到页面上，ViewModel通过双向绑定把View和Model进行同步交互，不需要手动操作DOM的一种设计思想。
+
+MVVM和MVC都是一种设计思想，主要就是MVC中的Controller演变成ViewModel,，MVVM主要通过数据来显示视图层而不是操作节点，解决了MVC中大量的DOM操作使页面渲染性能降低，加载速度慢，影响用户体验问题。主要用于数据操作比较多的场景。
+
+### 假如有几个p标签，p标签里都有一个v-if属性，属性值来源于一个数组，这个数组存的都是一些true或者false，当改变数组的值后，界面没有变化是什么原因？
+
+[双向数据绑定不生效](<https://github.com/factory011/learning-case/blob/master/20190627-vue%E4%B8%AD%E5%8F%8C%E5%90%91%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A%E4%B8%8D%E7%94%9F%E6%95%88%E7%9A%84%E6%83%85%E5%86%B5/index.html>)
+
+### vue怎么设计模态框组件?
+
+[模态框组件](<https://github.com/factory011/learning-case/tree/master/20190627-vue%E5%AE%9E%E7%8E%B0%E6%A8%A1%E6%80%81%E6%A1%86%E7%BB%84%E4%BB%B6>)
+
+### 平均评价3.2分，怎么用星星渲染出来?
+
+[星星评分效果](<https://github.com/factory011/learning-case/tree/master/20190626-css%E8%83%8C%E6%99%AF%E5%9B%BE%E7%89%87%E3%80%81%E7%89%B9%E6%AE%8A%E7%AC%A6%E5%8F%B7%E5%AE%9E%E7%8E%B0%E4%BA%94%E8%A7%92%E6%98%9F%EF%BC%88%E5%8D%8A%E9%A2%97%E6%98%9F%E3%80%8113%E9%A2%97%E6%98%9F%EF%BC%89%E8%AF%84%E5%88%86%E6%95%88%E6%9E%9C>)
+
+### 为什么选择从事前端?
+
+xxx
+
+### componentA中通过prosmise获取了一个data，componentB中`<span>{{data}}</span>`,created中console.log(this.data),问两个data的结果分别是什么？
+
+TODO
+
+### 中间固定两侧自适应布局怎么实现？
+
+[三栏布局](<https://github.com/factory011/learning-case/tree/master/20190627-css%E4%B8%89%E6%A0%8F%E5%B8%83%E5%B1%80>)
+
+### 写一个函数，实现传入一个数据，输出数据的类型是Array、Object或者Function?
+
+  通过 Object.prototype.toString.call()方法来实现
+
+​    var gettype = Object.prototype.toString
+​    console.log(gettype.call('aaaa')) // 输出    [object String]
+​    console.log(gettype.call(2222)) // 输出    [object Number]
+​    console.log(gettype.call(true)) // 输出    [object Boolean]
+​    console.log(gettype.call(undefined)) // 输出    [object Undefined]
+​    console.log(gettype.call(null)) // 输出    [object Null]
+​    console.log(gettype.call({})) // 输出    [object Object]
+​    console.log(gettype.call([])) // 输出    [object Array]
+​    console.log(gettype.call(function () {})) // 输出    [object Function]
+
+### 750px设计稿，使用rem布局，具体怎么设计？
+
+font-size：document.documentElement.clientWidth / 750 * 100
+
+font-size: 100px
+
+1rem = 100px  0.16rem = 16px
+
+### function和箭头函数有什么区别，什么时候不能用箭头函数？
+
+语法更加简洁、清晰
+
+箭头函数不会创建自己的this，会捕获其所在上下文的 this 值，作为自己的 this 值
+
+箭头函数继承而来的this指向永远不变
+
+.call()/.apply()/.bind()无法改变箭头函数中this的指向
+
+箭头函数作为匿名函数,是不能作为构造函数的,不能使用new
+
+箭头函数没有自己的arguments,在箭头函数中访问`arguments`实际上获得的是外层局部（函数）执行环境中的值，取而代之用rest参数…解决
+
+箭头函数没有原型属性prototype
+
+箭头函数不能当做Generator函数,不能使用yield关键字
+
+### [{id: 3, xxx},{id: 1, xxx}...],数组对象结构根据id进行排序，要求多种方法实现？
+
+```JS
+var result = [
+   {id:2,name:'上海'},
+   {id:3,name:'北京'},
+   {id:1,name:'武汉'},
+   {id:10,name:'西安'},
+   {id:7,name:'江苏'}
+  ]
+function sortId(a,b){
+  return a.id-b.id
+}
+result.sort(sortId);
+console.log(result);
+```
+
+### 写个promise的简单用法？
+
+```JS
+function runAsync () {
+    var promise = new Promise(function (resolve, reject) {
+        setTimeout(function () {
+            console.log('执行完成');
+            resolve('想传的数据')
+        },1000)
+    });
+    return promise;
+}
+runAsync();
+runAsync().then(function (data) {
+    console.log(data);
+}).catch(function (error) {
+    console.log(error)
+})
+```
+
+### 左侧列表，通过按钮控制显示/隐藏列表有数据加载的时候，transition失效？有没有其它方法解决？
+
+TODO
+
+### 子组件watch中监听的props属性什么时候能够监听的到？是一进来的时候还是数据变化后？
+
+将props传入的数据当做默认初始值，一开始进来的时候监听不到，当数据变化后才能监听到。
+
+### 后台管理平台的权限控制？
+
+TODO
+
+### foreach和map区别？
+
+forEach(): 针对每一个元素执行提供的函数。
+
+map(): 创建一个新的数组，其中每一个元素由调用数组中的每一个元素执行提供的函数得来。
+
+forEach()方法不会返回执行结果，而是undefined。也就是说，forEach()会修改原来的数组。而map()方法会得到一个新的数组并返回。
+
+### 深浅拷贝？
+
+#### 浅拷贝：
+
+```JS
+// 方式一
+Object.assign()
+eg：
+let a = { 
+  age: 1 
+} 
+let b = Object.assign({}, a) 
+a.age = 2 
+console.log(b.age) // 1
+// 方式二
+...
+eg：
+let a = {
+  age: 1
+}
+let b = { ...a }
+a.age = 2
+console.log(b.age) // 1
+```
+
+#### 深拷贝：
+
+```JS
+// 方式一
+JSON.parse(JSON.stringify(object))
+let a = { 
+  age: 1, 
+  jobs: { 
+    first: 'FE' 
+  } 
+} 
+let b = JSON.parse(JSON.stringify(a)) 
+a.jobs.first = 'native' 
+console.log(b.jobs.first) // FE
+
+// 方式二 
+ lodash函数库的深拷贝函数
+ 
+// 方式三
+ var deepClone = function(target, obj){
+    for (var key in obj){
+        if (obj.hasOwnProperty(key)){
+            var val = obj[key];
+            if (typeof val === "object") {
+                target[key] = {};
+                deepClone(target[key], val)
+            }else {
+                target[key] = val;
+            }
+        }
+    }
+    return target;
+}
+```
+
+### vue中watch的深度监听除了deep还能怎么做？
+
+```JS
+// deep: true
+watch: {
+    obj: {
+        // 开启深度监听
+        deep: true,
+    	// 数据变化时执行的逻辑代码
+        handler(newName, oldName) {
+            console.log('obj.a changed');
+        }
+    }
+}
+```
+
+```JS
+// 通过计算属性，计算出需要监听的数据
+computed: {
+    changed: function () {
+        return this.obj.changed
+    }
+},
+
+// 不通过deep，仍然可以深度监听计算出来的数据
+watch: {
+    changed: function () {
+        console.log(this.changed)
+    }
+}
+```
+
+### vuex多模块后用的是一个state还是多个？
+
+一个
+

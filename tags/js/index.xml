@@ -6,18 +6,18 @@
     <description>Recent content in js on 浪里个小胖子</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 06 Jul 2019 16:15:34 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 15 Oct 2020 22:35:51 +0800</lastBuildDate>
     
 	<atom:link href="https://factory011.github.io/tags/js/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>那年夏天遇见的面试题</title>
-      <link>https://factory011.github.io/post/2019-07-06-%E9%82%A3%E5%B9%B4%E5%A4%8F%E5%A4%A9%E9%81%87%E8%A7%81%E7%9A%84%E9%9D%A2%E8%AF%95%E9%A2%98/</link>
-      <pubDate>Sat, 06 Jul 2019 16:15:34 +0800</pubDate>
+      <title>图片压缩上传</title>
+      <link>https://factory011.github.io/post/2020-10-15-%E5%9B%BE%E7%89%87%E5%8E%8B%E7%BC%A9%E4%B8%8A%E4%BC%A0/</link>
+      <pubDate>Thu, 15 Oct 2020 22:35:51 +0800</pubDate>
       
-      <guid>https://factory011.github.io/post/2019-07-06-%E9%82%A3%E5%B9%B4%E5%A4%8F%E5%A4%A9%E9%81%87%E8%A7%81%E7%9A%84%E9%9D%A2%E8%AF%95%E9%A2%98/</guid>
-      <description>说说vue的生命周期，每个钩子函数做了些什么？ new Vue() 启动Vue创建Vue实例 初始化Vue内部使用的事件以及开启Vue生命周期 beforeCreate 数据初始化，将d</description>
+      <guid>https://factory011.github.io/post/2020-10-15-%E5%9B%BE%E7%89%87%E5%8E%8B%E7%BC%A9%E4%B8%8A%E4%BC%A0/</guid>
+      <description>1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70</description>
     </item>
     
     <item>

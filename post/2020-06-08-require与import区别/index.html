@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+  <title>Require与import区别 - 浪里个小胖子</title>
+  <meta name="renderer" content="webkit" />
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f5f5f5" />
+<meta name="msapplication-navbutton-color" content="#f5f5f5">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f5f5f5">
+
+
+<meta name="author" content="hl" /><meta name="description" content="Node.js 使用 CommonJS 模块系统，而在浏览器中，则还正在实现 ES 模块标准。 在实践中，这意味着在 Node.js 中使用 require() ，而在浏览器中则使用 import 。 遵循的规范 1、require 是" /><meta name="keywords" content="Blog, Hugo, 前端, 浪里个小胖子" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.55.6 with even 4.0.0" />
+
+
+<link rel="canonical" href="https://factory011.github.io/post/2020-06-08-require%E4%B8%8Eimport%E5%8C%BA%E5%88%AB/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="/dist/even.abc3492d.min.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+<link rel="stylesheet" href="/css/custom.min.css">
+
+
+
+<link rel="stylesheet" defer href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+
+<meta property="og:title" content="Require与import区别" />
+<meta property="og:description" content="Node.js 使用 CommonJS 模块系统，而在浏览器中，则还正在实现 ES 模块标准。 在实践中，这意味着在 Node.js 中使用 require() ，而在浏览器中则使用 import 。 遵循的规范 1、require 是" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://factory011.github.io/post/2020-06-08-require%E4%B8%8Eimport%E5%8C%BA%E5%88%AB/" />
+<meta property="article:published_time" content="2020-06-08T22:31:34&#43;08:00"/>
+<meta property="article:modified_time" content="2020-06-08T22:31:34&#43;08:00"/>
+
+<meta itemprop="name" content="Require与import区别">
+<meta itemprop="description" content="Node.js 使用 CommonJS 模块系统，而在浏览器中，则还正在实现 ES 模块标准。 在实践中，这意味着在 Node.js 中使用 require() ，而在浏览器中则使用 import 。 遵循的规范 1、require 是">
+
+
+<meta itemprop="datePublished" content="2020-06-08T22:31:34&#43;08:00" />
+<meta itemprop="dateModified" content="2020-06-08T22:31:34&#43;08:00" />
+<meta itemprop="wordCount" content="1217">
+
+
+
+<meta itemprop="keywords" content="nodejs," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Require与import区别"/>
+<meta name="twitter:description" content="Node.js 使用 CommonJS 模块系统，而在浏览器中，则还正在实现 ES 模块标准。 在实践中，这意味着在 Node.js 中使用 require() ，而在浏览器中则使用 import 。 遵循的规范 1、require 是"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">浪里个小胖子</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">首页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">关于</li>
+      </a>
+  </ul>
+</nav>
+  <div id="mobile-panel">
+    <header id="header" class="header">
+		<div class="container">
+			<div class="logo-wrapper">
+  <a href="/" class="logo animate swing">浪里个小胖子</a>
+</div>
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/"><i class="iconfont icon-home"></i>首页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/"><i class="iconfont icon-archives"></i>归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/"><i class="iconfont icon-tags"></i>标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/"><i class="iconfont icon-categories"></i>分类</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/"><i class="iconfont icon-"></i>关于</a>
+      </li>
+  </ul>
+</nav>
+		<div/>
+    </header>
+
+    <main id="main" class="container main animate bounceInLeft">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Require与import区别</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2020-06-08 </span>
+        <div class="post-category">
+            <a href="/categories/nodejs/"> nodejs </a>
+            </div>
+          <span class="more-meta"> 约 1217 字 </span>
+          <span class="more-meta"> 预计阅读 3 分钟 </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#遵循的规范">遵循的规范</a></li>
+<li><a href="#调用的时间">调用的时间</a></li>
+<li><a href="#exports和module-exports">exports和module.exports</a>
+<ul>
+<li><a href="#exports方式使用方法">exports方式使用方法</a></li>
+<li><a href="#module-exports方式使用方法">module.exports方式使用方法</a></li>
+<li><a href="#根本区别">根本区别</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      
+
+<p>Node.js 使用 CommonJS 模块系统，而在浏览器中，则还正在实现 ES 模块标准。</p>
+
+<p>在实践中，这意味着在 Node.js 中使用 <code>require()</code> ，而在浏览器中则使用 <code>import</code> 。</p>
+
+<h1 id="遵循的规范">遵循的规范</h1>
+
+<p>1、require 是 AMD规范引入方式。</p>
+
+<p>2、import是es6的一个语法标准，如果要兼容浏览器的话必须转化成es5的语法。</p>
+
+<h1 id="调用的时间">调用的时间</h1>
+
+<p>1、require是运行时调用，所以require理论上可以运用在代码的任何地方。</p>
+
+<p>2、import是编译时调用，最好把 import 放在代码的开头。</p>
+
+<p>解释器在执行语句时，遵循作用域原则。因为这和作用域有关系，如果在顶层导入模块，此时它的作用域是全局的。如果在函数内部导入了模块，那它的作用域只是局部的，不能被其它函数使用。如果其它函数也要用到这个模块，还需要再次导入比较麻烦。在用 import 语句导入模块时最好按照这样的顺序：python 标准库模块 -》python 第三方模块 -》自定义模块。</p>
+
+<p>本质</p>
+
+<p>require是赋值过程，其实require的结果就是对象、数字、字符串、函数等，再把require的结果赋值给某个变量。</p>
+
+<p>import是解构过程，但是目前所有的引擎都还没有实现import，我们在node中使用babel支持ES6，也仅仅是将ES6转码为ES5再执行，import语法会被转码为require。</p>
+
+<h1 id="exports和module-exports">exports和module.exports</h1>
+
+<h2 id="exports方式使用方法">exports方式使用方法</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">exports</span><span class="p">.[</span><span class="kd">function</span> <span class="nx">name</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="kd">function</span> <span class="nx">name</span><span class="p">]</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="module-exports方式使用方法">module.exports方式使用方法</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">moudle</span><span class="p">.</span><span class="nx">exports</span><span class="o">=</span> <span class="p">[</span><span class="kd">function</span> <span class="nx">name</span><span class="p">]</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="根本区别">根本区别</h2>
+
+<p>为了方便，<strong>Node为每个模块提供一个exports变量，指向module.exports。</strong>这等同在每个模块头部，有一行这样的命令。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">exports</span> <span class="o">=</span> <span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+<p><strong>module和exports是Node.js给每个js文件内置的两个对象。</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">exports</span><span class="p">);</span> <span class="c1">//输出：{}
+</span><span class="c1"></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">module</span><span class="p">);</span>  <span class="c1">//输出：Module {..., exports: {}, ...} （注：...代表省略了其他一些属性）
+</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>module.exports和exports一开始都是一个空对象{}，实际上，这两个对象指向同一块内存。这也就是说module.exports和exports是等价的（有个前提：不去改变它们指向的内存地址）。</p>
+
+<p>例如：exports.age = 18和module.export.age = 18，这两种写法是一致的（都相当于给最初的空对象{}添加了一个属性，通过require得到的就是{age: 18}）。</p>
+
+<p><strong>require引入的对象本质上是module.exports</strong>。这就产生了一个问题，当 module.exports和exports指向的不是同一块内存时，exports的内容就会失效。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span><span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;萤火虫叔叔&#39;</span><span class="p">}</span><span class="err">；</span>
+<span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span><span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;萤火虫老阿姨&#39;</span><span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+<p>于是我们可以直接在 exports 对象上添加方法，表示对外输出的接口，如同在module.exports上添加一样。</p>
+
+<p>注意，因为 <strong>Node 模块是通过 module.exports 导出</strong><strong>的</strong>，如果直接将exports变量指向一个值，就切断了exports与module.exports的联系，导致意外发生：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-js" data-lang="js"><span class="c1">// a.js
+</span><span class="c1"></span><span class="nx">exports</span> <span class="o">=</span> <span class="kd">function</span> <span class="nx">a</span><span class="p">()</span> <span class="p">{};</span>
+<span class="c1">// b.js
+</span><span class="c1"></span><span class="k">const</span> <span class="nx">a</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;./a.js&#39;</span><span class="p">)</span> <span class="c1">// a 是一个空对象
+</span></code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">hl</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2020-06-08
+        
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/wechat.png">
+        <span>微信打赏</span>
+      </label>
+    
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/nodejs/">nodejs</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/2020-08-20-odoo%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A8%A1%E5%9D%97%E5%BC%80%E5%8F%91/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Odoo自定义模块开发</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/2020-05-10-vue%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/">
+            <span class="next-text nav-default">Vue生命周期</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  <script type="text/javascript">
+    window.MathJax = {
+      showProcessingMessages: false,
+      messageStyle: 'none'
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"  integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script>
+  
+
+  <div id="comments-gitment"></div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/default.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/gitment.browser.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var gitment = new Gitment({
+        id: '2020-06-08 22:31:34 \x2b0800 CST',
+        title: 'Require与import区别',
+        link: decodeURI(location.href),
+        desc: 'Node.js 使用 CommonJS 模块系统，而在浏览器中，则还正在实现 ES 模块标准。 在实践中，这意味着在 Node.js 中使用 require() ，而在浏览器中则使用 import 。 遵循的规范 1、require 是',
+        owner: 'factory011',
+        repo: 'factory011.github.io',
+        oauth: {
+          client_id: '119efc9ab3446717371a',
+          client_secret: '8c57c5ba3c166b577ea4390a102dccb1efa729ff'
+        }
+      });
+      gitment.render('comments-gitment');
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/imsun/gitment">comments powered by gitment.</a></noscript>
+  
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+		<div class="social-links">
+      <a href="https://github.com/factory011" class="iconfont icon-github" title="github" target="_blank"></a>
+      <a href="https://blog.csdn.net/qq_37908043" class="iconfont icon-csdn" title="csdn" target="_blank"></a>
+      <a href="mailto:lhweb@foxmail.com" class="iconfont icon-email" title="email" target="_blank"></a>
+  <a href="https://factory011.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2021
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">hl</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

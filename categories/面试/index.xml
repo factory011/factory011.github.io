@@ -6,19 +6,10 @@
     <description>Recent content in 面试 on 浪里个小胖子</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 06 Jul 2019 16:15:34 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 06 Jul 2019 16:05:11 +0800</lastBuildDate>
     
 	<atom:link href="https://factory011.github.io/categories/%E9%9D%A2%E8%AF%95/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>那年夏天遇见的面试题</title>
-      <link>https://factory011.github.io/post/2019-07-06-%E9%82%A3%E5%B9%B4%E5%A4%8F%E5%A4%A9%E9%81%87%E8%A7%81%E7%9A%84%E9%9D%A2%E8%AF%95%E9%A2%98/</link>
-      <pubDate>Sat, 06 Jul 2019 16:15:34 +0800</pubDate>
-      
-      <guid>https://factory011.github.io/post/2019-07-06-%E9%82%A3%E5%B9%B4%E5%A4%8F%E5%A4%A9%E9%81%87%E8%A7%81%E7%9A%84%E9%9D%A2%E8%AF%95%E9%A2%98/</guid>
-      <description>说说vue的生命周期，每个钩子函数做了些什么？ new Vue() 启动Vue创建Vue实例 初始化Vue内部使用的事件以及开启Vue生命周期 beforeCreate 数据初始化，将d</description>
-    </item>
     
     <item>
       <title>面试中的一些手写代码</title>
