@@ -1,227 +1,378 @@
-<?xml-stylesheet type="text/xsl" href="https://factory011.github.io/sitemap.xsl"?>
+<?xml-stylesheet type="text/xsl" href="https://www.liangh.top/sitemap.xsl"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://factory011.github.io/categories/</loc>
+    <loc>https://www.liangh.top/</loc>
     <lastmod>2020-10-16T22:35:51+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://factory011.github.io/post/</loc>
+    <loc>https://www.liangh.top/categories/</loc>
     <lastmod>2020-10-16T22:35:51+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://factory011.github.io/tags/</loc>
+    <loc>https://www.liangh.top/post/</loc>
     <lastmod>2020-10-16T22:35:51+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://factory011.github.io/categories/nginx/</loc>
+    <loc>https://www.liangh.top/tags/</loc>
     <lastmod>2020-10-16T22:35:51+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://factory011.github.io/tags/nginx/</loc>
+    <loc>https://www.liangh.top/categories/nginx/</loc>
     <lastmod>2020-10-16T22:35:51+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://factory011.github.io/post/2020-10-16-nginx%E9%85%8D%E7%BD%AE/</loc>
+    <loc>https://www.liangh.top/tags/nginx/</loc>
+    <lastmod>2020-10-16T22:35:51+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.liangh.top/post/2020-10-16-nginx%E9%85%8D%E7%BD%AE/</loc>
     <lastmod>2020-10-16T22:35:51+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://factory011.github.io/</loc>
-    <lastmod>2020-10-16T22:35:51+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://factory011.github.io/categories/js/</loc>
+    <loc>https://www.liangh.top/categories/js/</loc>
     <lastmod>2020-10-15T22:35:51+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://factory011.github.io/tags/js/</loc>
+    <loc>https://www.liangh.top/tags/js/</loc>
     <lastmod>2020-10-15T22:35:51+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://factory011.github.io/post/2020-10-15-%E5%9B%BE%E7%89%87%E5%8E%8B%E7%BC%A9%E4%B8%8A%E4%BC%A0/</loc>
+    <loc>https://www.liangh.top/post/2020-10-15-%E5%9B%BE%E7%89%87%E5%8E%8B%E7%BC%A9%E4%B8%8A%E4%BC%A0/</loc>
     <lastmod>2020-10-15T22:35:51+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://factory011.github.io/post/2020-08-20-odoo%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A8%A1%E5%9D%97%E5%BC%80%E5%8F%91/</loc>
+    <loc>https://www.liangh.top/post/2020-08-20-odoo%E8%87%AA%E5%AE%9A%E4%B9%89%E6%A8%A1%E5%9D%97%E5%BC%80%E5%8F%91/</loc>
     <lastmod>2020-08-20T22:34:15+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://factory011.github.io/categories/odoo/</loc>
+    <loc>https://www.liangh.top/categories/odoo/</loc>
     <lastmod>2020-08-20T22:34:15+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://factory011.github.io/tags/odoo/</loc>
+    <loc>https://www.liangh.top/tags/odoo/</loc>
     <lastmod>2020-08-20T22:34:15+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://factory011.github.io/post/2020-06-08-require%E4%B8%8Eimport%E5%8C%BA%E5%88%AB/</loc>
+    <loc>https://www.liangh.top/post/2020-06-08-require%E4%B8%8Eimport%E5%8C%BA%E5%88%AB/</loc>
     <lastmod>2020-06-08T22:31:34+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://factory011.github.io/categories/nodejs/</loc>
+    <loc>https://www.liangh.top/categories/nodejs/</loc>
     <lastmod>2020-06-08T22:31:34+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://factory011.github.io/tags/nodejs/</loc>
+    <loc>https://www.liangh.top/tags/nodejs/</loc>
     <lastmod>2020-06-08T22:31:34+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://factory011.github.io/post/2020-05-10-vue%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/</loc>
+    <loc>https://www.liangh.top/post/2020-05-10-vue%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/</loc>
     <lastmod>2020-05-10T22:29:24+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://factory011.github.io/categories/vue/</loc>
+    <loc>https://www.liangh.top/categories/vue/</loc>
     <lastmod>2020-05-10T22:29:24+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://factory011.github.io/tags/vue/</loc>
+    <loc>https://www.liangh.top/tags/vue/</loc>
     <lastmod>2020-05-10T22:29:24+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://factory011.github.io/post/2020-05-05-vue%E5%AE%9A%E6%97%B6%E5%99%A8%E6%B8%85%E7%90%86/</loc>
+    <loc>https://www.liangh.top/post/2020-05-05-vue%E5%AE%9A%E6%97%B6%E5%99%A8%E6%B8%85%E7%90%86/</loc>
     <lastmod>2020-05-05T22:27:17+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://factory011.github.io/post/2020-04-03-vue%E4%B8%ADaxios%E8%AF%B7%E6%B1%82%E5%85%A8%E5%B1%80%E9%85%8D%E7%BD%AE/</loc>
+    <loc>https://www.liangh.top/post/2020-04-03-vue%E4%B8%ADaxios%E8%AF%B7%E6%B1%82%E5%85%A8%E5%B1%80%E9%85%8D%E7%BD%AE/</loc>
     <lastmod>2020-04-10T22:21:36+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://factory011.github.io/post/2019-10-26-elementui%E4%B8%AD%E7%BB%9F%E8%AE%A1table%E7%AD%9B%E9%80%89%E7%BB%93%E6%9E%9C%E6%95%B0%E9%87%8F/</loc>
+    <loc>https://www.liangh.top/post/2019-10-26-elementui%E4%B8%AD%E7%BB%9F%E8%AE%A1table%E7%AD%9B%E9%80%89%E7%BB%93%E6%9E%9C%E6%95%B0%E9%87%8F/</loc>
     <lastmod>2019-10-26T08:19:44+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://factory011.github.io/categories/elementui/</loc>
+    <loc>https://www.liangh.top/categories/elementui/</loc>
     <lastmod>2019-10-26T08:19:44+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://factory011.github.io/tags/elementui/</loc>
+    <loc>https://www.liangh.top/tags/elementui/</loc>
     <lastmod>2019-10-26T08:19:44+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://factory011.github.io/post/2019-10-26-vue%E4%B8%AD%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0/</loc>
+    <loc>https://www.liangh.top/post/2019-10-26-vue%E4%B8%AD%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0/</loc>
     <lastmod>2019-10-26T08:19:02+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://factory011.github.io/categories/%E9%9D%A2%E8%AF%95/</loc>
+    <loc>https://www.liangh.top/categories/%E9%9D%A2%E8%AF%95/</loc>
     <lastmod>2019-07-06T16:05:11+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://factory011.github.io/post/2019-07-06-%E9%9D%A2%E8%AF%95%E4%B8%AD%E7%9A%84%E4%B8%80%E4%BA%9B%E6%89%8B%E5%86%99%E4%BB%A3%E7%A0%81/</loc>
+    <loc>https://www.liangh.top/post/2019-07-06-%E9%9D%A2%E8%AF%95%E4%B8%AD%E7%9A%84%E4%B8%80%E4%BA%9B%E6%89%8B%E5%86%99%E4%BB%A3%E7%A0%81/</loc>
     <lastmod>2019-07-06T16:05:11+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://factory011.github.io/post/2019-06-24-hugohexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E5%8F%8Ahugo%E7%9A%84%E8%87%AA%E5%AE%9A%E4%B9%89%E9%85%8D%E7%BD%AE/</loc>
+    <loc>https://www.liangh.top/post/2019-06-24-hugohexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E5%8F%8Ahugo%E7%9A%84%E8%87%AA%E5%AE%9A%E4%B9%89%E9%85%8D%E7%BD%AE/</loc>
     <lastmod>2019-06-24T09:50:50+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://factory011.github.io/categories/blog/</loc>
+    <loc>https://www.liangh.top/categories/blog/</loc>
     <lastmod>2019-06-24T09:50:50+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://factory011.github.io/tags/hexo/</loc>
+    <loc>https://www.liangh.top/tags/hexo/</loc>
     <lastmod>2019-06-24T09:50:50+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://factory011.github.io/tags/hugo/</loc>
+    <loc>https://www.liangh.top/tags/hugo/</loc>
     <lastmod>2019-06-24T09:50:50+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://factory011.github.io/post/2018-03-06-blog%E4%B8%AD%E7%9A%84markdown%E8%AF%AD%E6%B3%95%E6%95%88%E6%9E%9C%E9%A2%84%E8%A7%88/</loc>
+    <loc>https://www.liangh.top/post/2018-03-06-blog%E4%B8%AD%E7%9A%84markdown%E8%AF%AD%E6%B3%95%E6%95%88%E6%9E%9C%E9%A2%84%E8%A7%88/</loc>
     <lastmod>2018-03-06T16:01:23+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://factory011.github.io/categories/markdown/</loc>
+    <loc>https://www.liangh.top/categories/markdown/</loc>
     <lastmod>2018-03-06T16:01:23+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://factory011.github.io/tags/markdown/</loc>
+    <loc>https://www.liangh.top/tags/markdown/</loc>
     <lastmod>2018-03-06T16:01:23+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://factory011.github.io/about/</loc>
+    <loc>https://www.liangh.top/post/doc-footnote-preview/</loc>
+    <lastmod>2018-03-01T16:01:23+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.liangh.top/categories/docs/</loc>
+    <lastmod>2018-03-01T16:01:23+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.liangh.top/tags/footnote/</loc>
+    <lastmod>2018-03-01T16:01:23+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.liangh.top/categories/index/</loc>
+    <lastmod>2018-03-01T16:01:23+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.liangh.top/tags/tag-11/</loc>
+    <lastmod>2018-03-01T16:01:23+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.liangh.top/categories/english/</loc>
+    <lastmod>2017-08-31T15:43:48+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.liangh.top/tags/english/</loc>
+    <lastmod>2017-08-31T15:43:48+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.liangh.top/post/english-preview/</loc>
+    <lastmod>2017-08-31T15:43:48+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.liangh.top/tags/preview/</loc>
+    <lastmod>2017-08-31T15:43:48+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.liangh.top/tags/tag-2/</loc>
+    <lastmod>2017-08-31T15:43:48+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.liangh.top/post/this-is-a-very-long-title/</loc>
+    <lastmod>2017-08-30T15:43:48+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.liangh.top/categories/test/</loc>
+    <lastmod>2017-08-30T15:43:48+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.liangh.top/about/</loc>
     <lastmod>2017-08-28T21:41:52+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.liangh.top/post/creating-a-new-theme/</loc>
+    <lastmod>2014-09-28T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.liangh.top/categories/development/</loc>
+    <lastmod>2014-09-28T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.liangh.top/tags/development/</loc>
+    <lastmod>2014-09-28T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.liangh.top/tags/go/</loc>
+    <lastmod>2014-09-28T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.liangh.top/categories/golang/</loc>
+    <lastmod>2014-09-28T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.liangh.top/tags/golang/</loc>
+    <lastmod>2014-09-28T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.liangh.top/tags/templates/</loc>
+    <lastmod>2014-09-28T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.liangh.top/tags/themes/</loc>
+    <lastmod>2014-09-28T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.liangh.top/post/goisforlovers/</loc>
+    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.liangh.top/post/hugoisforlovers/</loc>
+    <lastmod>2014-04-02T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.liangh.top/post/migrate-from-jekyll/</loc>
+    <lastmod>2014-03-10T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.liangh.top/tags/jekyll/</loc>
+    <lastmod>2014-03-10T00:00:00+00:00</lastmod>
+    <priority>0</priority>
   </url>
   
 </urlset>

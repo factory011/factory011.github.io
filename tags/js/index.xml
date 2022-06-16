@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>js on 浪里个小胖子</title>
-    <link>https://factory011.github.io/tags/js/</link>
-    <description>Recent content in js on 浪里个小胖子</description>
+    <title>js on ALiang</title>
+    <link>https://www.liangh.top/tags/js/</link>
+    <description>Recent content in js on ALiang</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Thu, 15 Oct 2020 22:35:51 +0800</lastBuildDate>
     
-	<atom:link href="https://factory011.github.io/tags/js/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.liangh.top/tags/js/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>图片压缩上传</title>
-      <link>https://factory011.github.io/post/2020-10-15-%E5%9B%BE%E7%89%87%E5%8E%8B%E7%BC%A9%E4%B8%8A%E4%BC%A0/</link>
+      <link>https://www.liangh.top/post/2020-10-15-%E5%9B%BE%E7%89%87%E5%8E%8B%E7%BC%A9%E4%B8%8A%E4%BC%A0/</link>
       <pubDate>Thu, 15 Oct 2020 22:35:51 +0800</pubDate>
       
-      <guid>https://factory011.github.io/post/2020-10-15-%E5%9B%BE%E7%89%87%E5%8E%8B%E7%BC%A9%E4%B8%8A%E4%BC%A0/</guid>
+      <guid>https://www.liangh.top/post/2020-10-15-%E5%9B%BE%E7%89%87%E5%8E%8B%E7%BC%A9%E4%B8%8A%E4%BC%A0/</guid>
       <description>1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70</description>
     </item>
     
     <item>
       <title>面试中的一些手写代码</title>
-      <link>https://factory011.github.io/post/2019-07-06-%E9%9D%A2%E8%AF%95%E4%B8%AD%E7%9A%84%E4%B8%80%E4%BA%9B%E6%89%8B%E5%86%99%E4%BB%A3%E7%A0%81/</link>
+      <link>https://www.liangh.top/post/2019-07-06-%E9%9D%A2%E8%AF%95%E4%B8%AD%E7%9A%84%E4%B8%80%E4%BA%9B%E6%89%8B%E5%86%99%E4%BB%A3%E7%A0%81/</link>
       <pubDate>Sat, 06 Jul 2019 16:05:11 +0800</pubDate>
       
-      <guid>https://factory011.github.io/post/2019-07-06-%E9%9D%A2%E8%AF%95%E4%B8%AD%E7%9A%84%E4%B8%80%E4%BA%9B%E6%89%8B%E5%86%99%E4%BB%A3%E7%A0%81/</guid>
+      <guid>https://www.liangh.top/post/2019-07-06-%E9%9D%A2%E8%AF%95%E4%B8%AD%E7%9A%84%E4%B8%80%E4%BA%9B%E6%89%8B%E5%86%99%E4%BB%A3%E7%A0%81/</guid>
       <description>手写call、apply、bind函数 call实现 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 // 实现 Function.prototype.myCall = function(context) { if(typeof context === &amp;#39;undefined&amp;#39; || context === null) { context = window } context.fn = this let args = [...arguments].slice(1)</description>
     </item>
     

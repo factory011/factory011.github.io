@@ -1,94 +1,193 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on 浪里个小胖子</title>
-    <link>https://factory011.github.io/tags/</link>
-    <description>Recent content in Tags on 浪里个小胖子</description>
+    <title>Tags on ALiang</title>
+    <link>https://www.liangh.top/tags/</link>
+    <description>Recent content in Tags on ALiang</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Fri, 16 Oct 2020 22:35:51 +0800</lastBuildDate>
     
-	<atom:link href="https://factory011.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.liangh.top/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>nginx</title>
-      <link>https://factory011.github.io/tags/nginx/</link>
+      <link>https://www.liangh.top/tags/nginx/</link>
       <pubDate>Fri, 16 Oct 2020 22:35:51 +0800</pubDate>
       
-      <guid>https://factory011.github.io/tags/nginx/</guid>
+      <guid>https://www.liangh.top/tags/nginx/</guid>
       <description></description>
     </item>
     
     <item>
       <title>js</title>
-      <link>https://factory011.github.io/tags/js/</link>
+      <link>https://www.liangh.top/tags/js/</link>
       <pubDate>Thu, 15 Oct 2020 22:35:51 +0800</pubDate>
       
-      <guid>https://factory011.github.io/tags/js/</guid>
+      <guid>https://www.liangh.top/tags/js/</guid>
       <description></description>
     </item>
     
     <item>
       <title>odoo</title>
-      <link>https://factory011.github.io/tags/odoo/</link>
+      <link>https://www.liangh.top/tags/odoo/</link>
       <pubDate>Thu, 20 Aug 2020 22:34:15 +0800</pubDate>
       
-      <guid>https://factory011.github.io/tags/odoo/</guid>
+      <guid>https://www.liangh.top/tags/odoo/</guid>
       <description></description>
     </item>
     
     <item>
       <title>nodejs</title>
-      <link>https://factory011.github.io/tags/nodejs/</link>
+      <link>https://www.liangh.top/tags/nodejs/</link>
       <pubDate>Mon, 08 Jun 2020 22:31:34 +0800</pubDate>
       
-      <guid>https://factory011.github.io/tags/nodejs/</guid>
+      <guid>https://www.liangh.top/tags/nodejs/</guid>
       <description></description>
     </item>
     
     <item>
       <title>vue</title>
-      <link>https://factory011.github.io/tags/vue/</link>
+      <link>https://www.liangh.top/tags/vue/</link>
       <pubDate>Sun, 10 May 2020 22:29:24 +0800</pubDate>
       
-      <guid>https://factory011.github.io/tags/vue/</guid>
+      <guid>https://www.liangh.top/tags/vue/</guid>
       <description></description>
     </item>
     
     <item>
       <title>elementUI</title>
-      <link>https://factory011.github.io/tags/elementui/</link>
+      <link>https://www.liangh.top/tags/elementui/</link>
       <pubDate>Sat, 26 Oct 2019 08:19:44 +0800</pubDate>
       
-      <guid>https://factory011.github.io/tags/elementui/</guid>
+      <guid>https://www.liangh.top/tags/elementui/</guid>
       <description></description>
     </item>
     
     <item>
       <title>hexo</title>
-      <link>https://factory011.github.io/tags/hexo/</link>
+      <link>https://www.liangh.top/tags/hexo/</link>
       <pubDate>Mon, 24 Jun 2019 09:50:50 +0800</pubDate>
       
-      <guid>https://factory011.github.io/tags/hexo/</guid>
+      <guid>https://www.liangh.top/tags/hexo/</guid>
       <description></description>
     </item>
     
     <item>
       <title>hugo</title>
-      <link>https://factory011.github.io/tags/hugo/</link>
+      <link>https://www.liangh.top/tags/hugo/</link>
       <pubDate>Mon, 24 Jun 2019 09:50:50 +0800</pubDate>
       
-      <guid>https://factory011.github.io/tags/hugo/</guid>
+      <guid>https://www.liangh.top/tags/hugo/</guid>
       <description></description>
     </item>
     
     <item>
       <title>markdown</title>
-      <link>https://factory011.github.io/tags/markdown/</link>
+      <link>https://www.liangh.top/tags/markdown/</link>
       <pubDate>Tue, 06 Mar 2018 16:01:23 +0800</pubDate>
       
-      <guid>https://factory011.github.io/tags/markdown/</guid>
+      <guid>https://www.liangh.top/tags/markdown/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>footnote</title>
+      <link>https://www.liangh.top/tags/footnote/</link>
+      <pubDate>Thu, 01 Mar 2018 16:01:23 +0800</pubDate>
+      
+      <guid>https://www.liangh.top/tags/footnote/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tag-11</title>
+      <link>https://www.liangh.top/tags/tag-11/</link>
+      <pubDate>Thu, 01 Mar 2018 16:01:23 +0800</pubDate>
+      
+      <guid>https://www.liangh.top/tags/tag-11/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>English</title>
+      <link>https://www.liangh.top/tags/english/</link>
+      <pubDate>Thu, 31 Aug 2017 15:43:48 +0800</pubDate>
+      
+      <guid>https://www.liangh.top/tags/english/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>preview</title>
+      <link>https://www.liangh.top/tags/preview/</link>
+      <pubDate>Thu, 31 Aug 2017 15:43:48 +0800</pubDate>
+      
+      <guid>https://www.liangh.top/tags/preview/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tag-2</title>
+      <link>https://www.liangh.top/tags/tag-2/</link>
+      <pubDate>Thu, 31 Aug 2017 15:43:48 +0800</pubDate>
+      
+      <guid>https://www.liangh.top/tags/tag-2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>development</title>
+      <link>https://www.liangh.top/tags/development/</link>
+      <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.liangh.top/tags/development/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>go</title>
+      <link>https://www.liangh.top/tags/go/</link>
+      <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.liangh.top/tags/go/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>golang</title>
+      <link>https://www.liangh.top/tags/golang/</link>
+      <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.liangh.top/tags/golang/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>templates</title>
+      <link>https://www.liangh.top/tags/templates/</link>
+      <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.liangh.top/tags/templates/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>themes</title>
+      <link>https://www.liangh.top/tags/themes/</link>
+      <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.liangh.top/tags/themes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>jekyll</title>
+      <link>https://www.liangh.top/tags/jekyll/</link>
+      <pubDate>Mon, 10 Mar 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.liangh.top/tags/jekyll/</guid>
       <description></description>
     </item>
     

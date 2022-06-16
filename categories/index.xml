@@ -1,94 +1,148 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Categories on 浪里个小胖子</title>
-    <link>https://factory011.github.io/categories/</link>
-    <description>Recent content in Categories on 浪里个小胖子</description>
+    <title>Categories on ALiang</title>
+    <link>https://www.liangh.top/categories/</link>
+    <description>Recent content in Categories on ALiang</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Fri, 16 Oct 2020 22:35:51 +0800</lastBuildDate>
     
-	<atom:link href="https://factory011.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.liangh.top/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>nginx</title>
-      <link>https://factory011.github.io/categories/nginx/</link>
+      <link>https://www.liangh.top/categories/nginx/</link>
       <pubDate>Fri, 16 Oct 2020 22:35:51 +0800</pubDate>
       
-      <guid>https://factory011.github.io/categories/nginx/</guid>
+      <guid>https://www.liangh.top/categories/nginx/</guid>
       <description></description>
     </item>
     
     <item>
       <title>js</title>
-      <link>https://factory011.github.io/categories/js/</link>
+      <link>https://www.liangh.top/categories/js/</link>
       <pubDate>Thu, 15 Oct 2020 22:35:51 +0800</pubDate>
       
-      <guid>https://factory011.github.io/categories/js/</guid>
+      <guid>https://www.liangh.top/categories/js/</guid>
       <description></description>
     </item>
     
     <item>
       <title>odoo</title>
-      <link>https://factory011.github.io/categories/odoo/</link>
+      <link>https://www.liangh.top/categories/odoo/</link>
       <pubDate>Thu, 20 Aug 2020 22:34:15 +0800</pubDate>
       
-      <guid>https://factory011.github.io/categories/odoo/</guid>
+      <guid>https://www.liangh.top/categories/odoo/</guid>
       <description></description>
     </item>
     
     <item>
       <title>nodejs</title>
-      <link>https://factory011.github.io/categories/nodejs/</link>
+      <link>https://www.liangh.top/categories/nodejs/</link>
       <pubDate>Mon, 08 Jun 2020 22:31:34 +0800</pubDate>
       
-      <guid>https://factory011.github.io/categories/nodejs/</guid>
+      <guid>https://www.liangh.top/categories/nodejs/</guid>
       <description></description>
     </item>
     
     <item>
       <title>vue</title>
-      <link>https://factory011.github.io/categories/vue/</link>
+      <link>https://www.liangh.top/categories/vue/</link>
       <pubDate>Sun, 10 May 2020 22:29:24 +0800</pubDate>
       
-      <guid>https://factory011.github.io/categories/vue/</guid>
+      <guid>https://www.liangh.top/categories/vue/</guid>
       <description></description>
     </item>
     
     <item>
       <title>elementUI</title>
-      <link>https://factory011.github.io/categories/elementui/</link>
+      <link>https://www.liangh.top/categories/elementui/</link>
       <pubDate>Sat, 26 Oct 2019 08:19:44 +0800</pubDate>
       
-      <guid>https://factory011.github.io/categories/elementui/</guid>
+      <guid>https://www.liangh.top/categories/elementui/</guid>
       <description></description>
     </item>
     
     <item>
       <title>面试</title>
-      <link>https://factory011.github.io/categories/%E9%9D%A2%E8%AF%95/</link>
+      <link>https://www.liangh.top/categories/%E9%9D%A2%E8%AF%95/</link>
       <pubDate>Sat, 06 Jul 2019 16:05:11 +0800</pubDate>
       
-      <guid>https://factory011.github.io/categories/%E9%9D%A2%E8%AF%95/</guid>
+      <guid>https://www.liangh.top/categories/%E9%9D%A2%E8%AF%95/</guid>
       <description></description>
     </item>
     
     <item>
       <title>blog</title>
-      <link>https://factory011.github.io/categories/blog/</link>
+      <link>https://www.liangh.top/categories/blog/</link>
       <pubDate>Mon, 24 Jun 2019 09:50:50 +0800</pubDate>
       
-      <guid>https://factory011.github.io/categories/blog/</guid>
+      <guid>https://www.liangh.top/categories/blog/</guid>
       <description></description>
     </item>
     
     <item>
       <title>markdown</title>
-      <link>https://factory011.github.io/categories/markdown/</link>
+      <link>https://www.liangh.top/categories/markdown/</link>
       <pubDate>Tue, 06 Mar 2018 16:01:23 +0800</pubDate>
       
-      <guid>https://factory011.github.io/categories/markdown/</guid>
+      <guid>https://www.liangh.top/categories/markdown/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>docs</title>
+      <link>https://www.liangh.top/categories/docs/</link>
+      <pubDate>Thu, 01 Mar 2018 16:01:23 +0800</pubDate>
+      
+      <guid>https://www.liangh.top/categories/docs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>index</title>
+      <link>https://www.liangh.top/categories/index/</link>
+      <pubDate>Thu, 01 Mar 2018 16:01:23 +0800</pubDate>
+      
+      <guid>https://www.liangh.top/categories/index/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>English</title>
+      <link>https://www.liangh.top/categories/english/</link>
+      <pubDate>Thu, 31 Aug 2017 15:43:48 +0800</pubDate>
+      
+      <guid>https://www.liangh.top/categories/english/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>test</title>
+      <link>https://www.liangh.top/categories/test/</link>
+      <pubDate>Wed, 30 Aug 2017 15:43:48 +0800</pubDate>
+      
+      <guid>https://www.liangh.top/categories/test/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Development</title>
+      <link>https://www.liangh.top/categories/development/</link>
+      <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.liangh.top/categories/development/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>golang</title>
+      <link>https://www.liangh.top/categories/golang/</link>
+      <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.liangh.top/categories/golang/</guid>
       <description></description>
     </item>
     

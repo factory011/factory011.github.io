@@ -74,9 +74,9 @@ a {
 .header .logo-wrapper .logo::before {
     content: '';
     position: absolute;
-	top: 8px;
-	left: 27px;
-    width: 160px;
+	top: 12px;
+    left: 12px;
+    width: 118px;
     height: 2px;
     background-color: rgba(139,69,19,0.8);
 }
@@ -85,11 +85,10 @@ a {
 .header .logo-wrapper .logo::after {
     content: '';
     position: absolute;
-	bottom: 8px;
-    left: 0;
-	left: 27px;
-    width: 160px;
-    height: 4px;
+	bottom: 2px;
+    left: -10px;
+    width: 118px;
+    height: 2px;
     background-color: rgba(139,69,19,0.8);
 }
 
