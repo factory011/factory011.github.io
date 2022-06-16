@@ -92,59 +92,5 @@
       <description></description>
     </item>
     
-    <item>
-      <title>docs</title>
-      <link>https://www.liangh.top/categories/docs/</link>
-      <pubDate>Thu, 01 Mar 2018 16:01:23 +0800</pubDate>
-      
-      <guid>https://www.liangh.top/categories/docs/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>index</title>
-      <link>https://www.liangh.top/categories/index/</link>
-      <pubDate>Thu, 01 Mar 2018 16:01:23 +0800</pubDate>
-      
-      <guid>https://www.liangh.top/categories/index/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>English</title>
-      <link>https://www.liangh.top/categories/english/</link>
-      <pubDate>Thu, 31 Aug 2017 15:43:48 +0800</pubDate>
-      
-      <guid>https://www.liangh.top/categories/english/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>test</title>
-      <link>https://www.liangh.top/categories/test/</link>
-      <pubDate>Wed, 30 Aug 2017 15:43:48 +0800</pubDate>
-      
-      <guid>https://www.liangh.top/categories/test/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Development</title>
-      <link>https://www.liangh.top/categories/development/</link>
-      <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.liangh.top/categories/development/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>golang</title>
-      <link>https://www.liangh.top/categories/golang/</link>
-      <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.liangh.top/categories/golang/</guid>
-      <description></description>
-    </item>
-    
   </channel>
 </rss>
