@@ -130,75 +130,6 @@
           <section id="posts" class="posts">
     <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/2020-05-05-vue%E5%AE%9A%E6%97%B6%E5%99%A8%E6%B8%85%E7%90%86/">Vue定时器清理</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2020-05-05 </span>
-      <div class="post-category">
-          <a href="/categories/vue/"> vue </a>
-          </div>
-        <span class="more-meta"> 约 163 字 </span>
-        <span class="more-meta"> 预计阅读 1 分钟 </span>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      直接在需要定时器的方法或者生命周期函数中声明并销毁 1 2 3 4 5 6 7 8 9 10 11 12 13 14 export default{ methods:{ getGameList(){ const timer = setInterval(()=&gt;{ //需要做的事情 console.log(&#3
-    </div>
-    <div class="read-more">
-      <a href="/post/2020-05-05-vue%E5%AE%9A%E6%97%B6%E5%99%A8%E6%B8%85%E7%90%86/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/2020-04-03-vue%E4%B8%ADaxios%E8%AF%B7%E6%B1%82%E5%85%A8%E5%B1%80%E9%85%8D%E7%BD%AE/">Vue中axios请求全局配置</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2020-04-10 </span>
-      <div class="post-category">
-          <a href="/categories/vue/"> vue </a>
-          </div>
-        <span class="more-meta"> 约 186 字 </span>
-        <span class="more-meta"> 预计阅读 1 分钟 </span>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      文件引入 1 2 import Vue from &#39;vue&#39; import axios from &#39;axios&#39; 全局参数 1 Vue.prototype.$http = axios 请求头Header 1 2 3 4 5 6 7 8 9 10 11 axios.interceptors.request.use(function (config) { config.headers[&#39;Content-Type&#39;] = &#39;application/json;charset=UTF-8&#39; const token = localStorage.getItem(&#39;token&#39;) const TGC = getCookie(&#39;TGC&#39;) if (TGC) { config.headers.Authorization = TGC } else if (token) { config.headers.Authorization = token
-    </div>
-    <div class="read-more">
-      <a href="/post/2020-04-03-vue%E4%B8%ADaxios%E8%AF%B7%E6%B1%82%E5%85%A8%E5%B1%80%E9%85%8D%E7%BD%AE/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/2019-10-26-elementui%E4%B8%AD%E7%BB%9F%E8%AE%A1table%E7%AD%9B%E9%80%89%E7%BB%93%E6%9E%9C%E6%95%B0%E9%87%8F/">ElementUI中统计Table筛选结果数量</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2019-10-26 </span>
-      <div class="post-category">
-          <a href="/categories/elementui/"> elementUI </a>
-          </div>
-        <span class="more-meta"> 约 1238 字 </span>
-        <span class="more-meta"> 预计阅读 3 分钟 </span>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      1、el-table标签栏添加@filter-change=&quot;filterChange&quot; 2、需过滤的列el-table-
-    </div>
-    <div class="read-more">
-      <a href="/post/2019-10-26-elementui%E4%B8%AD%E7%BB%9F%E8%AE%A1table%E7%AD%9B%E9%80%89%E7%BB%93%E6%9E%9C%E6%95%B0%E9%87%8F/" class="read-more-link">阅读更多</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
     <h1 class="post-title"><a class="post-link" href="/post/2019-10-26-vue%E4%B8%AD%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0/">Vue中文件下载功能实现</a></h1>
     <div class="post-meta">
       <span class="post-time"> 2019-10-26 </span>
@@ -239,6 +170,153 @@
     </div>
     <div class="read-more">
       <a href="/post/2019-07-06-%E9%9D%A2%E8%AF%95%E4%B8%AD%E7%9A%84%E4%B8%80%E4%BA%9B%E6%89%8B%E5%86%99%E4%BB%A3%E7%A0%81/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/2019-06-24-hugohexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E5%8F%8Ahugo%E7%9A%84%E8%87%AA%E5%AE%9A%E4%B9%89%E9%85%8D%E7%BD%AE/">Hugo、Hexo博客搭建及Hugo的自定义配置</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2019-06-24 </span>
+      <div class="post-category">
+          <a href="/categories/blog/"> blog </a>
+          </div>
+        <span class="more-meta"> 约 2769 字 </span>
+        <span class="more-meta"> 预计阅读 6 分钟 </span>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      1 Hugo介绍 &emsp;&emsp;世界上最快的网站构建框架。 &emsp;&emsp;Hugo是最受欢迎的开源静态站点生成器之一。凭借其惊
+    </div>
+    <div class="read-more">
+      <a href="/post/2019-06-24-hugohexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E5%8F%8Ahugo%E7%9A%84%E8%87%AA%E5%AE%9A%E4%B9%89%E9%85%8D%E7%BD%AE/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/2018-03-06-blog%E4%B8%AD%E7%9A%84markdown%E8%AF%AD%E6%B3%95%E6%95%88%E6%9E%9C%E9%A2%84%E8%A7%88/">Blog中的Markdown语法效果预览</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2018-03-06 </span>
+      <div class="post-category">
+          <a href="/categories/markdown/"> markdown </a>
+          </div>
+        <span class="more-meta"> 约 737 字 </span>
+        <span class="more-meta"> 预计阅读 2 分钟 </span>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      1 md引用：&gt; + （space or enter）显示效果 To the world you may be one person, but to one person you may be the world 对于世界而言，你是一个人；但是对于某个人，你是他的
+    </div>
+    <div class="read-more">
+      <a href="/post/2018-03-06-blog%E4%B8%AD%E7%9A%84markdown%E8%AF%AD%E6%B3%95%E6%95%88%E6%9E%9C%E9%A2%84%E8%A7%88/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/doc-footnote-preview/">Jane-Theme Footnote Preview</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2018-03-01 </span>
+      <div class="post-category">
+          <a href="/categories/docs/"> docs </a>
+          <a href="/categories/index/"> index </a>
+          </div>
+        <span class="more-meta"> 约 196 字 </span>
+        <span class="more-meta"> 预计阅读 1 分钟 </span>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <p>Hugo-theme-jane optimized for footnote. When you mouse hover the footnote<sup class="footnote-ref" id="fnref:example"><a href="#fn:example">1</a></sup> , footnote content will be displayed.</p>
+    </div>
+    <div class="read-more">
+      <a href="/post/doc-footnote-preview/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/english-preview/">English Creating a New Theme</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2017-08-31 </span>
+      <div class="post-category">
+          <a href="/categories/english/"> English </a>
+          <a href="/categories/index/"> index </a>
+          </div>
+        <span class="more-meta"> 约 7829 字 </span>
+        <span class="more-meta"> 预计阅读 37 分钟 </span>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <h2 id="introduction">Introduction</h2>
+
+<p>This tutorial will show you how to create a simple theme in Hugo. I assume that you are familiar with HTML, the bash command line, and that you are comfortable using Markdown to format content. I&rsquo;ll explain how Hugo uses templates and how you can organize your templates to create a theme. I won&rsquo;t cover using CSS to style your theme.</p>
+    </div>
+    <div class="read-more">
+      <a href="/post/english-preview/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/this-is-a-very-long-title/">This is a very long title This is a very long title This is a very long title This is a very long title This is a very long title</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2017-08-30 </span>
+      <div class="post-category">
+          <a href="/categories/english/"> English </a>
+          <a href="/categories/index/"> index </a>
+          <a href="/categories/test/"> test </a>
+          </div>
+        <span class="more-meta"> 约 246 字 </span>
+        <span class="more-meta"> 预计阅读 2 分钟 </span>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      This is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long titleThis is a very long title
+    </div>
+    <div class="read-more">
+      <a href="/post/this-is-a-very-long-title/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/creating-a-new-theme/">Creating a New Theme</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2014-09-28 </span>
+      <div class="post-category">
+          <a href="/categories/development/"> Development </a>
+          <a href="/categories/golang/"> golang </a>
+          <a href="/categories/index/"> index </a>
+          </div>
+        <span class="more-meta"> 约 7829 字 </span>
+        <span class="more-meta"> 预计阅读 37 分钟 </span>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      Introduction This tutorial will show you how to create a simple theme in Hugo. I assume that you are familiar with HTML, the bash command line, and that you are comfortable using Markdown to format content. I&rsquo;ll explain how Hugo uses templates and how you can organize your templates to create a theme. I won&rsquo;t cover using CSS to style your theme.
+We&rsquo;ll start with creating a new site with a very basic template.
+    </div>
+    <div class="read-more">
+      <a href="/post/creating-a-new-theme/" class="read-more-link">阅读更多</a>
     </div>
   </div>
 </article>

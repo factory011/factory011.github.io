@@ -243,6 +243,75 @@
   </div>
 </article>
 
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/2020-05-05-vue%E5%AE%9A%E6%97%B6%E5%99%A8%E6%B8%85%E7%90%86/">Vue定时器清理</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2020-05-05 </span>
+      <div class="post-category">
+          <a href="/categories/vue/"> vue </a>
+          </div>
+        <span class="more-meta"> 约 163 字 </span>
+        <span class="more-meta"> 预计阅读 1 分钟 </span>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      直接在需要定时器的方法或者生命周期函数中声明并销毁 1 2 3 4 5 6 7 8 9 10 11 12 13 14 export default{ methods:{ getGameList(){ const timer = setInterval(()=&gt;{ //需要做的事情 console.log(&#3
+    </div>
+    <div class="read-more">
+      <a href="/post/2020-05-05-vue%E5%AE%9A%E6%97%B6%E5%99%A8%E6%B8%85%E7%90%86/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/2020-04-03-vue%E4%B8%ADaxios%E8%AF%B7%E6%B1%82%E5%85%A8%E5%B1%80%E9%85%8D%E7%BD%AE/">Vue中axios请求全局配置</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2020-04-10 </span>
+      <div class="post-category">
+          <a href="/categories/vue/"> vue </a>
+          </div>
+        <span class="more-meta"> 约 186 字 </span>
+        <span class="more-meta"> 预计阅读 1 分钟 </span>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      文件引入 1 2 import Vue from &#39;vue&#39; import axios from &#39;axios&#39; 全局参数 1 Vue.prototype.$http = axios 请求头Header 1 2 3 4 5 6 7 8 9 10 11 axios.interceptors.request.use(function (config) { config.headers[&#39;Content-Type&#39;] = &#39;application/json;charset=UTF-8&#39; const token = localStorage.getItem(&#39;token&#39;) const TGC = getCookie(&#39;TGC&#39;) if (TGC) { config.headers.Authorization = TGC } else if (token) { config.headers.Authorization = token
+    </div>
+    <div class="read-more">
+      <a href="/post/2020-04-03-vue%E4%B8%ADaxios%E8%AF%B7%E6%B1%82%E5%85%A8%E5%B1%80%E9%85%8D%E7%BD%AE/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/2019-10-26-elementui%E4%B8%AD%E7%BB%9F%E8%AE%A1table%E7%AD%9B%E9%80%89%E7%BB%93%E6%9E%9C%E6%95%B0%E9%87%8F/">ElementUI中统计Table筛选结果数量</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2019-10-26 </span>
+      <div class="post-category">
+          <a href="/categories/elementui/"> elementUI </a>
+          </div>
+        <span class="more-meta"> 约 1238 字 </span>
+        <span class="more-meta"> 预计阅读 3 分钟 </span>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      1、el-table标签栏添加@filter-change=&quot;filterChange&quot; 2、需过滤的列el-table-
+    </div>
+    <div class="read-more">
+      <a href="/post/2019-10-26-elementui%E4%B8%AD%E7%BB%9F%E8%AE%A1table%E7%AD%9B%E9%80%89%E7%BB%93%E6%9E%9C%E6%95%B0%E9%87%8F/" class="read-more-link">阅读更多</a>
+    </div>
+  </div>
+</article>
+
     </section>
   
   <nav class="pagination">
