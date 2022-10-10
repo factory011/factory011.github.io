@@ -6,10 +6,19 @@
     <description>Recent content in Posts on ALiang</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 16 Oct 2020 22:35:51 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 15 May 2021 20:02:55 +0800</lastBuildDate>
     
 	<atom:link href="https://www.liangh.top/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>sonar配置</title>
+      <link>https://www.liangh.top/post/2021-05-15-sonar%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Sat, 15 May 2021 20:02:55 +0800</pubDate>
+      
+      <guid>https://www.liangh.top/post/2021-05-15-sonar%E9%85%8D%E7%BD%AE/</guid>
+      <description>1、安装sonar-scanner并查看环境变量是否配置成功 1 sonar-scanner -v 2、编辑配置文件sonar-project.properties （D:\s</description>
+    </item>
     
     <item>
       <title>nginx配置</title>
