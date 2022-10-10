@@ -26,13 +26,13 @@
   </url>
   
   <url>
-    <loc>https://www.liangh.top/tags/nginx/</loc>
+    <loc>https://www.liangh.top/categories/nginx/</loc>
     <lastmod>2020-10-16T22:35:51+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.liangh.top/categories/nginx/</loc>
+    <loc>https://www.liangh.top/tags/nginx/</loc>
     <lastmod>2020-10-16T22:35:51+08:00</lastmod>
     <priority>0</priority>
   </url>
@@ -45,13 +45,13 @@
   </url>
   
   <url>
-    <loc>https://www.liangh.top/tags/js/</loc>
+    <loc>https://www.liangh.top/categories/js/</loc>
     <lastmod>2020-10-15T22:35:51+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.liangh.top/categories/js/</loc>
+    <loc>https://www.liangh.top/tags/js/</loc>
     <lastmod>2020-10-15T22:35:51+08:00</lastmod>
     <priority>0</priority>
   </url>
@@ -71,13 +71,13 @@
   </url>
   
   <url>
-    <loc>https://www.liangh.top/tags/odoo/</loc>
+    <loc>https://www.liangh.top/categories/odoo/</loc>
     <lastmod>2020-08-20T22:34:15+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.liangh.top/categories/odoo/</loc>
+    <loc>https://www.liangh.top/tags/odoo/</loc>
     <lastmod>2020-08-20T22:34:15+08:00</lastmod>
     <priority>0</priority>
   </url>
@@ -90,66 +90,14 @@
   </url>
   
   <url>
-    <loc>https://www.liangh.top/tags/nodejs/</loc>
-    <lastmod>2020-06-08T22:31:34+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://www.liangh.top/categories/nodejs/</loc>
     <lastmod>2020-06-08T22:31:34+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.liangh.top/post/2020-05-10-vue%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/</loc>
-    <lastmod>2020-05-10T22:29:24+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.liangh.top/tags/vue/</loc>
-    <lastmod>2020-05-10T22:29:24+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.liangh.top/categories/vue/</loc>
-    <lastmod>2020-05-10T22:29:24+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.liangh.top/post/2020-05-05-vue%E5%AE%9A%E6%97%B6%E5%99%A8%E6%B8%85%E7%90%86/</loc>
-    <lastmod>2020-05-05T22:27:17+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.liangh.top/post/2020-04-03-vue%E4%B8%ADaxios%E8%AF%B7%E6%B1%82%E5%85%A8%E5%B1%80%E9%85%8D%E7%BD%AE/</loc>
-    <lastmod>2020-04-10T22:21:36+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.liangh.top/post/2019-10-26-elementui%E4%B8%AD%E7%BB%9F%E8%AE%A1table%E7%AD%9B%E9%80%89%E7%BB%93%E6%9E%9C%E6%95%B0%E9%87%8F/</loc>
-    <lastmod>2019-10-26T08:19:44+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.liangh.top/tags/elementui/</loc>
-    <lastmod>2019-10-26T08:19:44+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.liangh.top/categories/elementui/</loc>
-    <lastmod>2019-10-26T08:19:44+08:00</lastmod>
+    <loc>https://www.liangh.top/tags/nodejs/</loc>
+    <lastmod>2020-06-08T22:31:34+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -158,6 +106,18 @@
     <lastmod>2019-10-26T08:19:02+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.liangh.top/categories/vue/</loc>
+    <lastmod>2019-10-26T08:19:02+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.liangh.top/tags/vue/</loc>
+    <lastmod>2019-10-26T08:19:02+08:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -174,46 +134,73 @@
   </url>
   
   <url>
-    <loc>https://www.liangh.top/post/2019-06-24-hugohexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E5%8F%8Ahugo%E7%9A%84%E8%87%AA%E5%AE%9A%E4%B9%89%E9%85%8D%E7%BD%AE/</loc>
-    <lastmod>2019-06-24T09:50:50+08:00</lastmod>
+    <loc>https://www.liangh.top/post/2019-05-10-vue%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/</loc>
+    <lastmod>2019-05-10T22:29:24+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.liangh.top/post/2019-05-05-vue%E5%AE%9A%E6%97%B6%E5%99%A8%E6%B8%85%E7%90%86/</loc>
+    <lastmod>2019-05-05T22:27:17+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.liangh.top/post/2019-04-10-vue%E4%B8%ADaxios%E8%AF%B7%E6%B1%82%E5%85%A8%E5%B1%80%E9%85%8D%E7%BD%AE/</loc>
+    <lastmod>2019-04-10T22:21:36+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.liangh.top/tags/axios/</loc>
+    <lastmod>2019-04-10T22:21:36+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.liangh.top/post/2018-10-26-elementui%E4%B8%AD%E7%BB%9F%E8%AE%A1table%E7%AD%9B%E9%80%89%E7%BB%93%E6%9E%9C%E6%95%B0%E9%87%8F/</loc>
+    <lastmod>2018-10-26T08:19:44+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.liangh.top/categories/ui/</loc>
+    <lastmod>2018-10-26T08:19:44+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.liangh.top/tags/elementui/</loc>
+    <lastmod>2018-10-26T08:19:44+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.liangh.top/post/2018-06-24-hugohexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E5%8F%8Ahugo%E7%9A%84%E8%87%AA%E5%AE%9A%E4%B9%89%E9%85%8D%E7%BD%AE/</loc>
+    <lastmod>2018-06-24T09:50:50+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://www.liangh.top/categories/blog/</loc>
-    <lastmod>2019-06-24T09:50:50+08:00</lastmod>
+    <lastmod>2018-06-24T09:50:50+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://www.liangh.top/tags/hexo/</loc>
-    <lastmod>2019-06-24T09:50:50+08:00</lastmod>
+    <lastmod>2018-06-24T09:50:50+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://www.liangh.top/tags/hugo/</loc>
-    <lastmod>2019-06-24T09:50:50+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.liangh.top/post/2018-03-06-blog%E4%B8%AD%E7%9A%84markdown%E8%AF%AD%E6%B3%95%E6%95%88%E6%9E%9C%E9%A2%84%E8%A7%88/</loc>
-    <lastmod>2018-03-06T16:01:23+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.liangh.top/tags/markdown/</loc>
-    <lastmod>2018-03-06T16:01:23+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.liangh.top/categories/markdown/</loc>
-    <lastmod>2018-03-06T16:01:23+08:00</lastmod>
+    <lastmod>2018-06-24T09:50:50+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -222,6 +209,25 @@
     <lastmod>2017-08-28T21:41:52+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.liangh.top/post/2017-03-06-blog%E4%B8%AD%E7%9A%84markdown%E8%AF%AD%E6%B3%95%E6%95%88%E6%9E%9C%E9%A2%84%E8%A7%88/</loc>
+    <lastmod>2017-03-06T16:01:23+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.liangh.top/categories/editor/</loc>
+    <lastmod>2017-03-06T16:01:23+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.liangh.top/tags/markdown/</loc>
+    <lastmod>2017-03-06T16:01:23+08:00</lastmod>
+    <priority>0</priority>
   </url>
   
 </urlset>

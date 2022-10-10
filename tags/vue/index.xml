@@ -6,37 +6,10 @@
     <description>Recent content in vue on ALiang</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 10 May 2020 22:29:24 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 26 Oct 2019 08:19:02 +0800</lastBuildDate>
     
 	<atom:link href="https://www.liangh.top/tags/vue/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Vue生命周期</title>
-      <link>https://www.liangh.top/post/2020-05-10-vue%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/</link>
-      <pubDate>Sun, 10 May 2020 22:29:24 +0800</pubDate>
-      
-      <guid>https://www.liangh.top/post/2020-05-10-vue%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/</guid>
-      <description>生命周期 vuex概念图 MVC和MVVM的关系图解</description>
-    </item>
-    
-    <item>
-      <title>Vue定时器清理</title>
-      <link>https://www.liangh.top/post/2020-05-05-vue%E5%AE%9A%E6%97%B6%E5%99%A8%E6%B8%85%E7%90%86/</link>
-      <pubDate>Tue, 05 May 2020 22:27:17 +0800</pubDate>
-      
-      <guid>https://www.liangh.top/post/2020-05-05-vue%E5%AE%9A%E6%97%B6%E5%99%A8%E6%B8%85%E7%90%86/</guid>
-      <description>直接在需要定时器的方法或者生命周期函数中声明并销毁 1 2 3 4 5 6 7 8 9 10 11 12 13 14 export default{ methods:{ getGameList(){ const timer = setInterval(()=&amp;gt;{ //需要做的事情 console.log(&amp;#3</description>
-    </item>
-    
-    <item>
-      <title>Vue中axios请求全局配置</title>
-      <link>https://www.liangh.top/post/2020-04-03-vue%E4%B8%ADaxios%E8%AF%B7%E6%B1%82%E5%85%A8%E5%B1%80%E9%85%8D%E7%BD%AE/</link>
-      <pubDate>Fri, 10 Apr 2020 22:21:36 +0800</pubDate>
-      
-      <guid>https://www.liangh.top/post/2020-04-03-vue%E4%B8%ADaxios%E8%AF%B7%E6%B1%82%E5%85%A8%E5%B1%80%E9%85%8D%E7%BD%AE/</guid>
-      <description>文件引入 1 2 import Vue from &amp;#39;vue&amp;#39; import axios from &amp;#39;axios&amp;#39; 全局参数 1 Vue.prototype.$http = axios 请求头Header 1 2 3 4 5 6 7 8 9 10 11 axios.interceptors.request.use(function (config) { config.headers[&amp;#39;Content-Type&amp;#39;] = &amp;#39;application/json;charset=UTF-8&amp;#39; const token = localStorage.getItem(&amp;#39;token&amp;#39;) const TGC = getCookie(&amp;#39;TGC&amp;#39;) if (TGC) { config.headers.Authorization = TGC } else if (token) { config.headers.Authorization = token</description>
-    </item>
     
     <item>
       <title>Vue中文件下载功能实现</title>
@@ -45,6 +18,24 @@
       
       <guid>https://www.liangh.top/post/2019-10-26-vue%E4%B8%AD%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0/</guid>
       <description>1、需求：页面中点击下载excel文件 2、实现代码a（后端未开启token验证可用） 1 2 3 4 5 6 7 // mian.js文件中 import axios from &amp;#39;axios&amp;#39; Vue.prototype.$http = axios axios.interceptors.request.use(function (config) {</description>
+    </item>
+    
+    <item>
+      <title>Vue生命周期</title>
+      <link>https://www.liangh.top/post/2019-05-10-vue%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/</link>
+      <pubDate>Fri, 10 May 2019 22:29:24 +0800</pubDate>
+      
+      <guid>https://www.liangh.top/post/2019-05-10-vue%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/</guid>
+      <description>生命周期 vuex概念图 MVC和MVVM的关系图解</description>
+    </item>
+    
+    <item>
+      <title>Vue定时器清理</title>
+      <link>https://www.liangh.top/post/2019-05-05-vue%E5%AE%9A%E6%97%B6%E5%99%A8%E6%B8%85%E7%90%86/</link>
+      <pubDate>Sun, 05 May 2019 22:27:17 +0800</pubDate>
+      
+      <guid>https://www.liangh.top/post/2019-05-05-vue%E5%AE%9A%E6%97%B6%E5%99%A8%E6%B8%85%E7%90%86/</guid>
+      <description>直接在需要定时器的方法或者生命周期函数中声明并销毁 1 2 3 4 5 6 7 8 9 10 11 12 13 14 export default{ methods:{ getGameList(){ const timer = setInterval(()=&amp;gt;{ //需要做的事情 console.log(&amp;#3</description>
     </item>
     
   </channel>

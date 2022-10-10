@@ -48,42 +48,6 @@
     </item>
     
     <item>
-      <title>Vue生命周期</title>
-      <link>https://www.liangh.top/post/2020-05-10-vue%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/</link>
-      <pubDate>Sun, 10 May 2020 22:29:24 +0800</pubDate>
-      
-      <guid>https://www.liangh.top/post/2020-05-10-vue%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/</guid>
-      <description>生命周期 vuex概念图 MVC和MVVM的关系图解</description>
-    </item>
-    
-    <item>
-      <title>Vue定时器清理</title>
-      <link>https://www.liangh.top/post/2020-05-05-vue%E5%AE%9A%E6%97%B6%E5%99%A8%E6%B8%85%E7%90%86/</link>
-      <pubDate>Tue, 05 May 2020 22:27:17 +0800</pubDate>
-      
-      <guid>https://www.liangh.top/post/2020-05-05-vue%E5%AE%9A%E6%97%B6%E5%99%A8%E6%B8%85%E7%90%86/</guid>
-      <description>直接在需要定时器的方法或者生命周期函数中声明并销毁 1 2 3 4 5 6 7 8 9 10 11 12 13 14 export default{ methods:{ getGameList(){ const timer = setInterval(()=&amp;gt;{ //需要做的事情 console.log(&amp;#3</description>
-    </item>
-    
-    <item>
-      <title>Vue中axios请求全局配置</title>
-      <link>https://www.liangh.top/post/2020-04-03-vue%E4%B8%ADaxios%E8%AF%B7%E6%B1%82%E5%85%A8%E5%B1%80%E9%85%8D%E7%BD%AE/</link>
-      <pubDate>Fri, 10 Apr 2020 22:21:36 +0800</pubDate>
-      
-      <guid>https://www.liangh.top/post/2020-04-03-vue%E4%B8%ADaxios%E8%AF%B7%E6%B1%82%E5%85%A8%E5%B1%80%E9%85%8D%E7%BD%AE/</guid>
-      <description>文件引入 1 2 import Vue from &amp;#39;vue&amp;#39; import axios from &amp;#39;axios&amp;#39; 全局参数 1 Vue.prototype.$http = axios 请求头Header 1 2 3 4 5 6 7 8 9 10 11 axios.interceptors.request.use(function (config) { config.headers[&amp;#39;Content-Type&amp;#39;] = &amp;#39;application/json;charset=UTF-8&amp;#39; const token = localStorage.getItem(&amp;#39;token&amp;#39;) const TGC = getCookie(&amp;#39;TGC&amp;#39;) if (TGC) { config.headers.Authorization = TGC } else if (token) { config.headers.Authorization = token</description>
-    </item>
-    
-    <item>
-      <title>ElementUI中统计Table筛选结果数量</title>
-      <link>https://www.liangh.top/post/2019-10-26-elementui%E4%B8%AD%E7%BB%9F%E8%AE%A1table%E7%AD%9B%E9%80%89%E7%BB%93%E6%9E%9C%E6%95%B0%E9%87%8F/</link>
-      <pubDate>Sat, 26 Oct 2019 08:19:44 +0800</pubDate>
-      
-      <guid>https://www.liangh.top/post/2019-10-26-elementui%E4%B8%AD%E7%BB%9F%E8%AE%A1table%E7%AD%9B%E9%80%89%E7%BB%93%E6%9E%9C%E6%95%B0%E9%87%8F/</guid>
-      <description>1、el-table标签栏添加@filter-change=&amp;quot;filterChange&amp;quot; 2、需过滤的列el-table-</description>
-    </item>
-    
-    <item>
       <title>Vue中文件下载功能实现</title>
       <link>https://www.liangh.top/post/2019-10-26-vue%E4%B8%AD%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0/</link>
       <pubDate>Sat, 26 Oct 2019 08:19:02 +0800</pubDate>
@@ -102,21 +66,48 @@
     </item>
     
     <item>
-      <title>Hugo、Hexo博客搭建及Hugo的自定义配置</title>
-      <link>https://www.liangh.top/post/2019-06-24-hugohexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E5%8F%8Ahugo%E7%9A%84%E8%87%AA%E5%AE%9A%E4%B9%89%E9%85%8D%E7%BD%AE/</link>
-      <pubDate>Mon, 24 Jun 2019 09:50:50 +0800</pubDate>
+      <title>Vue生命周期</title>
+      <link>https://www.liangh.top/post/2019-05-10-vue%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/</link>
+      <pubDate>Fri, 10 May 2019 22:29:24 +0800</pubDate>
       
-      <guid>https://www.liangh.top/post/2019-06-24-hugohexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E5%8F%8Ahugo%E7%9A%84%E8%87%AA%E5%AE%9A%E4%B9%89%E9%85%8D%E7%BD%AE/</guid>
-      <description>1 Hugo介绍 &amp;emsp;&amp;emsp;世界上最快的网站构建框架。 &amp;emsp;&amp;emsp;Hugo是最受欢迎的开源静态站点生成器之一。凭借其惊</description>
+      <guid>https://www.liangh.top/post/2019-05-10-vue%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/</guid>
+      <description>生命周期 vuex概念图 MVC和MVVM的关系图解</description>
     </item>
     
     <item>
-      <title>Blog中的Markdown语法效果预览</title>
-      <link>https://www.liangh.top/post/2018-03-06-blog%E4%B8%AD%E7%9A%84markdown%E8%AF%AD%E6%B3%95%E6%95%88%E6%9E%9C%E9%A2%84%E8%A7%88/</link>
-      <pubDate>Tue, 06 Mar 2018 16:01:23 +0800</pubDate>
+      <title>Vue定时器清理</title>
+      <link>https://www.liangh.top/post/2019-05-05-vue%E5%AE%9A%E6%97%B6%E5%99%A8%E6%B8%85%E7%90%86/</link>
+      <pubDate>Sun, 05 May 2019 22:27:17 +0800</pubDate>
       
-      <guid>https://www.liangh.top/post/2018-03-06-blog%E4%B8%AD%E7%9A%84markdown%E8%AF%AD%E6%B3%95%E6%95%88%E6%9E%9C%E9%A2%84%E8%A7%88/</guid>
-      <description>1 md引用：&amp;gt; + （space or enter）显示效果 To the world you may be one person, but to one person you may be the world 对于世界而言，你是一个人；但是对于某个人，你是他的</description>
+      <guid>https://www.liangh.top/post/2019-05-05-vue%E5%AE%9A%E6%97%B6%E5%99%A8%E6%B8%85%E7%90%86/</guid>
+      <description>直接在需要定时器的方法或者生命周期函数中声明并销毁 1 2 3 4 5 6 7 8 9 10 11 12 13 14 export default{ methods:{ getGameList(){ const timer = setInterval(()=&amp;gt;{ //需要做的事情 console.log(&amp;#3</description>
+    </item>
+    
+    <item>
+      <title>Vue中axios请求全局配置</title>
+      <link>https://www.liangh.top/post/2019-04-10-vue%E4%B8%ADaxios%E8%AF%B7%E6%B1%82%E5%85%A8%E5%B1%80%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Wed, 10 Apr 2019 22:21:36 +0800</pubDate>
+      
+      <guid>https://www.liangh.top/post/2019-04-10-vue%E4%B8%ADaxios%E8%AF%B7%E6%B1%82%E5%85%A8%E5%B1%80%E9%85%8D%E7%BD%AE/</guid>
+      <description>文件引入 1 2 import Vue from &amp;#39;vue&amp;#39; import axios from &amp;#39;axios&amp;#39; 全局参数 1 Vue.prototype.$http = axios 请求头Header 1 2 3 4 5 6 7 8 9 10 11 axios.interceptors.request.use(function (config) { config.headers[&amp;#39;Content-Type&amp;#39;] = &amp;#39;application/json;charset=UTF-8&amp;#39; const token = localStorage.getItem(&amp;#39;token&amp;#39;) const TGC = getCookie(&amp;#39;TGC&amp;#39;) if (TGC) { config.headers.Authorization = TGC } else if (token) { config.headers.Authorization = token</description>
+    </item>
+    
+    <item>
+      <title>ElementUI中统计Table筛选结果数量</title>
+      <link>https://www.liangh.top/post/2018-10-26-elementui%E4%B8%AD%E7%BB%9F%E8%AE%A1table%E7%AD%9B%E9%80%89%E7%BB%93%E6%9E%9C%E6%95%B0%E9%87%8F/</link>
+      <pubDate>Fri, 26 Oct 2018 08:19:44 +0800</pubDate>
+      
+      <guid>https://www.liangh.top/post/2018-10-26-elementui%E4%B8%AD%E7%BB%9F%E8%AE%A1table%E7%AD%9B%E9%80%89%E7%BB%93%E6%9E%9C%E6%95%B0%E9%87%8F/</guid>
+      <description>1、el-table标签栏添加@filter-change=&amp;quot;filterChange&amp;quot; 2、需过滤的列el-table-</description>
+    </item>
+    
+    <item>
+      <title>Hugo、Hexo博客搭建及Hugo的自定义配置</title>
+      <link>https://www.liangh.top/post/2018-06-24-hugohexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E5%8F%8Ahugo%E7%9A%84%E8%87%AA%E5%AE%9A%E4%B9%89%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Sun, 24 Jun 2018 09:50:50 +0800</pubDate>
+      
+      <guid>https://www.liangh.top/post/2018-06-24-hugohexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E5%8F%8Ahugo%E7%9A%84%E8%87%AA%E5%AE%9A%E4%B9%89%E9%85%8D%E7%BD%AE/</guid>
+      <description>1 Hugo介绍 &amp;emsp;&amp;emsp;世界上最快的网站构建框架。 &amp;emsp;&amp;emsp;Hugo是最受欢迎的开源静态站点生成器之一。凭借其惊</description>
     </item>
     
     <item>
@@ -126,6 +117,15 @@
       
       <guid>https://www.liangh.top/about/</guid>
       <description>《蒹葭》 蒹葭苍苍，白露为霜。所谓伊人，在水一方。 &amp;ensp;&amp;ensp;溯洄从之，道阻且长。溯游从之，宛在水中央。 蒹葭萋萋，白露未晞。所谓伊</description>
+    </item>
+    
+    <item>
+      <title>Blog中的Markdown语法效果预览</title>
+      <link>https://www.liangh.top/post/2017-03-06-blog%E4%B8%AD%E7%9A%84markdown%E8%AF%AD%E6%B3%95%E6%95%88%E6%9E%9C%E9%A2%84%E8%A7%88/</link>
+      <pubDate>Mon, 06 Mar 2017 16:01:23 +0800</pubDate>
+      
+      <guid>https://www.liangh.top/post/2017-03-06-blog%E4%B8%AD%E7%9A%84markdown%E8%AF%AD%E6%B3%95%E6%95%88%E6%9E%9C%E9%A2%84%E8%A7%88/</guid>
+      <description>1 md引用：&amp;gt; + （space or enter）显示效果 To the world you may be one person, but to one person you may be the world 对于世界而言，你是一个人；但是对于某个人，你是他的</description>
     </item>
     
   </channel>
