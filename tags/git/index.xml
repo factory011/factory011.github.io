@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>git on ALiang</title>
+    <link>https://www.liangh.top/tags/git/</link>
+    <description>Recent content in git on ALiang</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 02 Mar 2021 20:34:42 +0800</lastBuildDate>
+    
+	<atom:link href="https://www.liangh.top/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>GitFlow工作流规范</title>
+      <link>https://www.liangh.top/post/2021-03-02-gitflow%E5%B7%A5%E4%BD%9C%E6%B5%81%E8%A7%84%E8%8C%83/</link>
+      <pubDate>Tue, 02 Mar 2021 20:34:42 +0800</pubDate>
+      
+      <guid>https://www.liangh.top/post/2021-03-02-gitflow%E5%B7%A5%E4%BD%9C%E6%B5%81%E8%A7%84%E8%8C%83/</guid>
+      <description>工作流规范 版本规范 前端项目使用语义化版本进行发布: 版本格式：主版本号.次版本号.修订号，版本号递增规则如下： 主版本号：当你做了不兼容的 API 修改</description>
+    </item>
+    
+  </channel>
+</rss>

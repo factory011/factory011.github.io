@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+  <title>GitFlow工作流规范 - ALiang</title>
+  <meta name="renderer" content="webkit" />
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f5f5f5" />
+<meta name="msapplication-navbutton-color" content="#f5f5f5">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f5f5f5">
+
+
+<meta name="author" content="ALiang" /><meta name="description" content="工作流规范 版本规范 前端项目使用语义化版本进行发布: 版本格式：主版本号.次版本号.修订号，版本号递增规则如下： 主版本号：当你做了不兼容的 API 修改" /><meta name="keywords" content="前端, ALiang, Blog, Hugo" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.55.6 with even 4.0.0" />
+
+
+<link rel="canonical" href="https://www.liangh.top/post/2021-03-02-gitflow%E5%B7%A5%E4%BD%9C%E6%B5%81%E8%A7%84%E8%8C%83/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="/dist/even.abc3492d.min.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+<link rel="stylesheet" href="/css/custom.min.css">
+
+
+
+<link rel="stylesheet" defer href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+
+<meta property="og:title" content="GitFlow工作流规范" />
+<meta property="og:description" content="工作流规范 版本规范 前端项目使用语义化版本进行发布: 版本格式：主版本号.次版本号.修订号，版本号递增规则如下： 主版本号：当你做了不兼容的 API 修改" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.liangh.top/post/2021-03-02-gitflow%E5%B7%A5%E4%BD%9C%E6%B5%81%E8%A7%84%E8%8C%83/" />
+<meta property="article:published_time" content="2021-03-02T20:34:42&#43;08:00"/>
+<meta property="article:modified_time" content="2021-03-02T20:34:42&#43;08:00"/>
+
+<meta itemprop="name" content="GitFlow工作流规范">
+<meta itemprop="description" content="工作流规范 版本规范 前端项目使用语义化版本进行发布: 版本格式：主版本号.次版本号.修订号，版本号递增规则如下： 主版本号：当你做了不兼容的 API 修改">
+
+
+<meta itemprop="datePublished" content="2021-03-02T20:34:42&#43;08:00" />
+<meta itemprop="dateModified" content="2021-03-02T20:34:42&#43;08:00" />
+<meta itemprop="wordCount" content="4695">
+
+
+
+<meta itemprop="keywords" content="git," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="GitFlow工作流规范"/>
+<meta name="twitter:description" content="工作流规范 版本规范 前端项目使用语义化版本进行发布: 版本格式：主版本号.次版本号.修订号，版本号递增规则如下： 主版本号：当你做了不兼容的 API 修改"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">ALiang</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">首页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">关于</li>
+      </a>
+  </ul>
+</nav>
+  <div id="mobile-panel">
+    <header id="header" class="header">
+		<div class="container">
+			<div class="logo-wrapper">
+  <a href="/" class="logo animate swing">ALiang</a>
+</div>
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/"><i class="iconfont icon-home"></i>首页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/"><i class="iconfont icon-archives"></i>归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/"><i class="iconfont icon-tags"></i>标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/"><i class="iconfont icon-categories"></i>分类</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/"><i class="iconfont icon-"></i>关于</a>
+      </li>
+  </ul>
+</nav>
+		<div/>
+    </header>
+
+    <main id="main" class="container main animate bounceInLeft">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">GitFlow工作流规范</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2021-03-02 </span>
+        <div class="post-category">
+            <a href="/categories/git/"> git </a>
+            </div>
+          <span class="more-meta"> 约 4695 字 </span>
+          <span class="more-meta"> 预计阅读 10 分钟 </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#版本规范">版本规范</a>
+<ul>
+<li><a href="#常见工作流">常见工作流</a></li>
+</ul></li>
+<li><a href="#git-分支模型">Git 分支模型</a>
+<ul>
+<li><a href="#master分支">master分支</a></li>
+<li><a href="#dev分支">dev分支</a></li>
+<li><a href="#feature分支">feature分支</a></li>
+<li><a href="#preview分支">preview分支</a></li>
+<li><a href="#hotfix">hotfix</a></li>
+<li><a href="#release分支">release分支</a></li>
+<li><a href="#git-flow-风格的release分支">git flow 风格的release分支</a></li>
+</ul></li>
+<li><a href="#版本规范-1">版本规范</a>
+<ul>
+<li><a href="#自定义风格release分支">自定义风格release分支</a></li>
+</ul></li>
+<li><a href="#版本规范-2">版本规范</a></li>
+<li><a href="#提交信息规范">提交信息规范</a>
+<ul>
+<li><a href="#格式">格式</a>
+<ul>
+<li><a href="#header">header</a></li>
+<li><a href="#body">body</a></li>
+<li><a href="#footer">footer</a></li>
+<li><a href="#模板和示例">模板和示例</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#bug-处理规则">BUG 处理规则</a></li>
+<li><a href="#如何处理定制化需求">如何处理定制化需求</a></li>
+<li><a href="#通用的项目组织规范">通用的项目组织规范</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      
+
+<p>工作流规范
+<img src="https://github.com/factory011/perFileServer/blob/main/HugoBlog/gitflow.png?raw=true" alt="image.png" /></p>
+
+<h3 id="版本规范">版本规范</h3>
+
+<p>前端项目使用<a href="https://semver.org/lang/zh-CN/">语义化版本</a>进行发布:</p>
+
+<p>版本格式：主版本号.次版本号.修订号，版本号递增规则如下：</p>
+
+<ol>
+<li>主版本号：当你做了不兼容的 API 修改，</li>
+<li>次版本号：当你做了向下兼容的功能性新增，</li>
+<li>修订号：当你做了向下兼容的问题修正。</li>
+</ol>
+
+<p>先行版本号及版本编译元数据可以加到“主版本号.次版本号.修订号”的后面，作为延伸。</p>
+
+<h4 id="常见工作流">常见工作流</h4>
+
+<ul>
+<li><a href="https://link.juejin.cn/?target=https%3A%2F%2Fgithub.com%2Fivan-94%2Fgit-guide%2Fblob%2Fmaster%2Fbranch%2Fcentralized.md">简单的集中式</a></li>
+<li><a href="https://link.juejin.cn/?target=https%3A%2F%2Fgithub.com%2Fivan-94%2Fgit-guide%2Fblob%2Fmaster%2Fbranch%2Ffeature.md">基于功能分支的工作流</a></li>
+<li><a href="https://link.juejin.cn/?target=https%3A%2F%2Fgithub.com%2Fivan-94%2Fgit-guide%2Fblob%2Fmaster%2Fbranch%2Fgitflow.md">Git Flow</a> 🔥</li>
+<li><a href="https://link.juejin.cn/?target=https%3A%2F%2Fgithub.com%2Fivan-94%2Fgit-guide%2Fblob%2Fmaster%2Fbranch%2Ffork.md">Fork/Pull Request 工作流</a></li>
+</ul>
+
+<hr />
+
+<h3 id="git-分支模型">Git 分支模型</h3>
+
+<h4 id="master分支">master分支</h4>
+
+<p>master分支表示一个稳定的发布版本. 对应GZB的大版本.</p>
+
+<ul>
+<li>场景: 前端应用会跟随工作宝版本迭代, 在dev分支测试稳定后, 会合并到master分支, 并使用tag标记应用版本和对应的工作宝版本</li>
+<li>tag规范: <code>v{APP_version}@{GZB_version}</code>, 例如v0.1.0<a href="/GZB_6.6">@GZB_6.6 </a></li>
+<li>人员: 由项目负责人进行审核合并, 普通开发者没有权限</li>
+</ul>
+
+<h4 id="dev分支">dev分支</h4>
+
+<p>开发者主要工作的分支, 最新的特性或bug修复都会提交到这个分支. 开发者如果在该分支进行了提交，在push到远程之前应该先pull一下， 并尽量使用rebase模式，保证分支的简洁</p>
+
+<ul>
+<li>命名规范: dev</li>
+<li>tag规范: 在dev分支中也可能会经历发布过程, 例如bug修复版本. 这里同样使用tag来标记这些发布. 例如v0.1.1</li>
+<li>提交规范：如果实在开发分支上进行开发，在推送到远程之前，应该使用<code>git rebase</code>形式更新本地分支。</li>
+</ul>
+
+<h4 id="feature分支">feature分支</h4>
+
+<p>涉及多人协作或者大功能的开发, 应该从dev分支checkout出独立的feature分支, 避免干扰dev分支</p>
+
+<ul>
+<li><p>场景:</p>
+
+<ul>
+<li>涉及多人协作: 团队多个成员在同一个项目下负责开发不同的功能, 这时候每个成员在自己的feature分支独立开发</li>
+<li>大功能开发: 大功能开发跨越周期比较长, 需要多次迭代才会稳定. 这时候应该在独立的分支上开发. 方便跟踪历史记录, 也免于干扰dev分支的迭代和发布</li>
+</ul></li>
+
+<li><p>命名规范</p>
+
+<ul>
+<li>feature/name: name是功能名称</li>
+<li>feature/GZB_version: 这也是团队常见的模式, 当无法使用一个功能名称来描述时, 可以使用GZB版本号作为’功能’</li>
+</ul></li>
+
+<li><p>合并时机</p>
+
+<ol>
+<li>当feature分支迭代稳定, 并通过测试后, 合并到dev分支. 合并到dev后, <strong>feature分支的生命周期就结束了</strong>. 后续bug修复和功能优化直接在dev开发</li>
+<li>当多个feature分支需要合并对外发布临时版本时. 合并到preview分支 . ⚠️这种情况不应该合并到dev分支, 因为feature分支可能还不稳定或未完成. 比如为了联调某些功能.</li>
+</ol></li>
+
+<li><p>合并方式</p>
+
+<ul>
+<li>不要使用fast-forward. 这样可以在分支图上查看到分支历史</li>
+</ul></li>
+</ul>
+
+<h4 id="preview分支">preview分支</h4>
+
+<p>临时的预览分支, preview分支用于临时合并feature分支, 这其中可能会修复某些bug或者冲突. 可以选择性地将这些提交cherrypick回feature分支. 当预览结束后就可以销毁preview分支</p>
+
+<h4 id="hotfix">hotfix</h4>
+
+<p>主要负责管理生产环境下出现的紧急修复的代码。从主干分支分出，修理完毕并测试上线后，并回主干分支。并回后，视情况可以删除该分支。</p>
+
+<h4 id="release分支">release分支</h4>
+
+<p>release分支有两种使用策略，第一种遵循<code>gitFlow</code>流程, 第二种是目前后端团队使用的策略，为了配合后端工作，我们主要使用第二种</p>
+
+<h4 id="git-flow-风格的release分支">git flow 风格的release分支</h4>
+
+<p>当前前端应用的稳定版本和GZB版本绑定. release分支不一定存在, 一般情况下, 只会在前端版本稳定后, 将其合并到master, 并创建tag标记. 而只有需要为指定的正式版本修复bug时才会创建release分支</p>
+
+<p><img src="https://github.com/factory011/perFileServer/blob/main/HugoBlog/release-branch.png?raw=true" alt="image.png" /></p>
+
+<h3 id="版本规范-1">版本规范</h3>
+
+<ul>
+<li>场景: 需要为某个正式版本修复bug(hotFix)时, 从master的对应tag中checkout release分支</li>
+<li>命名规范: <code>release/{GZB_version}</code> 外部人员只会关注GZB版本</li>
+<li>如何修复
+
+<ul>
+<li>如果对应bug可以在dev分支直接被修复, 可以先提交到dev分支(或者已经修复了), 然后再cherrypick到release分支</li>
+<li>如果bug在新版本无法复现. 比如新版本升级了依赖. 那么在release分支直接修复即可</li>
+</ul></li>
+</ul>
+
+<h4 id="自定义风格release分支">自定义风格release分支</h4>
+
+<p><img src="https://github.com/factory011/perFileServer/blob/main/HugoBlog/release-branch2.png?raw=true" alt="image.png" /></p>
+
+<h3 id="版本规范-2">版本规范</h3>
+
+<p>当要发布一个工作宝对应的版本时（或者一开始开发时）从dev分支checkout出一个开发分支，后续需要对外发布时，将dev分支合并到release分支, 并打上版本tag. 后面会介绍到后端开发和自动交付机制这种分支模式。</p>
+
+<p>这一种使用策略. gzb后端在使用, 为了配合后端工作, 我们也推荐使用这种方式</p>
+
+<ul>
+<li><p>何时创建:</p>
+
+<ul>
+<li>开启GZB新版本开发任务时(推荐)</li>
+<li>向外发布第一个版本时</li>
+</ul></li>
+
+<li><p>何时合并：后面dev有版本发布都要合并到release分支，直到开启另一条release分支</p></li>
+
+<li><p>好处</p>
+
+<ul>
+<li>对发布内容进行筛选</li>
+<li>专门用于发布, 开发者容易过滤变更的内容</li>
+</ul></li>
+</ul>
+
+<hr />
+
+<h3 id="提交信息规范">提交信息规范</h3>
+
+<p>一个好的提交信息, 会帮助你提高项目的整体质量.</p>
+
+<ul>
+<li><p>why</p>
+
+<ul>
+<li>格式统一的提交信息可以帮助自动化生成changelog</li>
+<li>版本库不只是存放代码的仓库, 也记录项目的开发记录. 这些记录应该可以帮助后来者快速地学习和回顾代码. 也应该方便其他协作者review你的代码</li>
+</ul></li>
+
+<li><p>原则: 半年后, 你能看懂你的commit做了什么东西</p></li>
+
+<li><p>方式: 使用git commit(打开编辑器)而不是git commit -m</p></li>
+
+<li><p>必要信息</p>
+
+<ul>
+<li><p>为什么进行这次提交?</p>
+
+<ul>
+<li>提交改变了什么, 让其他reviewer更容易审核代码和忽略无关的改变</li>
+</ul></li>
+
+<li><p>如何解决的问题?</p>
+
+<ul>
+<li>问题是什么导致的？</li>
+<li>简短说明使用什么方式, 策略, 修复了问题.</li>
+</ul></li>
+
+<li><p>变化可能影响哪些地方</p>
+
+<ul>
+<li>说明变动功能的细节。 一个提交不应该做超过2个功能的变动</li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h4 id="格式">格式</h4>
+
+<p>社区上比较流行的提交信息规范是<a href="https://link.juejin.cn/?target=https%3A%2F%2Fgithub.com%2Fangular%2Fangular%2Fblob%2Fmaster%2FCONTRIBUTING.md%23commit">Angular的提交信息规范</a></p>
+
+<p>我们采用angular的提交规范, 在这个规范的基础上支持(可选)<code>emoji</code>进行修饰</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">&lt;type&gt;(&lt;scope&gt;): &lt;subject&gt;
+
+&lt;body&gt;
+
+&lt;footer&gt;</pre></td></tr></table>
+</div>
+</div>
+<h5 id="header">header</h5>
+
+<blockquote>
+<p>如果提交时feature或者fix(已发布的版本), 这些提交信息应该出现在CHANGELOG</p>
+</blockquote>
+
+<ul>
+<li><p>type: 说明commit的类别. 可以配合emoji使用, 让阅读者更快地区分提交的类型,允许以下类型:</p>
+
+<ul>
+<li>✨feature或feat: 引入新功能</li>
+<li>🐛fix: 修复了bug</li>
+<li>📝docs: 文档</li>
+<li>🎨style: 优化项目结构或者代码格式</li>
+<li>♻️refactor: 代码重构. 代码重构不涉及新功能和bug修复. 不应该影响原有功能, 包括对外暴露的接口</li>
+<li>✅test: 增加测试</li>
+<li>⏫chore: 构建过程, 辅助工具升级. 如升级依赖, 升级构建工具</li>
+<li>⚡️perf: 性能优化</li>
+
+<li><p>⏪
+revert: revert之前的commit</p>
+
+<ul>
+<li>git revert 命令用于撤销之前的一个提交, 并在为这个撤销操作生成一个提交</li>
+</ul></li>
+
+<li><p>🎉 build或release: 构建或发布版本</p></li>
+
+<li><p>🔒 safe: 修复安全问题</p></li>
+</ul></li>
+
+<li><p>scope: 可选. 说明提交影响的范围. 例如样式, 后端接口, 逻辑层等等</p></li>
+
+<li><p>Subject: 提交目的的简短描述, 动词开头, 不超过80个字符. 不要为了提交而提交</p></li>
+</ul>
+
+<h5 id="body">body</h5>
+
+<p>可选. 对本次提交的详细描述. 如果变动很简单, 可以省略</p>
+
+<h5 id="footer">footer</h5>
+
+<p>可选. 只用于说明不兼容变动(break change)和关闭 Issue(如果使用使用gitlab或github管理bug的话)</p>
+
+<h5 id="模板和示例">模板和示例</h5>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma"># 50-character subject line  
+#  
+# 72-character wrapped longer description. This should answer:  
+#  
+# * Why was this change necessary?  
+# * How does it address the problem?  
+# * Are there any side effects?  
+#  
+# Include a link to the ticket, if any.
+
+feat(forms)：使表单状态使用更严格的类型。( #42952 )
+具体来说：将用于表单状态的类型从字符串缩小到可能状态的联合。将 API 方法从 any 更改为使用新类型。
+
+这是一个突破性的变化。然而，正如 PR 中所讨论的，破损似乎很少，google3 已经准备好解决这个问题。
+
+背景：我们在键入表单的设计工作过程中发现了这些任何类型。它们可以通过将它们搭载在新类型的表单泛型之上以不间断的方式进行修复，但如果可能的话，单独修复它们会更清晰。
+
+突破性变化：
+
+引入了一种名为“FormControlStatus”的新类型，它是表单控件所有可能状态字符串的联合。`AbstractControl.status` 已经从`string` 缩小到`FormControlStatus`，`statusChanges` 已经从`Observable&lt;any&gt;` 缩小到`Observable&lt;FormControlStatus&gt;`。大多数应用程序应该无缝地使用新类型。此更改导致的任何损坏都可能是由于以下两个问题之一造成的：(1) 应用程序正在将 `AbstractControl.status` 与无效状态的字符串进行比较；或者，(2) 应用程序正在使用 `statusChanges` 事件，就好像它们不是字符串一样。</pre></td></tr></table>
+</div>
+</div>
+<p>参考<a href="https://github.com/vuejs/vue/commits/dev">vue</a>, <a href="https://github.com/angular/angular/commits/master">angular</a>等开源库项目的提交</p>
+
+<hr />
+
+<h3 id="bug-处理规则">BUG 处理规则</h3>
+
+<p>对于测试，目前会经历两个阶段</p>
+
+<ul>
+<li>冒烟测试：在对测试正式发版之前会要求对代码进行自测，及冒烟测试。</li>
+<li>正式测试阶段：正式测试阶段测试人员会在RDMS进行bug提交和管理，对BUG的处理规则如下：
+
+<ul>
+<li>[解决待关闭]: 修改了程序代码, 问题解决;</li>
+<li>[不做处理]: 没有修改程序代码, 是由于其他原因(需求变更等), 而解决的问题;</li>
+<li>[退回]: 无规律或只出现一次的BUG, 研发没找到原因, 加上必要排查日志后, 可退回给测试; 复现后重新打开</li>
+<li>[正在处理]: 已大致定位原因, 需要较多时间处理的BUG, 可置为&rdquo;正在处理&rdquo;</li>
+</ul></li>
+</ul>
+
+<hr />
+
+<h3 id="如何处理定制化需求">如何处理定制化需求</h3>
+
+<ul>
+<li><p>痛点</p>
+
+<ul>
+<li>对于定制化需求, 并不会引入到正规的代码流中, 一般情况下会checkout出一个分支, 来专门做这里定制化需求, 然后单独发版. 使用分支模式的缺点有:
+
+<ul>
+<li>更新问题
+
+<ul>
+<li>每次正规代码更新都要合并到该分支. 当分支较多时分支图就会比较混乱</li>
+<li>正规代码合并是必然会带来风险的, 比如项目结构变动, 依赖库变动. 都可能导致定制化的代码失效</li>
+</ul></li>
+</ul></li>
+</ul></li>
+
+<li><p>解决办法</p>
+
+<ul>
+<li><p>减少代码耦合</p>
+
+<ul>
+<li>尽量将定制化需求模块化, 最小化和正规代码之间的接触面. 这是解决该问题最根本的方式.
+
+<ul>
+<li>检验方式是结构变化时, 没有或很少适配代码</li>
+</ul></li>
+</ul></li>
+
+<li><p>考虑通过代码层面区分</p>
+
+<ul>
+<li>例如通过权限系统来配置. 通过后端接口动态配置</li>
+</ul></li>
+
+<li><p>优先使用fork模式</p>
+
+<ul>
+<li>有些场景确实无法通过代码层面解决, 比如ios应用定制启动图, icon, 应用名称, 外观等等. 这种方式优先使用fork模式, fork模式和分支模式没本质区别, 但是至少可以避免干扰正规开发流程</li>
+</ul></li>
+</ul></li>
+</ul>
+
+<hr />
+
+<h3 id="通用的项目组织规范">通用的项目组织规范</h3>
+
+<p>一个典型的项目组织规范如下:</p>
+
+<ul>
+<li><p><strong>README.md</strong>: 项目说明, 这个是最重要。你必须在这里提供关于项目的关键信息或者相关信息的入口. 一般包含下列信息:</p>
+
+<ul>
+<li>简要描述、项目主要特性</li>
+<li>运行环境/依赖、安装和构建、测试指南</li>
+<li>简单示例代码</li>
+<li>文档或文档入口, 其他版本或相关资源入口</li>
+<li>联系方式、讨论群</li>
+<li>许可、贡献/开发指南</li>
+</ul></li>
+
+<li><p><strong>CHANGELOG.md</strong>: 放置每个版本的变动内容, 通常要描述每个版本变更的内容。方便使用者确定应该使用哪个版本. 关于CHANGELOG的规范可以参考<a href="https://link.juejin.cn?target=https%3A%2F%2Fkeepachangelog.com%2Fen%2F1.0.0%2F">keep a changelog</a></p></li>
+
+<li><p><strong>package.json</strong>: 前端项目必须. 描述当前的版本、<strong>可用的命令</strong>、包名、依赖、环境约束、项目配置等信息.</p></li>
+
+<li><p><strong>.gitignore</strong>: 忽略不必要的文件，避免将自动生成的文件提交到版本库</p></li>
+
+<li><p><strong>.gitattributes</strong>: git配置，有一些跨平台差异的行为可能需要在这里配置一下，如换行规则</p></li>
+
+<li><p><strong>docs/</strong>: 项目的细化文档, 可选.</p></li>
+
+<li><p><strong>examples/</strong>: 项目的示例代码，可选.</p></li>
+
+<li><p><strong>build</strong>: 项目工具类脚本放置在这里，非必须。如果使用统一构建工具，则没有这个目录</p></li>
+
+<li><p><strong>dist/</strong>: 项目构建结果输出目录</p></li>
+
+<li><p><strong>src/</strong>: 源代码目录</p></li>
+
+<li><p><strong><em><em>tests</em></em>/</strong>: 单元测试目录. 按照<a href="https://link.juejin.cn?target=http%3A%2F%2Fjestjs.io">Jest</a>规范, <code>__tests__</code>目录通常和被测试的模块在同一个父目录下, 例如:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">/src
+__tests__/
+index.ts
+a.ts
+index.ts
+a.ts</pre></td></tr></table>
+</div>
+</div></li>
+
+<li><p><strong>tests</strong>: 全局的测试目录，通常放应用的集成测试或E2E测试等用例</p></li>
+
+<li><p><strong>.env</strong>*: 项目中我们通常会使用<code>环境变量</code>来影响应用在不同运行环境下的行为. 可以通过<a href="https://link.juejin.cn?target=https%3A%2F%2Fgithub.com%2Fmotdotla%2Fdotenv">dotEnv</a>来从文件中读取环境变量. 通常有三个文件:</p>
+
+<ul>
+<li><code>.env</code> 通用的环境变量</li>
+<li><code>.env.development</code> 开发环境的环境变量</li>
+<li><code>.env.production</code> 生成环境的环境变量</li>
+</ul></li>
+</ul>
+
+<p>基本上这些文件的变动的频率很少，团队成员应该不要随意变动，以免影响其他成员。所以通常会使用<code>.env.*.local</code>文件来覆盖上述的配置, 另外会设置版本库来忽略<code>*.local</code>文件.
+<strong>对于开源项目通常还包括这些目录</strong>:</p>
+
+<ul>
+<li><strong>LICENSE</strong>: 说明项目许可</li>
+<li>.github</li>
+<li>开源贡献规范和指南
+
+<ul>
+<li>CONTRIBUTING: 贡献指南, 这里一般会说明贡献的规范、以及项目的基本组织、架构等信息</li>
+<li>CODE_OF_CONDUCT: 行为准则</li>
+<li>COMMIT_CONVENTION: 提交信息规范，上文已经提及</li>
+<li>ISSUE_TEMPLATE: Issue的模板，github可以自动识别这个模板</li>
+<li>PULL_REQUEST_TEMPLATE: PR模板</li>
+</ul></li>
+</ul>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">ALiang</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2021-03-02
+        
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/wechat.png">
+        <span>微信打赏</span>
+      </label>
+    
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/git/">git</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/2021-05-15-sonar%E9%85%8D%E7%BD%AE/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">sonar配置</span>
+            <span class="prev-text nav-mobile">上一篇</span>
+          </a>
+        <a class="next" href="/post/2020-10-16-nginx%E9%85%8D%E7%BD%AE/">
+            <span class="next-text nav-default">nginx配置</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  <script type="text/javascript">
+    window.MathJax = {
+      showProcessingMessages: false,
+      messageStyle: 'none'
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"  integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script>
+  
+
+  <div id="comments-gitment"></div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/default.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/gitment.browser.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var gitment = new Gitment({
+        id: '2021-03-02 20:34:42 \x2b0800 CST',
+        title: 'GitFlow工作流规范',
+        link: decodeURI(location.href),
+        desc: '工作流规范 版本规范 前端项目使用语义化版本进行发布: 版本格式：主版本号.次版本号.修订号，版本号递增规则如下： 主版本号：当你做了不兼容的 API 修改',
+        owner: 'factory011',
+        repo: 'factory011.github.io',
+        oauth: {
+          client_id: '119efc9ab3446717371a',
+          client_secret: '8c57c5ba3c166b577ea4390a102dccb1efa729ff'
+        }
+      });
+      gitment.render('comments-gitment');
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/imsun/gitment">comments powered by gitment.</a></noscript>
+  
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+		<div class="social-links">
+      <a href="https://github.com/factory011" class="iconfont icon-github" title="github" target="_blank"></a>
+      <a href="mailto:lhweb@foxmail.com" class="iconfont icon-email" title="email" target="_blank"></a>
+  <a href="https://www.liangh.top/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2022
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">ALiang</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
