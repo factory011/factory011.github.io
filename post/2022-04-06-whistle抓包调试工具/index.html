@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
-  <title>sonar配置 - ALiang</title>
+  <title>whistle抓包调试工具 - ALiang</title>
   <meta name="renderer" content="webkit" />
 
 <meta http-equiv="Cache-Control" content="no-transform" />
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f5f5f5">
 
 
-<meta name="author" content="ALiang" /><meta name="description" content="1、安装sonar-scanner并查看环境变量是否配置成功 1 sonar-scanner -v 2、编辑配置文件sonar-project.properties （D:\s" /><meta name="keywords" content="前端, ALiang, Blog, Hugo" />
+<meta name="author" content="ALiang" /><meta name="description" content="介绍 whistle(读音[ˈwɪsəl]，拼音[wēisǒu])基于Node实现的跨平台web调试代理工具，类似的工具有Windows平台上" /><meta name="keywords" content="前端, ALiang, Blog, Hugo" />
 
 
 
@@ -26,7 +26,7 @@
 <meta name="generator" content="Hugo 0.55.6 with even 4.0.0" />
 
 
-<link rel="canonical" href="https://www.liangh.top/post/2021-05-15-sonar%E9%85%8D%E7%BD%AE/" />
+<link rel="canonical" href="https://www.liangh.top/post/2022-04-06-whistle%E6%8A%93%E5%8C%85%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 
@@ -45,27 +45,27 @@
 
 <link rel="stylesheet" defer href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
 
-<meta property="og:title" content="sonar配置" />
-<meta property="og:description" content="1、安装sonar-scanner并查看环境变量是否配置成功 1 sonar-scanner -v 2、编辑配置文件sonar-project.properties （D:\s" />
+<meta property="og:title" content="whistle抓包调试工具" />
+<meta property="og:description" content="介绍 whistle(读音[ˈwɪsəl]，拼音[wēisǒu])基于Node实现的跨平台web调试代理工具，类似的工具有Windows平台上" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://www.liangh.top/post/2021-05-15-sonar%E9%85%8D%E7%BD%AE/" />
-<meta property="article:published_time" content="2021-05-15T20:02:55&#43;08:00"/>
-<meta property="article:modified_time" content="2021-05-15T20:02:55&#43;08:00"/>
+<meta property="og:url" content="https://www.liangh.top/post/2022-04-06-whistle%E6%8A%93%E5%8C%85%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7/" />
+<meta property="article:published_time" content="2022-04-06T20:25:24&#43;08:00"/>
+<meta property="article:modified_time" content="2022-04-06T20:25:24&#43;08:00"/>
 
-<meta itemprop="name" content="sonar配置">
-<meta itemprop="description" content="1、安装sonar-scanner并查看环境变量是否配置成功 1 sonar-scanner -v 2、编辑配置文件sonar-project.properties （D:\s">
-
-
-<meta itemprop="datePublished" content="2021-05-15T20:02:55&#43;08:00" />
-<meta itemprop="dateModified" content="2021-05-15T20:02:55&#43;08:00" />
-<meta itemprop="wordCount" content="430">
+<meta itemprop="name" content="whistle抓包调试工具">
+<meta itemprop="description" content="介绍 whistle(读音[ˈwɪsəl]，拼音[wēisǒu])基于Node实现的跨平台web调试代理工具，类似的工具有Windows平台上">
 
 
+<meta itemprop="datePublished" content="2022-04-06T20:25:24&#43;08:00" />
+<meta itemprop="dateModified" content="2022-04-06T20:25:24&#43;08:00" />
+<meta itemprop="wordCount" content="595">
 
-<meta itemprop="keywords" content="sonar," />
+
+
+<meta itemprop="keywords" content="whistle," />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="sonar配置"/>
-<meta name="twitter:description" content="1、安装sonar-scanner并查看环境变量是否配置成功 1 sonar-scanner -v 2、编辑配置文件sonar-project.properties （D:\s"/>
+<meta name="twitter:title" content="whistle抓包调试工具"/>
+<meta name="twitter:description" content="介绍 whistle(读音[ˈwɪsəl]，拼音[wēisǒu])基于Node实现的跨平台web调试代理工具，类似的工具有Windows平台上"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -136,15 +136,15 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">sonar配置</h1>
+      <h1 class="post-title">whistle抓包调试工具</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2021-05-15 </span>
+        <span class="post-time"> 2022-04-06 </span>
         <div class="post-category">
-            <a href="/categories/sonar/"> sonar </a>
+            <a href="/categories/whistle/"> whistle </a>
             </div>
-          <span class="more-meta"> 约 430 字 </span>
-          <span class="more-meta"> 预计阅读 1 分钟 </span>
+          <span class="more-meta"> 约 595 字 </span>
+          <span class="more-meta"> 预计阅读 2 分钟 </span>
         
       </div>
     </header>
@@ -152,103 +152,98 @@
     <div class="post-toc" id="post-toc">
   <h2 class="post-toc-title">文章目录</h2>
   <div class="post-toc-content always-active">
-    
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#介绍">介绍</a></li>
+<li><a href="#安装启动">安装启动</a></li>
+<li><a href="#配置代理">配置代理</a></li>
+<li><a href="#https配置">HTTPS配置</a></li>
+<li><a href="#规则配置">规则配置</a></li>
+<li><a href="#结果验证">结果验证</a>
+<ul>
+<li><a href="#pc端">PC端</a></li>
+<li><a href="#移动端">移动端</a></li>
+</ul></li>
+<li><a href="#接口信息查看">接口信息查看</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
   </div>
 </div>
     <div class="post-content">
-      <p>1、安装<code>sonar-scanner</code>并查看环境变量是否配置成功</p>
+      
+
+<h3 id="介绍">介绍</h3>
+
+<p><a href="https://github.com/avwo/whistle">whistle</a>(读音[ˈwɪsəl]，拼音[wēisǒu])基于Node实现的跨平台web调试代理工具，类似的工具有Windows平台上的<a href="http://www.telerik.com/fiddler/">Fiddler</a>，主要用于查看、修改HTTP、HTTPS、Websocket的请求、响应，也可以作为HTTP代理服务器使用，不同于Fiddler通过断点修改请求响应的方式，whistle采用的是类似配置系统hosts的方式，一切操作都可以通过配置实现，支持域名、路径、正则表达式、通配符、通配路径等多种<a href="https://wproxy.org/whistle/pattern.html">匹配方式</a>，且可以通过Node模块<a href="https://wproxy.org/whistle/plugins.html">扩展功能</a>。</p>
+
+<h3 id="安装启动">安装启动</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt">1
-</span></pre></td>
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
 <td class="lntd">
-<pre class="chroma">sonar-scanner -v</pre></td></tr></table>
+<pre class="chroma"><code class="language-shell" data-lang="shell">// 安装
+$ npm install -g whistle 
+// 启动
+$ w2 start
+// 重启
+$ w2 restart
+// 停止
+$ w2 stop</code></pre></td></tr></table>
 </div>
 </div>
-<p>2、编辑配置文件<code>sonar-project.properties</code>
-（D:\sonar-scanner-4.6.2.2472-windows\conf\sonar-project.properties）</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma">#Configure here general information about the environment, such as SonarQube server connection details for example
-#No information about specific project should appear here
+<h3 id="配置代理">配置代理</h3>
 
-#----- Default SonarQube server
-# 可以是本地localhost也可以是服务器地址，如：localhost:9000
-sonar.host.url=http://sonar.xxx.com:9000/
+<p>1.安装Chrome代理插件：推荐安装<a href="https://chrome.google.com/webstore/detail/padekgcemlokbadohgkifijomclgjgif">SwitchyOmega</a>
+2.安装完成后，添加whistle选项，配置代理服务器，点击应用选项
+<img src="https://github.com/factory011/perFileServer/blob/main/HugoBlog/whistle_01.png?raw=true" alt="image.png" /></p>
 
-#----- Default source code encoding
-sonar.sourceEncoding=UTF-8
+<h3 id="https配置">HTTPS配置</h3>
 
-# 如果连接远程服务，需要身份验证
-sonar.login= zhangsan
+<p><img src="https://github.com/factory011/perFileServer/blob/main/HugoBlog/whistle_02.png?raw=true" alt="image.png" /></p>
 
-sonar.password = 123456</pre></td></tr></table>
-</div>
-</div>
-<p>3.在项目根目录新建<code>sonar-project.properties</code></p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span></pre></td>
-<td class="lntd">
-<pre class="chroma"># must be unique in a given SonarQube instance
-# 你的项目key值
-sonar.projectKey=project-name
+<h3 id="规则配置">规则配置</h3>
 
-# --- optional properties ---
+<p>详细规则api参考<a href="https://wproxy.org/whistle/">官方文档</a>
+<img src="https://github.com/factory011/perFileServer/blob/main/HugoBlog/whistle_03.png?raw=true" alt="image.png" /></p>
 
-# defaults to project key
-# 你的项目名称，一般跟projectKey对应
-sonar.projectName=project-name
+<h3 id="结果验证">结果验证</h3>
 
-# defaults to &#39;not provided&#39;
-sonar.projectVersion=1.0
- 
-# Path is relative to the sonar-project.properties file. Defaults to .
-# 检查的代码路径
-sonar.sources=./src  
- 
-# Encoding of the source code. Default is default system encoding
-sonar.sourceEncoding=UTF-8</pre></td></tr></table>
-</div>
-</div>
-<p>4.进入项目的根路径下，执行命令：<code>sonar-scanner</code>，开始对你的代码进行质量审核</p>
+<h4 id="pc端">PC端</h4>
 
-<p><img src="https://github.com/factory011/perFileServer/blob/main/HugoBlog/sonar.png?raw=true" alt="vuex概念图.png" /></p>
+<p>1.例如本地启动了vite项目，访问地址为<a href="http://127.0.0.1:3000">http://127.0.0.1:3000</a>
+2.SwitchyOmega插件选择到配置的weistle代理
+3.访问规则中配置的地址<a href="http://www.test.com/">http://www.test.com/</a>
+<img src="https://github.com/factory011/perFileServer/blob/main/HugoBlog/whistle_04.png?raw=true" alt="image.png" />
+4.vConsole界面（规则中配置）
+<img src="https://github.com/factory011/perFileServer/blob/main/HugoBlog/whistle_05.png?raw=true" alt="image.png" /></p>
+
+<h4 id="移动端">移动端</h4>
+
+<p>注：手机电脑处于同一局域网下
+1.修改网络属性，代理方式选择手动，输入ip、端口
+<img src="https://github.com/factory011/perFileServer/blob/main/HugoBlog/whistle_06.png?raw=true" alt="image.png" />
+2.访问<a href="http://www.test.com/">http://www.test.com/</a>
+<img src="https://github.com/factory011/perFileServer/blob/main/HugoBlog/whistle_07.png?raw=true" alt="image.png" />
+3.vConsole界面（规则中配置）
+<img src="https://github.com/factory011/perFileServer/blob/main/HugoBlog/whistle_08.png?raw=true" alt="image.png" /></p>
+
+<h3 id="接口信息查看">接口信息查看</h3>
+
+<p><img src="https://github.com/factory011/perFileServer/blob/main/HugoBlog/whistle_09.png?raw=true" alt="image.png" /></p>
 
     </div>
 
@@ -260,7 +255,7 @@ sonar.sourceEncoding=UTF-8</pre></td></tr></table>
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-        2021-05-15
+        2022-04-06
         
     </span>
   </p>
@@ -283,16 +278,12 @@ sonar.sourceEncoding=UTF-8</pre></td></tr></table>
   </div>
 </div><footer class="post-footer">
       <div class="post-tags">
-          <a href="/tags/sonar/">sonar</a>
+          <a href="/tags/whistle/">whistle</a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="/post/2022-04-06-whistle%E6%8A%93%E5%8C%85%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">whistle抓包调试工具</span>
-            <span class="prev-text nav-mobile">上一篇</span>
-          </a>
-        <a class="next" href="/post/2020-10-16-nginx%E9%85%8D%E7%BD%AE/">
-            <span class="next-text nav-default">nginx配置</span>
+        
+        <a class="next" href="/post/2021-05-15-sonar%E9%85%8D%E7%BD%AE/">
+            <span class="next-text nav-default">sonar配置</span>
             <span class="next-text nav-mobile">下一篇</span>
             <i class="iconfont icon-right"></i>
           </a>
@@ -315,10 +306,10 @@ sonar.sourceEncoding=UTF-8</pre></td></tr></table>
     <script src="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/gitment.browser.min.js" crossorigin="anonymous"></script>
     <script type="text/javascript">
       var gitment = new Gitment({
-        id: '2021-05-15 20:02:55 \x2b0800 CST',
-        title: 'sonar配置',
+        id: '2022-04-06 20:25:24 \x2b0800 CST',
+        title: 'whistle抓包调试工具',
         link: decodeURI(location.href),
-        desc: '1、安装sonar-scanner并查看环境变量是否配置成功 1 sonar-scanner -v 2、编辑配置文件sonar-project.properties （D:\\s',
+        desc: '介绍 whistle(读音[ˈwɪsəl]，拼音[wēisǒu])基于Node实现的跨平台web调试代理工具，类似的工具有Windows平台上',
         owner: 'factory011',
         repo: 'factory011.github.io',
         oauth: {
