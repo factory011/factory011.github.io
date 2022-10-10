@@ -6,10 +6,19 @@
     <description>Recent content in Categories on ALiang</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 06 Apr 2022 20:25:24 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 10 Oct 2022 20:51:52 +0800</lastBuildDate>
     
 	<atom:link href="https://www.liangh.top/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>node</title>
+      <link>https://www.liangh.top/categories/node/</link>
+      <pubDate>Mon, 10 Oct 2022 20:51:52 +0800</pubDate>
+      
+      <guid>https://www.liangh.top/categories/node/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>whistle</title>

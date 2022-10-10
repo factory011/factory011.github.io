@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+  <title>2021 07 09 创建命令行工具并发布成npm包 - ALiang</title>
+  <meta name="renderer" content="webkit" />
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f5f5f5" />
+<meta name="msapplication-navbutton-color" content="#f5f5f5">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f5f5f5">
+
+
+<meta name="author" content="ALiang" /><meta name="description" content="前言 项目中可能会频繁的新建一些移动端、pc端页面，每次通过cv大法（复制粘贴）会比较繁琐。因此实际工作中，我们可以通过发布成npm包的命令行" /><meta name="keywords" content="前端, ALiang, Blog, Hugo" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.55.6 with even 4.0.0" />
+
+
+<link rel="canonical" href="https://www.liangh.top/post/2021-07-09-%E5%88%9B%E5%BB%BA%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%B7%A5%E5%85%B7%E5%B9%B6%E5%8F%91%E5%B8%83%E6%88%90npm%E5%8C%85/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="/dist/even.abc3492d.min.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+<link rel="stylesheet" href="/css/custom.min.css">
+
+
+
+<link rel="stylesheet" defer href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+
+<meta property="og:title" content="2021 07 09 创建命令行工具并发布成npm包" />
+<meta property="og:description" content="前言 项目中可能会频繁的新建一些移动端、pc端页面，每次通过cv大法（复制粘贴）会比较繁琐。因此实际工作中，我们可以通过发布成npm包的命令行" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.liangh.top/post/2021-07-09-%E5%88%9B%E5%BB%BA%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%B7%A5%E5%85%B7%E5%B9%B6%E5%8F%91%E5%B8%83%E6%88%90npm%E5%8C%85/" />
+<meta property="article:published_time" content="2022-10-10T20:51:52&#43;08:00"/>
+<meta property="article:modified_time" content="2022-10-10T20:51:52&#43;08:00"/>
+
+<meta itemprop="name" content="2021 07 09 创建命令行工具并发布成npm包">
+<meta itemprop="description" content="前言 项目中可能会频繁的新建一些移动端、pc端页面，每次通过cv大法（复制粘贴）会比较繁琐。因此实际工作中，我们可以通过发布成npm包的命令行">
+
+
+<meta itemprop="datePublished" content="2022-10-10T20:51:52&#43;08:00" />
+<meta itemprop="dateModified" content="2022-10-10T20:51:52&#43;08:00" />
+<meta itemprop="wordCount" content="974">
+
+
+
+<meta itemprop="keywords" content="npm," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="2021 07 09 创建命令行工具并发布成npm包"/>
+<meta name="twitter:description" content="前言 项目中可能会频繁的新建一些移动端、pc端页面，每次通过cv大法（复制粘贴）会比较繁琐。因此实际工作中，我们可以通过发布成npm包的命令行"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">ALiang</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">首页</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">归档</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">标签</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">分类</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">关于</li>
+      </a>
+  </ul>
+</nav>
+  <div id="mobile-panel">
+    <header id="header" class="header">
+		<div class="container">
+			<div class="logo-wrapper">
+  <a href="/" class="logo animate swing">ALiang</a>
+</div>
+
+
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/"><i class="iconfont icon-home"></i>首页</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/"><i class="iconfont icon-archives"></i>归档</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/"><i class="iconfont icon-tags"></i>标签</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/"><i class="iconfont icon-categories"></i>分类</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/"><i class="iconfont icon-"></i>关于</a>
+      </li>
+  </ul>
+</nav>
+		<div/>
+    </header>
+
+    <main id="main" class="container main animate bounceInLeft">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">2021 07 09 创建命令行工具并发布成npm包</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2022-10-10 </span>
+        <div class="post-category">
+            <a href="/categories/node/"> node </a>
+            </div>
+          <span class="more-meta"> 约 974 字 </span>
+          <span class="more-meta"> 预计阅读 2 分钟 </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#前言">前言</a></li>
+<li><a href="#开发环境">开发环境</a></li>
+<li><a href="#项目结构">项目结构</a></li>
+<li><a href="#编写代码">编写代码</a></li>
+<li><a href="#发布到npm">发布到npm</a></li>
+<li><a href="#项目运行">项目运行</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      
+
+<h2 id="前言">前言</h2>
+
+<p>项目中可能会频繁的新建一些移动端、pc端页面，每次通过cv大法（复制粘贴）会比较繁琐。因此实际工作中，我们可以通过发布成npm包的命令行工具来简化工作流程，每次通过几个简单的命令就能得到理想的初始项目文件，初始项目文件可以将封装好的<code>axios</code>、常用的<code>UI</code>框架、<code>reset.css</code>等基本配置提前搭建好。</p>
+
+<h2 id="开发环境">开发环境</h2>
+
+<ul>
+<li><a href="https://blog.csdn.net/YouZi_X/article/details/107305216">node安装</a></li>
+<li><a href="https://blog.csdn.net/weixin_44950987/article/details/102619708">git安装</a></li>
+<li><a href="https://www.npmjs.com/">npm账号注册</a>
+<br /></li>
+</ul>
+
+<p>开发前需要先在本地环境安装<code>node.js</code>、<code>git</code>、注册npm账号。</p>
+
+<h2 id="项目结构">项目结构</h2>
+
+<p>最基本的项目结构
+<img src="https://img-blog.csdnimg.cn/20200927110313836.png#pic_center" alt="在这里插入图片描述" /></p>
+
+<h2 id="编写代码">编写代码</h2>
+
+<p>1、通过<code>npm init</code>创建<code>package.json</code>文件</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">{
+  &#34;name&#34;: &#34;vue-tem-cli&#34;,
+  &#34;version&#34;: &#34;1.0.0&#34;,
+  &#34;description&#34;: &#34;&#34;,
+  &#34;main&#34;: &#34;index.js&#34;,
+  &#34;scripts&#34;: {
+    &#34;test&#34;: &#34;echo \&#34;Error: no test specified\&#34; &amp;&amp; exit 1&#34;
+  },
+  &#34;dependencies&#34;: {
+    &#34;chalk&#34;: &#34;^3.0.0&#34;,
+    &#34;commander&#34;: &#34;^4.1.1&#34;,
+    &#34;download-git-repo&#34;: &#34;^3.0.2&#34;,
+    &#34;handlebars&#34;: &#34;^4.7.3&#34;,
+    &#34;inquirer&#34;: &#34;^7.0.4&#34;,
+    &#34;log-symbols&#34;: &#34;^3.0.0&#34;,
+    &#34;ora&#34;: &#34;^4.0.3&#34;
+  },
+  &#34;bin&#34;: {
+    &#34;vue-cli&#34;: &#34;./index.js&#34;
+  },
+  &#34;author&#34;: &#34;factory011&#34;,
+  &#34;license&#34;: &#34;ISC&#34;
+}</pre></td></tr></table>
+</div>
+</div>
+<p>2、执行<code>npm i</code>安装项目依赖
+3、<code>index.js</code>代码编写</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">#!/usr/bin/env node
+
+const fs = require(&#39;fs&#39;);
+const program = require(&#39;commander&#39;);
+const download = require(&#39;download-git-repo&#39;);
+const handlebars = require(&#39;handlebars&#39;);
+const inquirer = require(&#39;inquirer&#39;);
+const ora = require(&#39;ora&#39;);
+const chalk = require(&#39;chalk&#39;);
+const symbols = require(&#39;log-symbols&#39;);
+program.version(&#39;1.0.0&#39;, &#39;-v, --version&#39;)
+	.command(&#39;init &lt;name&gt;&#39;)
+	.action((name) =&gt; {
+		if (!fs.existsSync(name)) {
+			inquirer.prompt([
+				{
+					name: &#39;description&#39;,
+					message: &#39;请输入项目描述：&#39;
+				},
+				{
+					name: &#39;author&#39;,
+					message: &#39;请输入作者名称：&#39;
+				},
+				{
+					name: &#39;template&#39;,
+					message: &#39;请输入模板类型（pc/app）：&#39;
+				}
+			]).then((answers) =&gt; {
+				const spinner = ora(&#39;模板下载进行中...&#39;);
+				spinner.start();
+				const template_app = &#39;https://github.com:factory011/vue-app-rem-template#master&#39;;
+				const template_pc = &#39;https://github.com:factory011/vue-pc-template#master&#39;;
+				const TEMPLATE = answers.template === &#39;pc&#39; ? template_pc : template_app;
+				download(TEMPLATE, name, { clone: true }, (err) =&gt; {
+					if (err) {
+						spinner.fail();
+						console.log(symbols.error, chalk.red(err));
+					} else {
+						spinner.succeed();
+						const fileName = `${name}/package.json`;
+						const meta = {
+							name,
+							description: answers.description,
+							author: answers.author
+						}
+						if (fs.existsSync(fileName)) {
+							const content = fs.readFileSync(fileName).toString();
+							const result = handlebars.compile(content)(meta);
+							fs.writeFileSync(fileName, result);
+						}
+						console.log(symbols.success, chalk.green(&#39;项目初始化完成&#39;));
+					}
+				})
+			})
+		} else {
+			// 错误提示项目已存在，避免覆盖原有项目
+			console.log(symbols.error, chalk.red(&#39;项目已存在&#39;));
+		}
+	})
+program.parse(process.argv);</pre></td></tr></table>
+</div>
+</div>
+<p>这是<code>github</code>上搭建的模板文件下载地址，可以自行替换成自己的。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">const template_app = &#39;https://github.com:factory011/vue-app-rem-template#master&#39;;
+const template_pc = &#39;https://github.com:factory011/vue-pc-template#master&#39;;</pre></td></tr></table>
+</div>
+</div>
+<h2 id="发布到npm">发布到npm</h2>
+
+<p>1、执行<code>npm config get registry</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">https://registry.npm.taobao.org/</pre></td></tr></table>
+</div>
+</div>
+<p>2、配置本地仓库<code>npm config set registry=http://registry.npmjs.org</code>
+3、执行<code>npm adduser</code>
+4、执行<code>npm publish</code>
+5、执行成功后，在npm官网的个人资料中能查看到发布的包
+6、<strong><code>最后记得将本地仓库还原</code></strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">npm config set registry=https://registry.npm.taobao.org/</pre></td></tr></table>
+</div>
+</div>
+<h2 id="项目运行">项目运行</h2>
+
+<p>全局安装npm包</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">npm i vue-rem-cli -g</pre></td></tr></table>
+</div>
+</div>
+<p>创建初始项目</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">vue-cli init vue-pc-demo</pre></td></tr></table>
+</div>
+</div>
+<p>命令组成：
+<code>vue-cli</code>是<code>package.json</code>中的配置项</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">&#34;bin&#34;: {
+    &#34;vue-cli&#34;: &#34;./index.js&#34;
+  },</pre></td></tr></table>
+</div>
+</div>
+<p><code>init</code>是通过<code>commander</code>配置的命令</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><span class="lnt">1
+</span><span class="lnt">2
+</span></pre></td>
+<td class="lntd">
+<pre class="chroma">program.version(&#39;1.0.0&#39;, &#39;-v, --version&#39;)
+	.command(&#39;init &lt;name&gt;&#39;)</pre></td></tr></table>
+</div>
+</div>
+<p><code>vue-pc-demo</code>是项目名称</p>
+
+<p>最终执行结果如下：
+<img src="https://img-blog.csdnimg.cn/20200927132956508.png#pic_center" alt="在这里插入图片描述" />
+<img src="https://img-blog.csdnimg.cn/20200927133914546.png#pic_center" alt="在这里插入图片描述" /></p>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">ALiang</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+        2022-10-10
+        
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+<div class="post-reward">
+  <input type="checkbox" name="reward" id="reward" hidden />
+  <label class="reward-button" for="reward">赞赏支持</label>
+  <div class="qr-code">
+    
+    <label class="qr-code-image" for="reward">
+        <img class="image" src="/img/reward/wechat.png">
+        <span>微信打赏</span>
+      </label>
+    
+  </div>
+</div><footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/npm/">npm</a>
+          </div>
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/2022-04-06-whistle%E6%8A%93%E5%8C%85%E8%B0%83%E8%AF%95%E5%B7%A5%E5%85%B7/">
+            <span class="next-text nav-default">Whistle抓包调试工具</span>
+            <span class="next-text nav-mobile">下一篇</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  <script type="text/javascript">
+    window.MathJax = {
+      showProcessingMessages: false,
+      messageStyle: 'none'
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"  integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script>
+  
+
+  <div id="comments-gitment"></div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/default.min.css" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/gitment.browser.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var gitment = new Gitment({
+        id: '2022-10-10 20:51:52 \x2b0800 CST',
+        title: '2021 07 09 创建命令行工具并发布成npm包',
+        link: decodeURI(location.href),
+        desc: '前言 项目中可能会频繁的新建一些移动端、pc端页面，每次通过cv大法（复制粘贴）会比较繁琐。因此实际工作中，我们可以通过发布成npm包的命令行',
+        owner: 'factory011',
+        repo: 'factory011.github.io',
+        oauth: {
+          client_id: '119efc9ab3446717371a',
+          client_secret: '8c57c5ba3c166b577ea4390a102dccb1efa729ff'
+        }
+      });
+      gitment.render('comments-gitment');
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://github.com/imsun/gitment">comments powered by gitment.</a></noscript>
+  
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+		<div class="social-links">
+      <a href="https://github.com/factory011" class="iconfont icon-github" title="github" target="_blank"></a>
+      <a href="mailto:lhweb@foxmail.com" class="iconfont icon-email" title="email" target="_blank"></a>
+  <a href="https://www.liangh.top/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    由 <a class="hexo-link" href="https://gohugo.io">Hugo</a> 强力驱动
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    主题 - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2022
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">ALiang</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -2,26 +2,45 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.liangh.top/post/2021-07-09-%E5%88%9B%E5%BB%BA%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%B7%A5%E5%85%B7%E5%B9%B6%E5%8F%91%E5%B8%83%E6%88%90npm%E5%8C%85/</loc>
+    <lastmod>2022-10-10T20:51:52+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://www.liangh.top/</loc>
-    <lastmod>2022-04-06T20:25:24+08:00</lastmod>
+    <lastmod>2022-10-10T20:51:52+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://www.liangh.top/categories/</loc>
-    <lastmod>2022-04-06T20:25:24+08:00</lastmod>
+    <lastmod>2022-10-10T20:51:52+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://www.liangh.top/post/</loc>
-    <lastmod>2022-04-06T20:25:24+08:00</lastmod>
+    <lastmod>2022-10-10T20:51:52+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://www.liangh.top/tags/</loc>
-    <lastmod>2022-04-06T20:25:24+08:00</lastmod>
+    <lastmod>2022-10-10T20:51:52+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.liangh.top/categories/node/</loc>
+    <lastmod>2022-10-10T20:51:52+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.liangh.top/tags/npm/</loc>
+    <lastmod>2022-10-10T20:51:52+08:00</lastmod>
     <priority>0</priority>
   </url>
   
